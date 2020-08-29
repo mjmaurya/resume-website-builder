@@ -4,11 +4,17 @@
 You need a resume that you can update and share at any given moment. On top of that, potential employers should also be able to find you online with a quick search of your name. Having a well-designed CV website that conveys your personality sends a clear message to recruiters that you are serious about your career.
 ![](https://user-images.githubusercontent.com/45433443/91645295-9625ac00-ea61-11ea-8e49-7201dc401e37.png)
 
+
+
 #### This tool provide an easy and efficient way to create your online resume website within 10 minutes without any coding
 
 ### How it Works [Watch Video](https://youtu.be/HMUmI9kfSDc)
 
 🚀**Try it out:** [Live Demo](http://www.codescript.run/)
+
+- [Live Demo](http://www.codescript.run/)
+- [Report Bug](https://github.com/mjmaurya/resume-website-builder/issues/new/choose)
+- [Request Feature](https://github.com/mjmaurya/resume-website-builder/issues/new/choose)
 
 ## Features
 
