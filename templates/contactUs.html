@@ -1,0 +1,179 @@
+
+{% extends "base.html" %}
+{% block title %} Privacy & Policy{% endblock %}
+{% block style %}
+<style>
+   h1{
+       text-align:center;
+       padding:50px;
+       border-bottom:2px;
+
+   }
+   .social_media{
+       text-align:center;
+       margin-bottom:100px;
+   }
+   ul.social-network {
+	list-style: none;
+	display: inline;
+	margin-left:0 !important;
+	padding: 0;
+}
+ul.social-network li {
+	display: inline;
+	margin: 0 5px;
+}
+.social-network a.icoYt:hover {
+	background-color: #e52d27 ;
+}
+.social-network a.icoFacebook:hover {
+	background-color:#3B5998;
+}
+.social-network a.icoMedium:hover {
+	background-color:#BD3518;
+}
+.social-network a.icoTwitter:hover {
+	background-color: #02cff3 ;
+}
+.social-network a.icoInstagram:hover {
+	background-color:#fd31db;
+}
+.social-network a.icoLinkedin:hover {
+	background-color:#1844bd;
+}
+.social-circle li a {
+	display:inline-block;
+	position:relative;
+	margin:0 auto 0 auto;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+	border-radius:50%;
+	text-align:center;
+	width: 50px;
+	height: 50px;
+	font-size:20px;
+  background-color: #1f2027;
+}
+.social-circle li i {
+	margin:0;
+	line-height:50px;
+	text-align: center;
+}
+
+.social-circle li a:hover i, .triggeredHover {
+	-moz-transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-ms--transform: rotate(360deg);
+	transform: rotate(360deg);
+	-webkit-transition: all 3.2s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	transition: all 0.8s;
+}
+.social-circle i {
+	color: #fff;
+	-webkit-transition: all 0.8s;
+	-moz-transition: all 0.8s;
+	-o-transition: all 0.8s;
+	-ms-transition: all 0.8s;
+	transition: all 0.8s;
+}
+</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+<div class="container">
+    <div>
+        <h1>Contact Us</h1>
+    </div>
+</div>
+    <section class="container mt-5">
+        <!--Contact heading-->
+        <div class="row">
+           <!--Grid column-->
+           <div class="col-sm-12 mb-4 col-md-5">
+              <!--Form with header-->
+              <div class="card border-primary rounded-0">
+                 <div class="card-header p-0">
+                    <div class="bg-primary text-white text-center py-2">
+                       <h3><i class="fa fa-envelope"></i> Write to us:</h3>
+                       <p class="m-0">We’ll write rarely, but only the best content.</p>
+                    </div>
+                 </div>
+                 <div class="card-body p-3">
+                    
+                       <div class="form-group">
+                       <label> Your name </label>
+                       <div class="input-group">
+                          <input value="" type="text" name="data[name]" class="form-control" id="inlineFormInputGroupUsername" placeholder="Your name">
+                       </div>
+                     </div>
+                       <div class="form-group">
+                          <label>Your email</label>
+                          <div class="input-group mb-2 mb-sm-0">
+                             <input type="email" value="" name="data[email]" class="form-control" id="inlineFormInputGroupUsername" placeholder="Email">
+                          </div>
+                       </div>
+                       <div class="form-group">
+                          <label>Subject</label>
+                          <div class="input-group mb-2 mb-sm-0">
+                             <input type="text" name="data[subject]" class="form-control" id="inlineFormInputGroupUsername" placeholder="Subject">
+                          </div>
+                       </div>
+                       <div class="form-group">
+                          <label>Message</label>
+                          <div class="input-group mb-2 mb-sm-0">
+                             <input type="text" class="form-control" name="mesg">
+                          </div>
+                       </div>
+                       <div class="text-center">
+                          <input type="submit" name="submit" value="submit" class="btn btn-primary btn-block rounded-0 py-2">
+                       </div>
+                  
+                      </div>
+                       
+                 </div>
+              </div>
+           <!--Grid column-->
+           
+           <!--Grid column-->
+           <div class="col-sm-12 col-md-7">
+              <!--Google map-->
+              <div class="mb-4">
+                <div class="social_media" >
+                    <ul class="social-network social-circle">
+            
+                        <li><a href="https://www.youtube.com/channel/UCFlFtth3ewznKY0vriczHsg?sub_confirmation=1" class="icoYt" title="Youtube"><i class="fa fa-youtube-play"></i></a></li>
+                        <li><a href="https://www.facebook.com/mjkmaurya" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/gcssmanoj" class="icoTwitter" title="Google +"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/gcssmanoj" class="icoInstagram" title="Youtube"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://medium.com/@manojbce" class="icoMedium" title="Facebook"><i class="fa fa-medium"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/mjmaurya" class="icoLinkedin" title="Google +"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+                </div>
+              <!--Buttons-->
+              <div class="row text-center">
+                 <div class="col-md-4">
+                    <a class="bg-primary px-3 py-2 rounded text-white mb-2 d-inline-block"><i class="fa fa-map-marker"></i></a>
+                    <p> Patna </p>
+                 </div>
+                 <div class="col-md-4">
+                    <a class="bg-primary px-3 py-2 rounded text-white mb-2 d-inline-block"><i class="fa fa-phone"></i></a>
+                    <p>Not Available</p>
+                 </div>
+                 <div class="col-md-4">
+                    <a class="bg-primary px-3 py-2 rounded text-white mb-2 d-inline-block"><i class="fa fa-envelope"></i></a>
+                    <p>manoj.social99@gmail.com</p>
+                 </div>
+              </div>
+           </div>
+           <!--Grid column-->
+             </div>
+     </section>
+
+</div>
+
+{% endblock %}
+  

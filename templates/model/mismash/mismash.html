@@ -1,0 +1,2623 @@
+<!DOCTYPE html>
+<html lang="en" id="download">
+    <head>
+<style type="text/css">
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+/*===== VARIABLES CSS =====*/
+:root{
+  --header-height: 3rem;
+  --font-semi: 600;
+}
+
+/*===== Colores =====*/
+:root{
+  --first-color: #4070F4;
+  --second-color: #0E2431;
+}
+
+/*===== Fuente y tipografia =====*/
+:root{
+  --body-font: 'Poppins', sans-serif;
+  --big-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 0.938rem;
+}
+@media screen and (min-width: 768px){
+  :root{
+    --big-font-size: 3.5rem;
+    --h2-font-size: 2rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*===== Margenes =====*/
+:root{
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+}
+
+/*===== z index =====*/
+:root{
+  --z-back: -10;
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*===== BASE =====*/
+*,::before,::after{
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+main{
+  background:#a1a5af;
+}
+h1,h2,p{
+  margin: 0;
+}
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*===== CLASS CSS ===== */
+.section-title{
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  margin-top: var(--mb-2);
+  margin-bottom: var(--mb-4);
+  text-align: center;
+}
+.section-title::after{
+  position: absolute;
+  content: "";
+  width: 64px;
+  height: 0.18rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+.section{
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+/*===== LAYOUT =====*/
+.bd-grid{
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-column-gap: 2rem;
+  width: calc(100% - 2rem);
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+}
+.l-header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(146,161,176,.15);
+}
+
+/*===== NAV =====*/
+.nav{
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: var(--font-semi);
+}
+@media screen and (max-width: 768px){
+  .nav__menu{
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    padding: 2rem;
+    background-color: var(--second-color);
+    transition: .5s;
+  }
+}
+.nav__item{
+  margin-bottom: var(--mb-4);
+}
+.nav__link{
+  position: relative;
+  color: #fff;
+}
+.nav__link:hover{
+  position: relative;
+}
+.nav__link:hover::after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+.nav__logo{
+  color: var(--second-color);
+}
+.nav__toggle{
+  color: var(--second-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/*Active menu*/
+.active::after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+
+/*=== Show menu ===*/
+.show{
+  right: 0;
+}
+
+/*===== HOME =====*/
+#home{
+  margin-top:50px;
+}
+.home{
+  height: calc(100vh - 3rem);
+  row-gap: 1rem;
+}
+.home__data{
+  align-self: center;
+}
+.home__title{
+  font-size: var(--big-font-size);
+  margin-bottom: var(--mb-5);
+}
+.home__title-color{
+  color: var(--first-color);
+}
+.home__social{
+  display: flex;
+  flex-direction: column;
+}
+.home__social-icon{
+  width: max-content;
+  margin-bottom: var(--mb-2);
+  font-size: 1.5rem;
+  color: var(--second-color);
+}
+.home__social-icon:hover{
+  color: var(--first-color);
+}
+.home__img{
+  margin-top: top 50px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 295px;
+}
+
+/*BUTTONS*/
+.button{
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: .75rem 2.5rem;
+  font-weight: var(--font-semi);
+  border-radius: .5rem;
+}
+.button:hover{
+  box-shadow: 0 10px 36px rgba(0,0,0,.15);
+}
+.domain{
+  margin-top:10px;
+}
+.card-img-top{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+
+}
+.card{
+  height:300px;
+  overflow:scroll;
+  box-shadow:0 4px 25px rgba(14,36,49,.15);
+  padding:5px;
+  margin:10px;
+}
+/* ===== ABOUT =====*/
+.about__container{
+  row-gap: 2rem;
+  text-align: center;
+}
+.about__subtitle{
+  margin-bottom: var(--mb-2);
+}
+.about__img{
+  justify-self: center;
+}
+.about__img img{
+  width: 200px;
+  border-radius: .5rem;
+}
+
+/* ===== SKILLS =====*/
+.skills__name{
+  margin-left:5px;
+}
+.skills__names{
+  display: flex;
+  align-items: center;
+}
+.skills__subtitle{
+  margin-bottom: var(--mb-2);
+}
+.skills__text{
+  margin-bottom: var(--mb-4);
+}
+.skills__data{
+  font-weight: var(--font-semi);
+  padding: .5rem 1rem;
+  margin-bottom: var(--mb-4);
+  background:#fff;
+  border-radius: .5rem;
+  box-shadow: 0 4px 25px rgba(14,36,49,.15);
+}
+
+.work__data{
+  font-weight: var(--font-semi);
+  padding: .5rem 1rem;
+  margin-bottom: var(--mb-4);
+  color:#fff;
+  background:rgb(0, 0, 0);
+  border-radius: .5rem;
+  box-shadow: 0 4px 25px rgba(14,36,49,.15);
+}
+/* ===== CONTACT =====*/
+.contact__input{
+  width: 100%;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi);
+  padding: 1rem;
+  border-radius: .5rem;
+  border: 1.5px solid var(--second-color);
+  outline: none;
+  margin-bottom: var(--mb-4);
+}
+.contact__button{
+  display: block;
+  border: none;
+  outline: none;
+  font-size: var(--normal-font-size);
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* ===== FOOTER =====*/
+.footer{
+  background-color: var(--second-color);
+  color: #fff;
+  text-align: center;
+  font-weight: var(--font-semi);
+  padding: 2rem 0;
+}
+.footer__title{
+  font-size: 2rem;
+  margin-bottom: var(--mb-4);
+}
+.footer__social{
+  margin-bottom: var(--mb-4);
+}
+.footer__icon{
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0 var(--mb-2)
+}
+
+/* ===== MEDIA QUERIES=====*/
+@media screen and (min-width: 768px){
+  body{
+    margin: 0;
+  }
+  .section{
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+  .section-title{
+    margin-bottom: var(--mb-6);
+  }
+  .section-title::after{
+    width: 80px;
+    top: 3rem;
+  }
+
+  .nav{
+    height: calc(var(--header-height) + 1rem);
+  }
+  .nav__list{
+    display: flex;
+    padding-top: 0;
+  }
+  .nav__item{
+    margin-left: var(--mb-6);
+    margin-bottom: 0;
+  }
+  .nav__toggle{
+    display: none;
+  }
+  .nav__link{
+    color: var(--second-color);
+  }
+
+  .home{
+    height: 100vh;
+  }
+  .home__data{
+    align-self: flex-end;
+  }
+  .home__social{
+    padding-top: 0;
+    padding-bottom: 2.5rem;
+    flex-direction: row;
+    align-self: flex-end;
+  }
+  .home__social-icon{
+    margin-bottom: 0;
+    margin-right: var(--mb-4);
+  }
+  .home__img{
+    width: 457px;
+    bottom: 15%;
+  }
+
+  .about__container{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .about__img img{
+    width: 300px;
+  }
+  .work__container{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,1fr);
+    column-gap: 2rem;
+  }
+  .contact__form{
+    width: 360px;
+  }
+  .contact__container{
+    justify-items: center;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .bd-grid{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home__img{
+    right: 10%;
+  }
+}
+
+
+</style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            
+        <!-- BOX ICONS -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>{{params['yourname']}}</title>
+    </head>
+    <body style="background-color: powerblue;">
+        <!-- HEADER -->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">{{params['yourname'].split()[0]}}</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                        <li class="nav__item"><a href="#work" class="nav__link">Project</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                        <li class="nav__item"><a href="#education" class="nav__link">Education</a></li>
+                        <li class="nav__item"><button class="nav__link code__toggler">Show/Hide Code</button></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+        <main class="l-main show">
+            <!-- HOME -->
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">{{params['yourname']}}</span><br>{% if params["title"] %}<span id="typing"></span>{% endif %}</h1>
+
+                    <a href="#contact" class="button">Contact Me</a>
+                </div>
+
+                <div class="home__social">
+                  
+                  {% if params["linkedin"] %}
+                    <a href="https://www.linkedin.com/in/{{params['linkedin']}}" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                    {% endif %}
+                    {% if params["fb"] %}
+                    <a href="https://www.facebook.com/{{params['fb']}}" class="home__social-icon"><i class='bx bxl-facebook' ></i></a>
+                    {% endif %}
+                    {% if (params["github"]) %}
+                    <a href="https://github.com/{{params['github']}}" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                    {% endif %}
+                    {% if params["twitter"] %}
+                     <a href="https://twitter.com/{{params['twitter']}}" class="home__social-icon"><i class='bx bxl-twitter'></i></a>
+                     {% endif %}
+                     {% if params["instagram"] %}
+                     <a href="https://www.instagram.com/{{params['instagram']}}" class="home__social-icon"><i class='bx bxl-instagram'></i></a>
+                     {% endif %}
+                </div>
+
+                <div class="home__img">  
+                  {% if params['profile'] %}  
+                    <img src="{{params['profile']}}" alt="Profile Image" style="border-radius: 100px 100px 100px 100px;">
+                  {% endif %}
+                </div>
+            </section>
+
+            <!-- College -->
+            <section class="about section " id="about">
+                <h2 class="section-title">About</h2>
+
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                      {% if params['profile'] %}  
+                      <img src="{{params['profile']}}" alt="Profile Image" style="border-radius: 50%;">
+                    {% endif %}
+                    </div>
+                    
+                    <div>
+                        <h2 class="about__subtitle">A Little About {{params['yourname'].split()[0]}}</h2> 
+                       <b>
+                         <p> {{params["about"]}}</p>
+                       </b>
+
+                    </div>                                   
+                </div>
+            </section>
+
+            <section>
+              <div class="container">
+                <h2 class="section-title">What I'm Doing</h2>
+                <div class="row" style="text-align: center;">
+                  {% if params["doingone"][0] %}
+                  <div class="col-sm-4 domain">
+                    <div class="card">
+                      <img class="card-img-top" src="https://image.flaticon.com/icons/svg/1197/1197511.svg" alt="Card image" style="width:100%">
+                      <div class="card-body">
+                        <h4 class="card-title">{{params["doingone"][0]}}</h4>
+                        <p class="card-text">{{params["doingone"][1]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% if params["doingtwo"][0] %}
+                  <div class="col-sm-4 domain">
+                    <div class="card" >
+                      <img class="card-img-top" src="https://image.flaticon.com/icons/svg/1197/1197511.svg" alt="Card image" style="width:100%">
+                      <div class="card-body">
+                        <h4 class="card-title">{{params["doingtwo"][0]}}</h4>
+                        <p class="card-text">{{params["doingtwo"][1]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% if params["doingthree"][0] %}
+                  <div class="col-sm-4 domain">
+                    <div class="card">
+                      <img class="card-img-top" src="https://image.flaticon.com/icons/svg/1197/1197511.svg" alt="Card image" style="width:100%">
+                      <div class="card-body">
+                        <h4 class="card-title">{{params["doingthree"][0]}}</h4>
+                        <p class="card-text">{{params["doingthree"][1]}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+
+              </div>
+
+            </section>
+
+
+            <section class="work section" id="education">
+              <h2 class="section-title">Education</h2>
+              <div class="container">
+                {% if (params["degreeone"][0]) %}
+                  <div class="row work__data">
+                      <div class="col-3">
+                        <img src="https://img.icons8.com/dusk/150/000000/university.png"/>                      </div>
+                      <div class="col-9">
+                          <div>
+                            {% if params["degreeone"][0] %}
+                              <h5>{{params["degreeone"][0]}}</h5>
+                              {% endif %}
+                          </div>
+                          <div>
+                            {% if params["degreeone"][1] %}
+                              <p>{{params["degreeone"][1]}}</p>
+                              {% endif %}
+                          </div>
+                          <div>
+                            {% if params["degreeone"][2] %}
+                              <h5>{{params["degreeone"][2]}}</h5>
+                              {% endif %}
+                          </div>
+                      </div>
+                  </div>
+                  {% endif %}
+                  {% if (params["degreetwo"][0]) %}
+                  <div class="row work__data">
+                    <div class="col-3">
+                      <img src="https://img.icons8.com/dusk/150/000000/university.png"/>                     </div>
+                    <div class="col-9">
+                        <div>
+                          {% if params["degreetwo"][0] %}
+                            <h5>{{params["degreetwo"][0]}}</h5>
+                            {% endif %}
+                        </div>
+                        <div>
+                          {% if params["degreetwo"][1] %}
+                            <p>{{params["degreetwo"][1]}}</p>
+                            {% endif %}
+                        </div>
+                        <div>
+                          {% if params["degreetwo"][2] %}
+                            <h5>{{params["degreetwo"][2]}}</h5>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% if (params["degreethree"][0]) %}
+                <div class="row work__data">
+                  <div class="col-3">
+                    <img src="https://img.icons8.com/dusk/150/000000/university.png"/>                   </div>
+                  <div class="col-9">
+                      <div>
+                        {% if params["degreethree"][0] %}
+                          <h5>{{params["degreethree"][0]}}</h5>
+                          {% endif %}
+                      </div>
+                      <div>
+                        {% if params["degreethree"][1] %}
+                          <p>{{params["degreethree"][1]}}</p>
+                          {% endif %}
+                      </div>
+                      <div>
+                        {% if params["degreethree"][2] %}
+                          <h5>{{params["degreethree"][2]}}</h5>
+                          {% endif %}
+                      </div>
+                      
+                  </div>
+              </div>
+              {% endif %}
+              {% if (params["degreefour"][0]) %}
+              <div class="row work__data">
+                <div class="col-3">
+                  <img src="https://img.icons8.com/dusk/150/000000/university.png"/> 
+                </div>
+                <div class="col-9">
+                    <div>
+                      {% if params["degreefour"][0] %}
+                        <h5>{{params["degreefour"][0]}}</h5>
+                        {% endif %}
+                    </div>
+                    <div>
+                      {% if params["degreefour"][1] %}
+                        <p>{{params["degreefour"][1]}}</p>
+                        {% endif %}
+                    </div>
+                    <div>
+                      {% if params["degreefour"][2] %}
+                        <h5>{{params["degreefour"][2]}}</h5>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+              </div>
+                  
+              </div>
+          </section>
+
+
+
+            <!--SKILLS -->
+            <section class="skills section" id="skills">
+                <h2 class="section-title">Skills</h2>
+
+                <div class="container">          
+                    <div class="row">
+                        <div class="col-sm-6">
+                          <h2 class="skills__subtitle">Work Skills</h2>
+                          {% for i in params["work_skill"] %}
+                        <div class="skills__data">
+                            <div class="skills__names">
+                              <img src="https://img.icons8.com/fluent/24/000000/development-skill.png"/>
+                                <span class="skills__name">{{i}}</span>
+                            </div> 
+                        </div>
+                        {% endfor %}
+                        
+                        </div>
+
+                        <div class="col-sm-6">
+                          <h2 class="skills__subtitle">Programming Language</h2>
+                          {% for i in params["p_language"] %}
+                          <div class="skills__data">
+                              <div class="skills__names">
+                                <img src="https://img.icons8.com/color/24/000000/code.png"/>
+                                  <span class="skills__name">{{i}}</span>
+                              </div> 
+                          </div>
+                          {% endfor %}
+                      
+                        </div>
+
+                    </div>
+                    
+          
+                </div>
+
+                <div class="container">          
+                  <div class="row">
+                    {% if params["certificates"][0][0] %}
+                      <div class="col-sm-6">
+                        <h2 class="skills__subtitle">Certifications</h2>
+                        {% for i in params["certificates"] %}
+                        {% if i[0] %}
+                      <div class="skills__data">
+                          <div class="skills__names">
+                            <img src="https://img.icons8.com/fluent/24/000000/contract.png"/>
+                              <span class="skills__name"> {{i[0]}}</span>
+                              <span style="margin-left:10px;"><a href="{{i[1]}}">Verify</a></span>
+                          </div> 
+                      </div>
+                      {% endif %}
+                      {% endfor %}
+                      </div>
+                      {% endif %}
+                      {% if params["achivements"][0]%}
+                      <div class="col-sm-6">
+                        <h2 class="skills__subtitle">Achievements and Awards</h2>
+                        {% for i in params["achivements"] %}
+                        <div class="skills__data">
+                            <div class="skills__names">
+                              <img src="https://img.icons8.com/color/24/000000/medal.png"/>
+                                <span class="skills__name">{{i}}</span>
+                            </div> 
+                        </div>
+                        {% endfor %}
+                    
+                      </div>
+                      {% endif %}
+
+                  </div>
+                  
+        
+              </div>
+            </section>
+
+            <section class="work section" id="">
+              <h2 class="section-title">Internships/Work Experience</h2>
+              <div class="container">
+                {% if (params["jobone"][0]) %}
+                  <div class="row work__data">
+                      <div class="col-3">
+                          <img src="https://www.freeiconspng.com/uploads/experience-information-image-job-knowledge-concept-icon-symbol-5.png " width="150" height="150">
+                      </div>
+                      <div class="col-9">
+                          <div>
+                            {% if params["jobone"][0] %}
+                              <h3>{{params["jobone"][0]}}</h3>
+                              {% endif %}
+                          </div>
+                          <div>
+                            {% if params["jobone"][1] %}
+                              <p>{{params["jobone"][1]}}</p>
+                              {% endif %}
+                          </div>
+                          <div>
+                            {% if params["jobone"][2] %}
+                              <h5>{{params["jobone"][2]}}</h5>
+                              {% endif %}
+                          </div>
+                          <div>
+                            {% if params["jobone"][3] %}
+                              <p>{{params["jobone"][3]}}</p>
+                              {% endif %}
+                          </div>
+                          <div>
+                            {% if params["jobone"][4] %}
+                              <p>{{params["jobone"][4]}}</p>
+                              {% endif %}
+                          </div>
+                      </div>
+                  </div>
+                  {% endif %}
+                  {% if (params["jobtwo"][0]) %}
+                  <div class="row work__data">
+                    <div class="col-3">
+                        <img src="https://www.freeiconspng.com/uploads/experience-information-image-job-knowledge-concept-icon-symbol-5.png " width="150" height="150">
+                    </div>
+                    <div class="col-9">
+                        <div>
+                          {% if params["jobtwo"][0] %}
+                            <h3>{{params["jobtwo"][0]}}</h3>
+                            {% endif %}
+                        </div>
+                        <div>
+                          {% if params["jobtwo"][1] %}
+                            <p>{{params["jobtwo"][1]}}</p>
+                            {% endif %}
+                        </div>
+                        <div>
+                          {% if params["jobtwo"][2] %}
+                            <h5>{{params["jobtwo"][2]}}</h5>
+                            {% endif %}
+                        </div>
+                        <div>
+                          {% if params["jobtwo"][3] %}
+                            <p>{{params["jobtwo"][3]}}</p>
+                            {% endif %}
+                        </div>
+                        <div>
+                          {% if params["jobtwo"][4] %}
+                            <p>{{params["jobtwo"][4]}}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% if (params["jobthree"][0]) %}
+                <div class="row work__data">
+                  <div class="col-3">
+                      <img src="https://www.freeiconspng.com/uploads/experience-information-image-job-knowledge-concept-icon-symbol-5.png " width="150" height="150">
+                  </div>
+                  <div class="col-9">
+                      <div>
+                        {% if params["jobthree"][0] %}
+                          <h3>{{params["jobthree"][0]}}</h3>
+                          {% endif %}
+                      </div>
+                      <div>
+                        {% if params["jobthree"][1] %}
+                          <p>{{params["jobthree"][1]}}</p>
+                          {% endif %}
+                      </div>
+                      <div>
+                        {% if params["jobthree"][2] %}
+                          <h5>{{params["jobthree"][2]}}</h5>
+                          {% endif %}
+                      </div>
+                      <div>
+                        {% if params["jobthree"][3] %}
+                          <p>{{params["jobthree"][3]}}</p>
+                          {% endif %}
+                      </div>
+                      <div>
+                        {% if params["jobthree"][4] %}
+                          <p>{{params["jobthree"][4]}}</p>
+                          {% endif %}
+                      </div>
+                  </div>
+              </div>
+              {% endif %}
+              {% if (params["jobfour"][0]) %}
+              <div class="row work__data">
+                <div class="col-3">
+                    <img src="https://www.freeiconspng.com/uploads/experience-information-image-job-knowledge-concept-icon-symbol-5.png " width="150" height="150">
+                </div>
+                <div class="col-9">
+                    <div>
+                      {% if params["jobfour"][0] %}
+                        <h3>{{params["jobfour"][0]}}</h3>
+                        {% endif %}
+                    </div>
+                    <div>
+                      {% if params["jobfour"][1] %}
+                        <p>{{params["jobfour"][1]}}</p>
+                        {% endif %}
+                    </div>
+                    <div>
+                      {% if params["jobfour"][2] %}
+                        <h5>{{params["jobfour"][2]}}</h5>
+                        {% endif %}
+                    </div>
+                    <div>
+                      {% if params["jobfour"][3] %}
+                        <p>{{params["jobfour"][3]}}</p>
+                        {% endif %}
+                    </div>
+                    <div>
+                      {% if params["jobfour"][4] %}
+                        <p>{{params["jobfour"][4]}}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if (params["jobfive"][0]) %}
+            <div class="row work__data">
+              <div class="col-3">
+                  <img src="https://www.freeiconspng.com/uploads/experience-information-image-job-knowledge-concept-icon-symbol-5.png " width="150" height="150">
+              </div>
+              <div class="col-9">
+                  <div>
+                    {% if params["jobfive"][0] %}
+                      <h3>{{params["jobfive"][0]}}</h3>
+                      {% endif %}
+                  </div>
+                  <div>
+                    {% if params["jobfive"][1] %}
+                      <p>{{params["jobfive"][1]}}</p>
+                      {% endif %}
+                  </div>
+                  <div>
+                    {% if params["jobfive"][2] %}
+                      <h5>{{params["jobfive"][2]}}</h5>
+                      {% endif %}
+                  </div>
+                  <div>
+                    {% if params["jobfive"][3] %}
+                      <p>{{params["jobfive"][3]}}</p>
+                      {% endif %}
+                  </div>
+                  <div>
+                    {% if params["jobfive"][4] %}
+                      <p>{{params["jobfive"][4]}}</p>
+                      {% endif %}
+                  </div>
+              </div>
+          </div>
+          {% endif %}
+
+              </div>
+                  
+              </div>
+          </section>
+
+
+
+
+            <!-- PROJECT-->
+            <section class="work section" id="work">
+                <h2 class="section-title">Project</h2>
+              {% if (params["projectone"][0]) %}
+                <div class="container">
+                    <div class="row skills__data">
+                        <div class="col-3">
+                            <img src="https://image.flaticon.com/icons/png/512/1087/1087815.png" width="150" height="150">
+                        </div>
+                        <div class="col-9">
+                            <div>
+                              {% if params["projectone"][0] %}
+                                <h3>{{params["projectone"][0]}}</h3>
+                                {% endif %}
+                            </div>
+                            <div>
+                              {% if params["projectone"][2] %}
+                                <p>{{params["projectone"][2]}}</p>
+                                {% endif %}
+                            </div>
+                            <div>
+                              {% if params["projectone"][1] %}
+                                <a href="{{params['projectone'][1]}}"><button class="btn-warning">View Source</i></button></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if (params["projecttwo"][0]) %}
+                    
+                    <div class="container">
+                        <div class="row skills__data">
+                            <div class="col-3">
+                                <img src="https://image.flaticon.com/icons/png/512/1087/1087815.png" width="150" height="150">
+                            </div>
+                            <div class="col-9">
+                                <div>
+                                  {% if params["projecttwo"][0] %}
+                                    <h3>{{params["projecttwo"][0]}}</h3>
+                                    {% endif %}
+                                </div>
+                                <div>
+                                  {% if params["projecttwo"][2] %}
+                                    <p>{{params["projecttwo"][2]}}</p>
+                                    {% endif %}
+                                </div>
+                                <div>
+                                  {% if params["projecttwo"][1] %}
+                                    <a href="{{params['projecttwo'][1]}}"><button class="btn-warning">View Source</i></button></a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        {% if (params["projectthree"][0]) %}
+                <div class="container">
+                    <div class="row skills__data">
+                        <div class="col-3">
+                            <img src="https://image.flaticon.com/icons/png/512/1087/1087815.png" width="150" height="150">
+                        </div>
+                        <div class="col-9">
+                            <div>
+                              {% if params["projectthree"][0] %}
+                                <h3>{{params["projectthree"][0]}}</h3>
+                                {% endif %}
+                            </div>
+                            <div>
+                              {% if params["projectthree"][2] %}
+                                <p>{{params["projectthree"][2]}}</p>
+                                {% endif %}
+                            </div>
+                            <div>
+                              {% if params["projectthree"][1] %}
+                                <a href="{{params['projectthree'][1]}}"><button class="btn-warning">View Source</i></button></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if (params["projectfour"][0]) %}
+                <div class="container">
+                    <div class="row skills__data">
+                        <div class="col-3">
+                            <img src="https://image.flaticon.com/icons/png/512/1087/1087815.png" width="150" height="150">
+                        </div>
+                        <div class="col-9">
+                            <div>
+                              {% if params["projectfour"][0] %}
+                                <h3>{{params["projectfour"][0]}}</h3>
+                                {% endif %}
+                            </div>
+                            <div>
+                              {% if params["projectfour"][2] %}
+                                <p>{{params["projectfour"][2]}}</p>
+                                {% endif %}
+                            </div>
+                            <div>
+                              {% if params["projectfour"][1] %}
+                                <a href="{{params['projectfour'][1]}}"><button class="btn-warning">View Source</i></button></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if (params["projectfive"][0]) %}
+                <div class="container">
+                    <div class="row skills__data">
+                        <div class="col-3">
+                            <img src="https://image.flaticon.com/icons/png/512/1087/1087815.png" width="150" height="150">
+                        </div>
+                        <div class="col-9">
+                            <div>
+                              {% if params["projectfive"][0] %}
+                                <h3>{{params["projectfive"][0]}}</h3>
+                                {% endif %}
+                            </div>
+                            <div>
+                              {% if params["projectfive"][2] %}
+                                <p>{{params["projectfive"][2]}}</p>
+                                {% endif %}
+                            </div>
+                            <div>
+                              {% if params["projectfive"][1] %}
+                                <a href="{{params['projectfive'][1]}}"><button class="btn-warning">View Source</i></button></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                    
+                </div>
+            </section>
+
+            <!--CONTACT -->
+            <section class="contact section" id="contact">
+                <h2 class="section-title container">Contact</h2>
+
+                <div style="text-align: center;margin-bottom: 20px;">
+                  <h1 style="margin-bottom: 20px;">Get In Touch</h1>
+                  <hr class="mt-20 mb-3" />
+                  {% if params["touch_message"] %}
+                  <h5 style="margin-top: 70px;">{{params["touch_message"]}}</h5>
+                  <h5></h5>
+                  {% else %}
+                  <h5 style="margin-top: 70px;">I'd love if you reached out to me. Even if it's just to say "Hey!". Don't hesitate! Drop me a line and I’ll get back to you ASAP!</h5>
+                  <h5></h5>
+                  {% endif %}
+              </div>
+              <div class="container" style="text-align: center;">
+                <div class="footer__social">
+                  
+                  {% if params["linkedin"] %}
+                    <a href="https://www.linkedin.com/in/{{params['linkedin']}}" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                    {% endif %}
+                    {% if params["fb"] %}
+                    <a href="https://www.facebook.com/{{params['fb']}}" class="home__social-icon"><i class='bx bxl-facebook' ></i></a>
+                    {% endif %}
+                    {% if (params["github"]) %}
+                    <a href="https://github.com/{{params['github']}}" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                    {% endif %}
+                    {% if params["twitter"] %}
+                     <a href="https://twitter.com/{{params['twitter']}}" class="home__social-icon"><i class='bx bxl-twitter'></i></a>
+                     {% endif %}
+                     {% if params["instagram"] %}
+                     <a href="https://www.instagram.com/{{params['instagram']}}" class="home__social-icon"><i class='bx bxl-instagram'></i></a>
+                     {% endif %}
+
+                     {% if params['dev'] %}
+                     <a href="https://dev.to/{{params['dev']}}" class="home__social-icon"><i class='bx bxl-dev-to'></i></a>
+                     {% endif %}
+                     {% if params['codepen'] %}
+                     <a href="https://codepen.io/{{params['codepen']}}" class="home__social-icon"><i class='bx bxl-codepen' ></i></a>
+                     {% endif %}
+                     {% if (params["stackoverflow"]) %}
+                     <a href="https://stackoverflow.com/users/{{params['stackoverflow']}}" class="home__social-icon"><i class='bx bxl-stack-overflow' ></i></a>
+                     {% endif %}
+                     {% if params["medium"] %}
+                      <a href="https://medium.com/{{params['medium']}}" class="home__social-icon"><i class='bx bxl-medium'></i></a>
+                      {% endif %}
+                      {% if params["youtube"] %}
+                      <a href="{{params['youtube']}}" class="home__social-icon"><i class='bx bxl-youtube'></i></a>
+                      {% endif %}
+                </div>
+              </div>
+          <div class="row" style="text-align: center; margin: 40px 0 80px 0;">
+              <div class="col-sm-4 contact-mobile" style="margin-top:20px ;">
+          <div>
+              <i class="large material-icons">local_phone</i>
+          </div>
+          <div>
+              <h5>Call me On</h5>
+              {% if params["mobile"] %}
+                <h6>{{params["mobile"]}}</h6>
+              {% else %}
+              <h6>Not Available</h6>
+              {% endif %}
+          </div>
+              </div>
+              <div class="col-sm-4 contact-location" style="margin-top:20px ;">
+                  <div>
+                      <i class="large material-icons">location_on</i>
+                  </div>
+                  <div>
+                      <h5>Visite Here</h5>
+                      {% if params["city"] %}
+                      <h6>{{params["city"]}}</h6>
+                      {% else %}
+                      <h6>Not Available</h6>
+                      {% endif %}
+                  </div>
+                      </div>
+                      <div class="col-sm-4 contact-email" style="margin-top:20px ;">
+                          <div>
+                              <i class="large material-icons">email</i>
+                          </div>
+                          <div>
+                              <h5>Email me On</h5>
+                              <h6>{{params["email"]}}</h6>
+                          </div>
+                      </div>
+              </div>
+              
+            </section>
+        
+
+        <!--FOOTER -->
+        <footer class="footer">
+            <p class="footer__title">{{params['yourname'].split()[0]}}</p>
+            <div class="footer__social">
+              {% if params["linkedin"] %}
+              <a href="https://www.linkedin.com/in/{{params['linkedin']}}" class="footer__social-icon"><i class='bx bxl-linkedin'></i></a>
+              {% endif %}
+              {% if params["fb"] %}
+              <a href="https://www.facebook.com/{{params['fb']}}" class="footer__social-icon"><i class='bx bxl-facebook' ></i></a>
+              {% endif %}
+              {% if (params["github"]) %}
+              <a href="https://github.com/{{params['github']}}" class="footer__social-icon"><i class='bx bxl-github' ></i></a>
+              {% endif %}
+              {% if params["twitter"] %}
+               <a href="https://twitter.com/{{params['twitter']}}" class="footer__social-icon"><i class='bx bxl-twitter'></i></a>
+               {% endif %}
+               {% if params["instagram"] %}
+               <a href="https://www.instagram.com/{{params['instagram']}}" class="footer__social-icon"><i class='bx bxl-instagram'></i></a>
+               {% endif %}
+            </div>
+            <p>Copyright &#169; 2020 {{params['yourname']}},All rights reserved. 
+              Powered by
+              <a style="text-decoration: none; color: tomato; font-weight: bold;" href="http://www.codescript.run/"> CodeScript</a>
+            </p>
+        </footer>
+      </main>
+
+        <!-- SCROLL REVEAL -->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!-- MAIN JS -->
+        <script>
+            /*===== MENU SHOW =====*/ 
+const showMenu = (toggleId, navId) =>{
+    const toggle = document.getElementById(toggleId),
+    nav = document.getElementById(navId)
+
+    if(toggle && nav){
+        toggle.addEventListener('click', ()=>{
+            nav.classList.toggle('show')
+        })
+    }
+}
+showMenu('nav-toggle','nav-menu')
+
+/*===== ACTIVE AND REMOVE MENU =====*/
+const navLink = document.querySelectorAll('.nav__link');   
+
+function linkAction(){
+  /*Active link*/
+  navLink.forEach(n => n.classList.remove('active'));
+  this.classList.add('active');
+  
+  /*Remove menu mobile*/
+  const navMenu = document.getElementById('nav-menu')
+  navMenu.classList.remove('show')
+}
+navLink.forEach(n => n.addEventListener('click', linkAction));
+
+/*===== SCROLL REVEAL ANIMATION =====*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '80px',
+    duration: 2000,
+    reset: true
+});
+/*SCROLL HOME*/
+sr.reveal('.home__title',{}); 
+sr.reveal('.button',{delay: 200}); 
+sr.reveal('.home__img',{delay: 400}); 
+sr.reveal('.home__social-icon',{ interval: 200}); 
+
+/*SCROLL ABOUT*/
+sr.reveal('.about__img',{}); 
+sr.reveal('.about__subtitle',{delay: 400}); 
+
+/*SCROLL SKILLS*/
+sr.reveal('.skills__subtitle',{}); 
+sr.reveal('.skills__text',{}); 
+sr.reveal('.skills__data',{interval: 200}); 
+sr.reveal('.skills__img',{delay: 600});
+
+/*SCROLL WORK*/
+sr.reveal('.work__img',{interval: 200}); 
+sr.reveal('.work__data',{interval:200});
+
+/*SCROLL CONTACT*/
+sr.reveal('.contact-mobile',{interval: 0});
+sr.reveal('.contact-location',{interval: 100});
+sr.reveal('.contact-email',{interval: 200}); 
+
+var typeString=JSON.parse('{{params["title"] | tojson}}');
+console.log(typeString);
+    var i=0;
+    var count=0;
+    var selectedText="";
+    var text="";
+    (function type() {
+        if (count==typeString.length) {
+            count=0;
+        }
+        selectedText=typeString[count];
+        text=selectedText.slice(0,++i);
+        document.querySelector('#typing').innerHTML=text;
+        document.querySelector('#typing').style.color="red";
+        document.querySelector('#typing').style.fontSize="xx-large";
+
+        if (text.length===selectedText.length) {
+            count++;
+            i=0;
+        }
+    
+        setTimeout(type,250);
+    }());
+    function sleep(milliseconds) {
+        var start=new Date().getTime();
+        for (let i = 0; i < 1e7; i++) {
+            if ((new Date().getTime)-start)  milliseconds 
+                break;
+            }
+            
+        }
+
+    </script>
+<!-- User Can get These code -->
+
+<div class="code container" style="margin-top:100px; ">
+  <button id="button1" onclick="CopyToClipboard('content')">Click to copy</button>
+  <br /><br />
+  <pre id="content" style="color: #fff;background:rgb(0, 0, 0); height:100vh; overflow:scroll; padding:10px;">
+    &lt!DOCTYPE html&gt
+&lthtml lang="en"&gt
+    &lthead&gt
+&ltstyle type="text/css"&gt
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+/*===== VARIABLES CSS =====*/
+:root{
+  --header-height: 3rem;
+  --font-semi: 600;
+}
+
+/*===== Colores =====*/
+:root{
+  --first-color: #4070F4;
+  --second-color: #0E2431;
+}
+
+/*===== Fuente y tipografia =====*/
+:root{
+  --body-font: 'Poppins', sans-serif;
+  --big-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 0.938rem;
+}
+@media screen and (min-width: 768px){
+  :root{
+    --big-font-size: 3.5rem;
+    --h2-font-size: 2rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*===== Margenes =====*/
+:root{
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+}
+
+/*===== z index =====*/
+:root{
+  --z-back: -10;
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*===== BASE =====*/
+*,::before,::after{
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+main{
+  background:#a1a5af;
+}
+h1,h2,p{
+  margin: 0;
+}
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*===== CLASS CSS ===== */
+.section-title{
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  margin-top: var(--mb-2);
+  margin-bottom: var(--mb-4);
+  text-align: center;
+}
+.section-title::after{
+  position: absolute;
+  content: "";
+  width: 64px;
+  height: 0.18rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+.section{
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+/*===== LAYOUT =====*/
+.bd-grid{
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-column-gap: 2rem;
+  width: calc(100% - 2rem);
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+}
+.l-header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(146,161,176,.15);
+}
+
+/*===== NAV =====*/
+.nav{
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: var(--font-semi);
+}
+@media screen and (max-width: 768px){
+  .nav__menu{
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    padding: 2rem;
+    background-color: var(--second-color);
+    transition: .5s;
+  }
+}
+.nav__item{
+  margin-bottom: var(--mb-4);
+}
+.nav__link{
+  position: relative;
+  color: #fff;
+}
+.nav__link:hover{
+  position: relative;
+}
+.nav__link:hover::after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+.nav__logo{
+  color: var(--second-color);
+}
+.nav__toggle{
+  color: var(--second-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/*Active menu*/
+.active::after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+
+/*=== Show menu ===*/
+.show{
+  right: 0;
+}
+
+/*===== HOME =====*/
+#home{
+  margin-top:50px;
+}
+.home{
+  height: calc(100vh - 3rem);
+  row-gap: 1rem;
+}
+.home__data{
+  align-self: center;
+}
+.home__title{
+  font-size: var(--big-font-size);
+  margin-bottom: var(--mb-5);
+}
+.home__title-color{
+  color: var(--first-color);
+}
+.home__social{
+  display: flex;
+  flex-direction: column;
+}
+.home__social-icon{
+  width: max-content;
+  margin-bottom: var(--mb-2);
+  font-size: 1.5rem;
+  color: var(--second-color);
+}
+.home__social-icon:hover{
+  color: var(--first-color);
+}
+.home__img{
+  margin-top:50px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 295px;
+}
+
+/*BUTTONS*/
+.button{
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: .75rem 2.5rem;
+  font-weight: var(--font-semi);
+  border-radius: .5rem;
+}
+.button:hover{
+  box-shadow: 0 10px 36px rgba(0,0,0,.15);
+}
+.domain{
+  margin-top:10px;
+}
+.card-img-top{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+
+}
+.card{
+  height:300px;
+  overflow:scroll;
+  box-shadow:0 4px 25px rgba(14,36,49,.15);
+  padding:5px;
+  margin:10px;
+}
+/* ===== ABOUT =====*/
+.about__container{
+  row-gap: 2rem;
+  text-align: center;
+}
+.about__subtitle{
+  margin-bottom: var(--mb-2);
+}
+.about__img{
+  justify-self: center;
+}
+.about__img img{
+  width: 200px;
+  border-radius: .5rem;
+}
+
+/* ===== SKILLS =====*/
+.skills__name{
+  margin-left:5px;
+}
+.skills__names{
+  display: flex;
+  align-items: center;
+}
+.skills__subtitle{
+  margin-bottom: var(--mb-2);
+}
+.skills__text{
+  margin-bottom: var(--mb-4);
+}
+.skills__data{
+  font-weight: var(--font-semi);
+  padding: .5rem 1rem;
+  margin-bottom: var(--mb-4);
+  background:#fff;
+  border-radius: .5rem;
+  box-shadow: 0 4px 25px rgba(14,36,49,.15);
+}
+
+.work__data{
+  font-weight: var(--font-semi);
+  padding: .5rem 1rem;
+  margin-bottom: var(--mb-4);
+  color:#fff;
+  background:rgb(17, 5, 5);
+  border-radius: .5rem;
+  box-shadow: 0 4px 25px rgba(14,36,49,.15);
+}
+/* ===== CONTACT =====*/
+.contact__input{
+  width: 100%;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi);
+  padding: 1rem;
+  border-radius: .5rem;
+  border: 1.5px solid var(--second-color);
+  outline: none;
+  margin-bottom: var(--mb-4);
+}
+.contact__button{
+  display: block;
+  border: none;
+  outline: none;
+  font-size: var(--normal-font-size);
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* ===== FOOTER =====*/
+.footer{
+  background-color: var(--second-color);
+  color: #fff;
+  text-align: center;
+  font-weight: var(--font-semi);
+  padding: 2rem 0;
+}
+.footer__title{
+  font-size: 2rem;
+  margin-bottom: var(--mb-4);
+}
+.footer__social{
+  margin-bottom: var(--mb-4);
+}
+.footer__icon{
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0 var(--mb-2)
+}
+
+/* ===== MEDIA QUERIES=====*/
+@media screen and (min-width: 768px){
+  body{
+    margin: 0;
+  }
+  .section{
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+  .section-title{
+    margin-bottom: var(--mb-6);
+  }
+  .section-title::after{
+    width: 80px;
+    top: 3rem;
+  }
+
+  .nav{
+    height: calc(var(--header-height) + 1rem);
+  }
+  .nav__list{
+    display: flex;
+    padding-top: 0;
+  }
+  .nav__item{
+    margin-left: var(--mb-6);
+    margin-bottom: 0;
+  }
+  .nav__toggle{
+    display: none;
+  }
+  .nav__link{
+    color: var(--second-color);
+  }
+
+  .home{
+    height: 100vh;
+  }
+  .home__data{
+    align-self: flex-end;
+  }
+  .home__social{
+    padding-top: 0;
+    padding-bottom: 2.5rem;
+    flex-direction: row;
+    align-self: flex-end;
+  }
+  .home__social-icon{
+    margin-bottom: 0;
+    margin-right: var(--mb-4);
+  }
+  .home__img{
+    width: 457px;
+    bottom: 15%;
+  }
+
+  .about__container{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .about__img img{
+    width: 300px;
+  }
+  .work__container{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,1fr);
+    column-gap: 2rem;
+  }
+  .contact__form{
+    width: 360px;
+  }
+  .contact__container{
+    justify-items: center;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .bd-grid{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home__img{
+    right: 10%;
+  }
+}
+
+
+&lt/style&gt
+        &ltmeta charset="UTF-8"&gt
+        &ltmeta name="viewport" content="width=device-width, initial-scale=1.0"&gt
+
+        &ltlink rel="stylesheet" href="assets/css/styles.css"&gt
+        &ltlink rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"&gt
+            &ltlink href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"&gt
+            &ltlink rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt
+            
+        &lt!-- BOX ICONS --&gt
+        &ltlink href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'&gt
+
+        &lttitle&gt{{params['yourname']}}&lt/title&gt
+    &lt/head&gt
+    &ltbody style="background-color: powerblue;"&gt
+        &lt!-- HEADER --&gt
+        &ltheader class="l-header"&gt
+            &ltnav class="nav bd-grid"&gt
+                &ltdiv&gt
+                    &lta href="#" class="nav__logo"&gt{{params['yourname'].split()[0]}}&lt/a&gt
+                &lt/div&gt
+
+                &ltdiv class="nav__menu" id="nav-menu"&gt
+                    &ltul class="nav__list"&gt
+                        &ltli class="nav__item"&gt&lta href="#home" class="nav__link active"&gtHome&lt/a&gt&lt/li&gt
+                        &ltli class="nav__item"&gt&lta href="#about" class="nav__link"&gtAbout&lt/a&gt&lt/li&gt
+                        &ltli class="nav__item"&gt&lta href="#skills" class="nav__link"&gtSkills&lt/a&gt&lt/li&gt
+                        &ltli class="nav__item"&gt&lta href="#work" class="nav__link"&gtProject&lt/a&gt&lt/li&gt
+                        &ltli class="nav__item"&gt&lta href="#contact" class="nav__link"&gtContact&lt/a&gt&lt/li&gt
+                        &ltli class="nav__item"&gt&lta href="#education" class="nav__link"&gtEducation&lt/a&gt&lt/li&gt
+                    &lt/ul&gt
+                &lt/div&gt
+
+                &ltdiv class="nav__toggle" id="nav-toggle"&gt
+                    &lti class='bx bx-menu'&gt&lt/i&gt
+                &lt/div&gt
+            &lt/nav&gt
+        &lt/header&gt
+        &ltmain class="l-main show"&gt
+            &lt!-- HOME --&gt
+            &ltsection class="home bd-grid" id="home"&gt
+                &ltdiv class="home__data"&gt
+                    &lth1 class="home__title"&gtHi,&ltbr&gtI'am &ltspan class="home__title-color"&gt{{params['yourname']}}&lt/span&gt&ltbr&gt{% if params["title"] %}&ltspan id="typing"&gt&lt/span&gt{% endif %}&lt/h1&gt
+
+                    &lta href="#contact" class="button"&gtContact Me&lt/a&gt
+                &lt/div&gt
+
+                &ltdiv class="home__social"&gt
+                  
+                  {% if params["linkedin"] %}
+                    &lta href="https://www.linkedin.com/in/{{params['linkedin']}}" class="home__social-icon"&gt&lti class='bx bxl-linkedin'&gt&lt/i&gt&lt/a&gt
+                    {% endif %}
+                    {% if params["fb"] %}
+                    &lta href="https://www.facebook.com/{{params['fb']}}" class="home__social-icon"&gt&lti class='bx bxl-facebook' &gt&lt/i&gt&lt/a&gt
+                    {% endif %}
+                    {% if (params["github"]) %}
+                    &lta href="https://github.com/{{params['github']}}" class="home__social-icon"&gt&lti class='bx bxl-github' &gt&lt/i&gt&lt/a&gt
+                    {% endif %}
+                    {% if params["twitter"] %}
+                     &lta href="https://twitter.com/{{params['twitter']}}" class="home__social-icon"&gt&lti class='bx bxl-twitter'&gt&lt/i&gt&lt/a&gt
+                     {% endif %}
+                     {% if params["instagram"] %}
+                     &lta href="https://www.instagram.com/{{params['instagram']}}" class="home__social-icon"&gt&lti class='bx bxl-instagram'&gt&lt/i&gt&lt/a&gt
+                     {% endif %}
+                &lt/div&gt
+
+                &ltdiv class="home__img"&gt  
+                  {% if params['profile'] %}  
+                    &ltimg src="{{params['profile']}}" alt="Profile Image" style="border-radius: 100px 100px 100px 100px;"&gt
+                  {% endif %}
+                &lt/div&gt
+            &lt/section&gt
+
+            &lt!-- College --&gt
+            &ltsection class="about section " id="about"&gt
+                &lth2 class="section-title"&gtAbout&lt/h2&gt
+
+                &ltdiv class="about__container bd-grid"&gt
+                    &ltdiv class="about__img"&gt
+                      {% if params['profile'] %}  
+                      &ltimg src="{{params['profile']}}" alt="Profile Image" style="border-radius: 50%;"&gt
+                    {% endif %}
+                    &lt/div&gt
+                    
+                    &ltdiv&gt
+                        &lth2 class="about__subtitle"&gtA Little About {{params['yourname'].split()[0]}}&lt/h2&gt 
+                       &ltb&gt
+                         &ltp&gt {{params["about"]}}&lt/p&gt
+                       &lt/b&gt
+
+                    &lt/div&gt                                   
+                &lt/div&gt
+            &lt/section&gt
+
+            &ltsection&gt
+              &ltdiv class="container"&gt
+              &lth2 class="section-title"&gtWhat I'm Doing&lt/h2&gt
+                &ltdiv class="row" style="text-align: center;"&gt
+                  {% if params["doingone"][0] %}
+                  &ltdiv class="col-sm-4 domain"&gt
+                    &ltdiv class="card"&gt
+                      &ltimg class="card-img-top" src="https://image.flaticon.com/icons/svg/1197/1197511.svg" alt="Card image" style="width:100%"&gt
+                      &ltdiv class="card-body"&gt
+                        &lth4 class="card-title"&gt{{params["doingone"][0]}}&lt/h4&gt
+                        &ltp class="card-text"&gt{{params["doingone"][1]}}&lt/p&gt
+                      &lt/div&gt
+                    &lt/div&gt
+                  &lt/div&gt
+                  {% endif %}
+                  {% if params["doingtwo"][0] %}
+                  &ltdiv class="col-sm-4 domain"&gt
+                    &ltdiv class="card" &gt
+                      &ltimg class="card-img-top" src="https://image.flaticon.com/icons/svg/1197/1197511.svg" alt="Card image" style="width:100%"&gt
+                      &ltdiv class="card-body"&gt
+                        &lth4 class="card-title"&gt{{params["doingtwo"][0]}}&lt/h4&gt
+                        &ltp class="card-text"&gt{{params["doingtwo"][1]}}&lt/p&gt
+                      &lt/div&gt
+                    &lt/div&gt
+                  &lt/div&gt
+                  {% endif %}
+                  {% if params["doingthree"][0] %}
+                  &ltdiv class="col-sm-4 domain"&gt
+                    &ltdiv class="card"&gt
+                      &ltimg class="card-img-top" src="https://image.flaticon.com/icons/svg/1197/1197511.svg" alt="Card image" style="width:100%"&gt
+                      &ltdiv class="card-body"&gt
+                        &lth4 class="card-title"&gt{{params["doingthree"][0]}}&lt/h4&gt
+                        &ltp class="card-text"&gt{{params["doingthree"][1]}}&lt/p&gt
+                      &lt/div&gt
+                    &lt/div&gt
+                  &lt/div&gt
+                  {% endif %}
+                &lt/div&gt
+
+              &lt/div&gt
+
+            &lt/section&gt
+
+
+            &ltsection class="work section" id="education"&gt
+              &lth2 class="section-title"&gtEducation&lt/h2&gt
+              &ltdiv class="container"&gt
+                {% if (params["degreeone"][0]) %}
+                  &ltdiv class="row work__data"&gt
+                      &ltdiv class="col-3"&gt
+                        &ltimg src="https://img.icons8.com/dusk/150/000000/university.png"/&gt                      &lt/div&gt
+                      &ltdiv class="col-9"&gt
+                          &ltdiv&gt
+                            {% if params["degreeone"][0] %}
+                              &lth5&gt{{params["degreeone"][0]}}&lt/h5&gt
+                              {% endif %}
+                          &lt/div&gt
+                          &ltdiv&gt
+                            {% if params["degreeone"][1] %}
+                              &ltp&gt{{params["degreeone"][1]}}&lt/p&gt
+                              {% endif %}
+                          &lt/div&gt
+                          &ltdiv&gt
+                            {% if params["degreeone"][2] %}
+                              &lth5&gt{{params["degreeone"][2]}}&lt/h5&gt
+                              {% endif %}
+                          &lt/div&gt
+                      &lt/div&gt
+                  &lt/div&gt
+                  {% endif %}
+                  {% if (params["degreetwo"][0]) %}
+                  &ltdiv class="row work__data"&gt
+                    &ltdiv class="col-3"&gt
+                      &ltimg src="https://img.icons8.com/dusk/150/000000/university.png"/&gt                     &lt/div&gt
+                    &ltdiv class="col-9"&gt
+                        &ltdiv&gt
+                          {% if params["degreetwo"][0] %}
+                            &lth5&gt{{params["degreetwo"][0]}}&lt/h5&gt
+                            {% endif %}
+                        &lt/div&gt
+                        &ltdiv&gt
+                          {% if params["degreetwo"][1] %}
+                            &ltp&gt{{params["degreetwo"][1]}}&lt/p&gt
+                            {% endif %}
+                        &lt/div&gt
+                        &ltdiv&gt
+                          {% if params["degreetwo"][2] %}
+                            &lth5&gt{{params["degreetwo"][2]}}&lt/h5&gt
+                            {% endif %}
+                        &lt/div&gt
+                    &lt/div&gt
+                &lt/div&gt
+                {% endif %}
+                {% if (params["degreethree"][0]) %}
+                &ltdiv class="row work__data"&gt
+                  &ltdiv class="col-3"&gt
+                    &ltimg src="https://img.icons8.com/dusk/150/000000/university.png"/&gt                   &lt/div&gt
+                  &ltdiv class="col-9"&gt
+                      &ltdiv&gt
+                        {% if params["degreethree"][0] %}
+                          &lth5&gt{{params["degreethree"][0]}}&lt/h5&gt
+                          {% endif %}
+                      &lt/div&gt
+                      &ltdiv&gt
+                        {% if params["degreethree"][1] %}
+                          &ltp&gt{{params["degreethree"][1]}}&lt/p&gt
+                          {% endif %}
+                      &lt/div&gt
+                      &ltdiv&gt
+                        {% if params["degreethree"][2] %}
+                          &lth5&gt{{params["degreethree"][2]}}&lt/h5&gt
+                          {% endif %}
+                      &lt/div&gt
+                      
+                  &lt/div&gt
+              &lt/div&gt
+              {% endif %}
+              {% if (params["degreefour"][0]) %}
+              &ltdiv class="row work__data"&gt
+                &ltdiv class="col-3"&gt
+                  &ltimg src="https://img.icons8.com/dusk/150/000000/university.png"/&gt 
+                &lt/div&gt
+                &ltdiv class="col-9"&gt
+                    &ltdiv&gt
+                      {% if params["degreefour"][0] %}
+                        &lth5&gt{{params["degreefour"][0]}}&lt/h5&gt
+                        {% endif %}
+                    &lt/div&gt
+                    &ltdiv&gt
+                      {% if params["degreefour"][1] %}
+                        &ltp&gt{{params["degreefour"][1]}}&lt/p&gt
+                        {% endif %}
+                    &lt/div&gt
+                    &ltdiv&gt
+                      {% if params["degreefour"][2] %}
+                        &lth5&gt{{params["degreefour"][2]}}&lt/h5&gt
+                        {% endif %}
+                    &lt/div&gt
+                &lt/div&gt
+            &lt/div&gt
+            {% endif %}
+              &lt/div&gt
+                  
+              &lt/div&gt
+          &lt/section&gt
+
+
+
+            &lt!--SKILLS --&gt
+            &ltsection class="skills section" id="skills"&gt
+                &lth2 class="section-title"&gtSkills&lt/h2&gt
+
+                &ltdiv class="container"&gt          
+                    &ltdiv class="row"&gt
+                        &ltdiv class="col-sm-6"&gt
+                          &lth2 class="skills__subtitle"&gtWork Skills&lt/h2&gt
+                          {% for i in params["work_skill"] %}
+                        &ltdiv class="skills__data"&gt
+                            &ltdiv class="skills__names"&gt
+                              &ltimg src="https://img.icons8.com/fluent/24/000000/development-skill.png"/&gt
+                                &ltspan class="skills__name"&gt{{i}}&lt/span&gt
+                            &lt/div&gt 
+                        &lt/div&gt
+                        {% endfor %}
+                        
+                        &lt/div&gt
+
+                        &ltdiv class="col-sm-6"&gt
+                          &lth2 class="skills__subtitle"&gtProgramming Language&lt/h2&gt
+                          {% for i in params["p_language"] %}
+                          &ltdiv class="skills__data"&gt
+                              &ltdiv class="skills__names"&gt
+                                &ltimg src="https://img.icons8.com/color/24/000000/code.png"/&gt
+                                  &ltspan class="skills__name"&gt{{i}}&lt/span&gt
+                              &lt/div&gt 
+                          &lt/div&gt
+                          {% endfor %}
+                      
+                        &lt/div&gt
+
+                    &lt/div&gt
+                    
+          
+                &lt/div&gt
+
+                &ltdiv class="container"&gt          
+                  &ltdiv class="row"&gt
+                    {% if params["certificates"][0][0] %}
+                      &ltdiv class="col-sm-6"&gt
+                        &lth2 class="skills__subtitle"&gtCertifications&lt/h2&gt
+                        {% for i in params["certificates"] %}
+                        {% if i[0] %}
+                      &ltdiv class="skills__data"&gt
+                          &ltdiv class="skills__names"&gt
+                            &ltimg src="https://img.icons8.com/fluent/24/000000/contract.png"/&gt
+                              &ltspan class="skills__name"&gt {{i[0]}}&lt/span&gt
+                              &ltspan style="margin-left:10px;"&gt
+                              &lta href="{{i[1]}}">Verify&lt/a&gt
+                              &lt/span&gt
+                          &lt/div&gt 
+                      &lt/div&gt
+                      {% endif %}
+                      {% endfor %}
+                      &lt/div&gt
+                      {% endif %}
+                      {% if params["achivements"][0]%}
+                      &ltdiv class="col-sm-6"&gt
+                        &lth2 class="skills__subtitle"&gtAchievements and Awards&lt/h2&gt
+                        {% for i in params["achivements"] %}
+                        &ltdiv class="skills__data"&gt
+                            &ltdiv class="skills__names"&gt
+                              &ltimg src="https://img.icons8.com/color/24/000000/medal.png"/&gt
+                                &ltspan class="skills__name"&gt{{i}}&lt/span&gt
+                            &lt/div&gt 
+                        &lt/div&gt
+                        {% endfor %}
+                    
+                      &lt/div&gt
+                      {% endif %}
+
+                  &lt/div&gt
+                  
+        
+              &lt/div&gt
+            &lt/section&gt
+
+            &ltsection class="work section" id=""&gt
+              &lth2 class="section-title"&gtInternships/Work Experience&lt/h2&gt
+              &ltdiv class="container"&gt
+                {% if (params["jobone"][0]) %}
+                  &ltdiv class="row work__data"&gt
+                      &ltdiv class="col-3"&gt
+                          &ltimg src="https://www.freeiconspng.com/uploads/experience-information-image-job-knowledge-concept-icon-symbol-5.png " width="150" height="150"&gt
+                      &lt/div&gt
+                      &ltdiv class="col-9"&gt
+                          &ltdiv&gt
+                            {% if params["jobone"][0] %}
+                              &lth3&gt{{params["jobone"][0]}}&lt/h3&gt
+                              {% endif %}
+                          &lt/div&gt
+                          &ltdiv&gt
+                            {% if params["jobone"][1] %}
+                              &ltp&gt{{params["jobone"][1]}}&lt/p&gt
+                              {% endif %}
+                          &lt/div&gt
+                          &ltdiv&gt
+                            {% if params["jobone"][2] %}
+                              &lth5&gt{{params["jobone"][2]}}&lt/h5&gt
+                              {% endif %}
+                          &lt/div&gt
+                          &ltdiv&gt
+                            {% if params["jobone"][3] %}
+                              &ltp&gt{{params["jobone"][3]}}&lt/p&gt
+                              {% endif %}
+                          &lt/div&gt
+                          &ltdiv&gt
+                            {% if params["jobone"][4] %}
+                              &ltp&gt{{params["jobone"][4]}}&lt/p&gt
+                              {% endif %}
+                          &lt/div&gt
+                      &lt/div&gt
+                  &lt/div&gt
+                  {% endif %}
+                  {% if (params["jobtwo"][0]) %}
+                  &ltdiv class="row work__data"&gt
+                    &ltdiv class="col-3"&gt
+                        &ltimg src="https://www.freeiconspng.com/uploads/experience-information-image-job-knowledge-concept-icon-symbol-5.png " width="150" height="150"&gt
+                    &lt/div&gt
+                    &ltdiv class="col-9"&gt
+                        &ltdiv&gt
+                          {% if params["jobtwo"][0] %}
+                            &lth3&gt{{params["jobtwo"][0]}}&lt/h3&gt
+                            {% endif %}
+                        &lt/div&gt
+                        &ltdiv&gt
+                          {% if params["jobtwo"][1] %}
+                            &ltp&gt{{params["jobtwo"][1]}}&lt/p&gt
+                            {% endif %}
+                        &lt/div&gt
+                        &ltdiv&gt
+                          {% if params["jobtwo"][2] %}
+                            &lth5&gt{{params["jobtwo"][2]}}&lt/h5&gt
+                            {% endif %}
+                        &lt/div&gt
+                        &ltdiv&gt
+                          {% if params["jobtwo"][3] %}
+                            &ltp&gt{{params["jobtwo"][3]}}&lt/p&gt
+                            {% endif %}
+                        &lt/div&gt
+                        &ltdiv&gt
+                          {% if params["jobtwo"][4] %}
+                            &ltp&gt{{params["jobtwo"][4]}}&lt/p&gt
+                            {% endif %}
+                        &lt/div&gt
+                    &lt/div&gt
+                &lt/div&gt
+                {% endif %}
+                {% if (params["jobthree"][0]) %}
+                &ltdiv class="row work__data"&gt
+                  &ltdiv class="col-3"&gt
+                      &ltimg src="https://www.freeiconspng.com/uploads/experience-information-image-job-knowledge-concept-icon-symbol-5.png " width="150" height="150"&gt
+                  &lt/div&gt
+                  &ltdiv class="col-9"&gt
+                      &ltdiv&gt
+                        {% if params["jobthree"][0] %}
+                          &lth3&gt{{params["jobthree"][0]}}&lt/h3&gt
+                          {% endif %}
+                      &lt/div&gt
+                      &ltdiv&gt
+                        {% if params["jobthree"][1] %}
+                          &ltp&gt{{params["jobthree"][1]}}&lt/p&gt
+                          {% endif %}
+                      &lt/div&gt
+                      &ltdiv&gt
+                        {% if params["jobthree"][2] %}
+                          &lth5&gt{{params["jobthree"][2]}}&lt/h5&gt
+                          {% endif %}
+                      &lt/div&gt
+                      &ltdiv&gt
+                        {% if params["jobthree"][3] %}
+                          &ltp&gt{{params["jobthree"][3]}}&lt/p&gt
+                          {% endif %}
+                      &lt/div&gt
+                      &ltdiv&gt
+                        {% if params["jobthree"][4] %}
+                          &ltp&gt{{params["jobthree"][4]}}&lt/p&gt
+                          {% endif %}
+                      &lt/div&gt
+                  &lt/div&gt
+              &lt/div&gt
+              {% endif %}
+              {% if (params["jobfour"][0]) %}
+              &ltdiv class="row work__data"&gt
+                &ltdiv class="col-3"&gt
+                    &ltimg src="https://www.freeiconspng.com/uploads/experience-information-image-job-knowledge-concept-icon-symbol-5.png " width="150" height="150"&gt
+                &lt/div&gt
+                &ltdiv class="col-9"&gt
+                    &ltdiv&gt
+                      {% if params["jobfour"][0] %}
+                        &lth3&gt{{params["jobfour"][0]}}&lt/h3&gt
+                        {% endif %}
+                    &lt/div&gt
+                    &ltdiv&gt
+                      {% if params["jobfour"][1] %}
+                        &ltp&gt{{params["jobfour"][1]}}&lt/p&gt
+                        {% endif %}
+                    &lt/div&gt
+                    &ltdiv&gt
+                      {% if params["jobfour"][2] %}
+                        &lth5&gt{{params["jobfour"][2]}}&lt/h5&gt
+                        {% endif %}
+                    &lt/div&gt
+                    &ltdiv&gt
+                      {% if params["jobfour"][3] %}
+                        &ltp&gt{{params["jobfour"][3]}}&lt/p&gt
+                        {% endif %}
+                    &lt/div&gt
+                    &ltdiv&gt
+                      {% if params["jobfour"][4] %}
+                        &ltp&gt{{params["jobfour"][4]}}&lt/p&gt
+                        {% endif %}
+                    &lt/div&gt
+                &lt/div&gt
+            &lt/div&gt
+            {% endif %}
+            {% if (params["jobfive"][0]) %}
+            &ltdiv class="row work__data"&gt
+              &ltdiv class="col-3"&gt
+                  &ltimg src="https://www.freeiconspng.com/uploads/experience-information-image-job-knowledge-concept-icon-symbol-5.png " width="150" height="150"&gt
+              &lt/div&gt
+              &ltdiv class="col-9"&gt
+                  &ltdiv&gt
+                    {% if params["jobfive"][0] %}
+                      &lth3&gt{{params["jobfive"][0]}}&lt/h3&gt
+                      {% endif %}
+                  &lt/div&gt
+                  &ltdiv&gt
+                    {% if params["jobfive"][1] %}
+                      &ltp&gt{{params["jobfive"][1]}}&lt/p&gt
+                      {% endif %}
+                  &lt/div&gt
+                  &ltdiv&gt
+                    {% if params["jobfive"][2] %}
+                      &lth5&gt{{params["jobfive"][2]}}&lt/h5&gt
+                      {% endif %}
+                  &lt/div&gt
+                  &ltdiv&gt
+                    {% if params["jobfive"][3] %}
+                      &ltp&gt{{params["jobfive"][3]}}&lt/p&gt
+                      {% endif %}
+                  &lt/div&gt
+                  &ltdiv&gt
+                    {% if params["jobfive"][4] %}
+                      &ltp&gt{{params["jobfive"][4]}}&lt/p&gt
+                      {% endif %}
+                  &lt/div&gt
+              &lt/div&gt
+          &lt/div&gt
+          {% endif %}
+
+              &lt/div&gt
+                  
+              &lt/div&gt
+          &lt/section&gt
+
+
+
+
+            &lt!-- PROJECT--&gt
+            &ltsection class="work section" id="work"&gt
+                &lth2 class="section-title"&gtProject&lt/h2&gt
+              {% if (params["projectone"][0]) %}
+                &ltdiv class="container"&gt
+                    &ltdiv class="row skills__data"&gt
+                        &ltdiv class="col-3"&gt
+                            &ltimg src="https://image.flaticon.com/icons/png/512/1087/1087815.png" width="150" height="150"&gt
+                        &lt/div&gt
+                        &ltdiv class="col-9"&gt
+                            &ltdiv&gt
+                              {% if params["projectone"][0] %}
+                                &lth3&gt{{params["projectone"][0]}}&lt/h3&gt
+                                {% endif %}
+                            &lt/div&gt
+                            &ltdiv&gt
+                              {% if params["projectone"][2] %}
+                                &ltp&gt{{params["projectone"][2]}}&lt/p&gt
+                                {% endif %}
+                            &lt/div&gt
+                            &ltdiv&gt
+                              {% if params["projectone"][1] %}
+                                &lta href="{{params['projectone'][1]}}"&gt&ltbutton class="btn-warning"&gtView Source&lt/i&gt&lt/button&gt&lt/a&gt
+                                {% endif %}
+                            &lt/div&gt
+                        &lt/div&gt
+                    &lt/div&gt
+                    {% endif %}
+                    {% if (params["projecttwo"][0]) %}
+                    
+                    &ltdiv class="container"&gt
+                        &ltdiv class="row skills__data"&gt
+                            &ltdiv class="col-3"&gt
+                                &ltimg src="https://image.flaticon.com/icons/png/512/1087/1087815.png" width="150" height="150"&gt
+                            &lt/div&gt
+                            &ltdiv class="col-9"&gt
+                                &ltdiv&gt
+                                  {% if params["projecttwo"][0] %}
+                                    &lth3&gt{{params["projecttwo"][0]}}&lt/h3&gt
+                                    {% endif %}
+                                &lt/div&gt
+                                &ltdiv&gt
+                                  {% if params["projecttwo"][2] %}
+                                    &ltp&gt{{params["projecttwo"][2]}}&lt/p&gt
+                                    {% endif %}
+                                &lt/div&gt
+                                &ltdiv&gt
+                                  {% if params["projecttwo"][1] %}
+                                    &lta href="{{params['projecttwo'][1]}}"&gt&ltbutton class="btn-warning"&gtView Source&lt/i&gt&lt/button&gt&lt/a&gt
+                                    {% endif %}
+                                &lt/div&gt
+                            &lt/div&gt
+                        &lt/div&gt
+                        {% endif %}
+
+                        {% if (params["projectthree"][0]) %}
+                &ltdiv class="container"&gt
+                    &ltdiv class="row skills__data"&gt
+                        &ltdiv class="col-3"&gt
+                            &ltimg src="https://image.flaticon.com/icons/png/512/1087/1087815.png" width="150" height="150"&gt
+                        &lt/div&gt
+                        &ltdiv class="col-9"&gt
+                            &ltdiv&gt
+                              {% if params["projectthree"][0] %}
+                                &lth3&gt{{params["projectthree"][0]}}&lt/h3&gt
+                                {% endif %}
+                            &lt/div&gt
+                            &ltdiv&gt
+                              {% if params["projectthree"][2] %}
+                                &ltp&gt{{params["projectthree"][2]}}&lt/p&gt
+                                {% endif %}
+                            &lt/div&gt
+                            &ltdiv&gt
+                              {% if params["projectthree"][1] %}
+                                &lta href="{{params['projectthree'][1]}}"&gt&ltbutton class="btn-warning"&gtView Source&lt/i&gt&lt/button&gt&lt/a&gt
+                                {% endif %}
+                            &lt/div&gt
+                        &lt/div&gt
+                    &lt/div&gt
+                    {% endif %}
+                    {% if (params["projectfour"][0]) %}
+                &ltdiv class="container"&gt
+                    &ltdiv class="row skills__data"&gt
+                        &ltdiv class="col-3"&gt
+                            &ltimg src="https://image.flaticon.com/icons/png/512/1087/1087815.png" width="150" height="150"&gt
+                        &lt/div&gt
+                        &ltdiv class="col-9"&gt
+                            &ltdiv&gt
+                              {% if params["projectfour"][0] %}
+                                &lth3&gt{{params["projectfour"][0]}}&lt/h3&gt
+                                {% endif %}
+                            &lt/div&gt
+                            &ltdiv&gt
+                              {% if params["projectfour"][2] %}
+                                &ltp&gt{{params["projectfour"][2]}}&lt/p&gt
+                                {% endif %}
+                            &lt/div&gt
+                            &ltdiv&gt
+                              {% if params["projectfour"][1] %}
+                                &lta href="{{params['projectfour'][1]}}"&gt&ltbutton class="btn-warning"&gtView Source&lt/i&gt&lt/button&gt&lt/a&gt
+                                {% endif %}
+                            &lt/div&gt
+                        &lt/div&gt
+                    &lt/div&gt
+                    {% endif %}
+                    {% if (params["projectfive"][0]) %}
+                &ltdiv class="container"&gt
+                    &ltdiv class="row skills__data"&gt
+                        &ltdiv class="col-3"&gt
+                            &ltimg src="https://image.flaticon.com/icons/png/512/1087/1087815.png" width="150" height="150"&gt
+                        &lt/div&gt
+                        &ltdiv class="col-9"&gt
+                            &ltdiv&gt
+                              {% if params["projectfive"][0] %}
+                                &lth3&gt{{params["projectfive"][0]}}&lt/h3&gt
+                                {% endif %}
+                            &lt/div&gt
+                            &ltdiv&gt
+                              {% if params["projectfive"][2] %}
+                                &ltp&gt{{params["projectfive"][2]}}&lt/p&gt
+                                {% endif %}
+                            &lt/div&gt
+                            &ltdiv&gt
+                              {% if params["projectfive"][1] %}
+                                &lta href="{{params['projectfive'][1]}}"&gt&ltbutton class="btn-warning"&gtView Source&lt/i&gt&lt/button&gt&lt/a&gt
+                                {% endif %}
+                            &lt/div&gt
+                        &lt/div&gt
+                    &lt/div&gt
+                    {% endif %}
+                &lt/div&gt
+                    
+                &lt/div&gt
+            &lt/section&gt
+
+            &lt!--CONTACT --&gt
+            &ltsection class="contact section" id="contact"&gt
+                &lth2 class="section-title container"&gtContact&lt/h2&gt
+
+                &ltdiv style="text-align: center;margin-bottom: 20px;"&gt
+                  &lth1 style="margin-bottom: 20px;"&gtGet In Touch&lt/h1&gt
+                  &lthr class="mt-20 mb-3" /&gt
+                  {% if params["touch_message"] %}
+                  &lth5 style="margin-top: 70px;"&gt{{params["touch_message"]}}&lt/h5&gt
+                  &lth5&gt&lt/h5&gt
+                  {% else %}
+                  &lth5 style="margin-top: 70px;"&gtI'd love if you reached out to me. Even if it's just to say "Hey!". Don't hesitate! Drop me a line and I’ll get back to you ASAP!&lt/h5&gt
+                  &lth5&gt&lt/h5&gt
+                  {% endif %}
+              &lt/div&gt
+              &ltdiv class="container" style="text-align: center;"&gt
+                &ltdiv class="footer__social"&gt
+                  
+                  {% if params["linkedin"] %}
+                    &lta href="https://www.linkedin.com/in/{{params['linkedin']}}" class="home__social-icon"&gt&lti class='bx bxl-linkedin'&gt&lt/i&gt&lt/a&gt
+                    {% endif %}
+                    {% if params["fb"] %}
+                    &lta href="https://www.facebook.com/{{params['fb']}}" class="home__social-icon"&gt&lti class='bx bxl-facebook' &gt&lt/i&gt&lt/a&gt
+                    {% endif %}
+                    {% if (params["github"]) %}
+                    &lta href="https://github.com/{{params['github']}}" class="home__social-icon"&gt&lti class='bx bxl-github' &gt&lt/i&gt&lt/a&gt
+                    {% endif %}
+                    {% if params["twitter"] %}
+                     &lta href="https://twitter.com/{{params['twitter']}}" class="home__social-icon"&gt&lti class='bx bxl-twitter'&gt&lt/i&gt&lt/a&gt
+                     {% endif %}
+                     {% if params["instagram"] %}
+                     &lta href="https://www.instagram.com/{{params['instagram']}}" class="home__social-icon"&gt&lti class='bx bxl-instagram'&gt&lt/i&gt&lt/a&gt
+                     {% endif %}
+
+                     {% if params['dev'] %}
+                     &lta href="https://dev.to/{{params['dev']}}" class="home__social-icon"&gt&lti class='bx bxl-dev-to'&gt&lt/i&gt&lt/a&gt
+                     {% endif %}
+                     {% if params['codepen'] %}
+                     &lta href="https://codepen.io/{{params['codepen']}}" class="home__social-icon"&gt&lti class='bx bxl-codepen' &gt&lt/i&gt&lt/a&gt
+                     {% endif %}
+                     {% if (params["stackoverflow"]) %}
+                     &lta href="https://stackoverflow.com/users/{{params['stackoverflow']}}" class="home__social-icon"&gt&lti class='bx bxl-stack-overflow' &gt&lt/i&gt&lt/a&gt
+                     {% endif %}
+                     {% if params["medium"] %}
+                      &lta href="https://medium.com/{{params['medium']}}" class="home__social-icon"&gt&lti class='bx bxl-medium'&gt&lt/i&gt&lt/a&gt
+                      {% endif %}
+                      {% if params["youtube"] %}
+                      &lta href="{{params['youtube']}}" class="home__social-icon"&gt&lti class='bx bxl-youtube'&gt&lt/i&gt&lt/a&gt
+                      {% endif %}
+                &lt/div&gt
+              &lt/div&gt
+          &ltdiv class="row" style="text-align: center; margin: 40px 0 80px 0;"&gt
+              &ltdiv class="col-sm-4 contact-mobile" style="margin-top:20px ;"&gt
+          &ltdiv&gt
+              &lti class="large material-icons"&gtlocal_phone&lt/i&gt
+          &lt/div&gt
+          &ltdiv&gt
+              &lth5&gtCall me On&lt/h5&gt
+              {% if params["mobile"] %}
+                &lth6&gt{{params["mobile"]}}&lt/h6&gt
+              {% else %}
+              &lth6&gtNot Available&lt/h6&gt
+              {% endif %}
+          &lt/div&gt
+              &lt/div&gt
+              &ltdiv class="col-sm-4 contact-location" style="margin-top:20px ;"&gt
+                  &ltdiv&gt
+                      &lti class="large material-icons"&gtlocation_on&lt/i&gt
+                  &lt/div&gt
+                  &ltdiv&gt
+                      &lth5&gtVisite Here&lt/h5&gt
+                      {% if params["city"] %}
+                      &lth6&gt{{params["city"]}}&lt/h6&gt
+                      {% else %}
+                      &lth6&gtNot Available&lt/h6&gt
+                      {% endif %}
+                  &lt/div&gt
+                      &lt/div&gt
+                      &ltdiv class="col-sm-4 contact-email" style="margin-top:20px ;"&gt
+                          &ltdiv&gt
+                              &lti class="large material-icons"&gtemail&lt/i&gt
+                          &lt/div&gt
+                          &ltdiv&gt
+                              &lth5&gtEmail me On&lt/h5&gt
+                              &lth6&gt{{params["email"]}}&lt/h6&gt
+                          &lt/div&gt
+                      &lt/div&gt
+              &lt/div&gt
+              
+            &lt/section&gt
+        
+
+        &lt!--FOOTER --&gt
+        &ltfooter class="footer"&gt
+            &ltp class="footer__title"&gt{{params['yourname'].split()[0]}}&lt/p&gt
+            &ltdiv class="footer__social"&gt
+              {% if params["linkedin"] %}
+              &lta href="https://www.linkedin.com/in/{{params['linkedin']}}" class="footer__social-icon"&gt&lti class='bx bxl-linkedin'&gt&lt/i&gt&lt/a&gt
+              {% endif %}
+              {% if params["fb"] %}
+              &lta href="https://www.facebook.com/{{params['fb']}}" class="footer__social-icon"&gt&lti class='bx bxl-facebook' &gt&lt/i&gt&lt/a&gt
+              {% endif %}
+              {% if (params["github"]) %}
+              &lta href="https://github.com/{{params['github']}}" class="footer__social-icon"&gt&lti class='bx bxl-github' &gt&lt/i&gt&lt/a&gt
+              {% endif %}
+              {% if params["twitter"] %}
+               &lta href="https://twitter.com/{{params['twitter']}}" class="footer__social-icon"&gt&lti class='bx bxl-twitter'&gt&lt/i&gt&lt/a&gt
+               {% endif %}
+               {% if params["instagram"] %}
+               &lta href="https://www.instagram.com/{{params['instagram']}}" class="footer__social-icon"&gt&lti class='bx bxl-instagram'&gt&lt/i&gt&lt/a&gt
+               {% endif %}
+            &lt/div&gt
+            &ltp&gtCopyright &#169; 2020 {{params['yourname']}},All rights reserved. 
+              Powered by
+              &lta style="text-decoration: none; color: tomato; font-weight: bold;" href="http://www.codescript.run/"&gt CodeScript&lt/a&gt
+            &lt/p&gt
+        &lt/footer&gt
+      &lt/main&gt
+
+        &lt!-- SCROLL REVEAL --&gt
+        &ltscript src="https://unpkg.com/scrollreveal"&gt&lt/script&gt
+
+        &lt!-- MAIN JS --&gt
+        &ltscript&gt
+            /*===== MENU SHOW =====*/ 
+const showMenu = (toggleId, navId) =&gt{
+    const toggle = document.getElementById(toggleId),
+    nav = document.getElementById(navId)
+
+    if(toggle && nav){
+        toggle.addEventListener('click', ()=&gt{
+            nav.classList.toggle('show')
+        })
+    }
+}
+showMenu('nav-toggle','nav-menu')
+
+/*===== ACTIVE AND REMOVE MENU =====*/
+const navLink = document.querySelectorAll('.nav__link');   
+
+function linkAction(){
+  /*Active link*/
+  navLink.forEach(n =&gt n.classList.remove('active'));
+  this.classList.add('active');
+  
+  /*Remove menu mobile*/
+  const navMenu = document.getElementById('nav-menu')
+  navMenu.classList.remove('show')
+}
+navLink.forEach(n =&gt n.addEventListener('click', linkAction));
+
+/*===== SCROLL REVEAL ANIMATION =====*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '80px',
+    duration: 2000,
+    reset: true
+});
+/*SCROLL HOME*/
+sr.reveal('.home__title',{}); 
+sr.reveal('.button',{delay: 200}); 
+sr.reveal('.home__img',{delay: 400}); 
+sr.reveal('.home__social-icon',{ interval: 200}); 
+
+/*SCROLL ABOUT*/
+sr.reveal('.about__img',{}); 
+sr.reveal('.about__subtitle',{delay: 400}); 
+
+/*SCROLL SKILLS*/
+sr.reveal('.skills__subtitle',{}); 
+sr.reveal('.skills__text',{}); 
+sr.reveal('.skills__data',{interval: 200}); 
+sr.reveal('.skills__img',{delay: 600});
+
+/*SCROLL WORK*/
+sr.reveal('.work__img',{interval: 200}); 
+sr.reveal('.work__data',{interval:200});
+
+/*SCROLL CONTACT*/
+sr.reveal('.contact-mobile',{interval: 0});
+sr.reveal('.contact-location',{interval: 100});
+sr.reveal('.contact-email',{interval: 200}); 
+
+var typeString=JSON.parse('{{params["title"] | tojson}}');
+console.log(typeString);
+    var i=0;
+    var count=0;
+    var selectedText="";
+    var text="";
+    (function type() {
+        if (count==typeString.length) {
+            count=0;
+        }
+        selectedText=typeString[count];
+        text=selectedText.slice(0,++i);
+        document.querySelector('#typing').innerHTML=text;
+        document.querySelector('#typing').style.color="red";
+        document.querySelector('#typing').style.fontSize="xx-large";
+
+        if (text.length===selectedText.length) {
+            count++;
+            i=0;
+        }
+    
+        setTimeout(type,250);
+    }());
+    function sleep(milliseconds) {
+        var start=new Date().getTime();
+        for (let i = 0; i &lt 1e7; i++) {
+            if ((new Date().getTime)-start)  milliseconds 
+                break;
+            }
+            
+        }
+
+    &lt/script&gt
+    &ltscript src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"&gt&lt/script&gt
+
+        &ltscript src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"&gt&lt/script&gt
+        &ltscript src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"&gt&lt/script&gt
+        &ltscript src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"&gt&lt/script&gt
+         
+    &lt/body&gt
+&lt/html&gt
+      </pre>
+</div>
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+$('.code').hide();
+$('.code__toggler').on('click',
+  function() {
+    $('.code, .show').toggle(200);
+  }
+);
+</script>
+<script>
+function CopyToClipboard(containerid) {
+  if (document.selection) {
+    var range = document.body.createTextRange();
+    range.moveToElementText(document.getElementById(containerid));
+    range.select().createTextRange();
+    document.execCommand("copy");
+  } else if (window.getSelection) {
+    var range = document.createRange();
+    range.selectNode(document.getElementById(containerid));
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    alert("Text has been copied, now paste in the text-area")
+  }
+}
+</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+         
+    </body>
+</html>

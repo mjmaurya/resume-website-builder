@@ -1,0 +1,23 @@
+.start{
+    background-color: royalblue;
+    height: 100vh;
+  }
+  button{
+    font-weight: bold;
+  }
+  button:hover{
+background-color: aqua;
+  }
+
+  .hero-image {
+    -webkit-animation: action 1s infinite  alternate;
+    animation: action 1s infinite  alternate;
+}
+@-webkit-keyframes action {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+@keyframes action {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}

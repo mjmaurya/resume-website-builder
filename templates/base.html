@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="description" content="Create your Professional, Career, Student portfolio within 10 minutes without any Coding">
+    <meta name="author" content="Manoj Kumar">
+    <meta name="keywords" content="portfolio,web design,website design,website builder,webdesign,Create an Online Portfolio,portfolio builder,portfolio generator    ">
+    <title>{% block title %}{% endblock %} -CodeScript</title>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176761697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-176761697-1');
+</script>
+<meta name="google-site-verification" content="wc79QR3xlwfhdbMkaxjbe_KWoFz76ckLcTyg5wgqI28" />
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+    <!-- Favicon
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/Image/favicon.ico">
+
+    <!-- Stylesheets
+    ================================================== -->
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/static/css/base.css" rel="stylesheet">
+  
+    
+    {% block style %}
+
+  {% endblock %}
+  </head>
+  
+  <body>
+
+    <nav class="navbar navbar-expand-lg py-3 navbar-dark shadow-sm" style="background: royalblue;">
+        <div class="container">
+          <a href="/" class="navbar-brand">
+            <!-- Logo Image 
+            <img src="/static/Image/codelogo.png" height="75px" width="100px"  alt="" class="d-inline-block align-middle mr-2">
+            --><!-- Logo Text -->
+            <span class="text-uppercase font-weight-bold">CodeScript</span>
+          </a>
+      
+          <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+      
+          <div id="navbarSupportedContent" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active"><a href="/" class="nav-link">Home <span class="sr-only">(current)</span></a></li>
+              <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
+              <li class="nav-item"><a href="/contactus" class="nav-link">Contact</a></li>
+              <li class="nav-item"><a href="" data-target="#donateModal" data-toggle="modal" class="nav-link btn btn-warning">Buy Me a Coffee</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div id="container-fluid">
+      <div class="modal" id="donateModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title"></h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body" style="text-align: center; padding:50px;">
+              <h3 style="margin-bottom:50px;">Buy Me a Coffee</h3>
+              <img src="https://freesvg.org/img/pitr_Coffee_cup_icon.png" width="450" height="350">
+              <h5>Thank You</h5>
+                           
+            </div>
+          </div>
+        </div>
+      </div>
+        {% block content %}
+
+        {% endblock %}
+    </div>
+    <div class="cotainer-fluid">
+      <!-- Footer -->
+<footer class="page-footer font-small indigo">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+       <div>
+         <img src="/static/Image/codelogo.png">
+       </div>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Gets Started</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Services</a>
+          </li>
+          <li>
+            <a href="/contactus">Contact</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="/pandp">Privacy & Policy</a>
+          </li>
+
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a style="cursor:pointer;" target="popup" onclick="window.open('https://postimages.org/','Image Link Generator', 'width=600,height=500')">Generate Image Link</a>
+          </li>
+    
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center bg-primary py-3">© 2020 Copyright:
+    <a style="text-decoration: none; color: tomato; font-weight: bold;" href="/"> CodeScript</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

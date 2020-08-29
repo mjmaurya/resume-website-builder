@@ -1,0 +1,655 @@
+{% extends "base.html" %}
+{% block title %} Profile Details{% endblock %}
+{% block style %}
+<style>
+  .icon{
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+}
+  .inputField{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #000;
+    width: 90%;
+    outline:0;
+}
+.container{
+    padding: 10px;
+}
+.number::-webkit-inner-spin-button, 
+.number::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+</style> 
+{% endblock %}
+  </head>
+ <body class="">
+  {% block content %}
+   <div class="container main">
+     <form method="POST" enctype="multipart/form-data" action="/result">
+    <div class="container">
+      <h1>About Me</h1>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="container">
+            <i class="material-icons icon">account_box</i>
+              <input name="yourname" placeholder="Your Name" class="inputField lg" value="" required>
+          </div>
+          <div class="container">
+            <i class="material-icons icon">account_box</i>
+              <input name="profile" placeholder="profile image url" class="inputField lg" value="">
+          </div>
+          <div class="container">
+            <i class="material-icons icon">school</i>
+              <input name="degree" placeholder="degree: B.Tech" class="inputField lg" value="" required>
+          </div>
+          
+          <div class="container">
+            <i class="material-icons icon">location_on</i>
+              <input name="city" placeholder="Adress" class="inputField lg" value="">
+          </div>
+    
+      </div>
+
+
+      <div class="col-sm-6">
+        <div class="container">
+            <textarea name="about" placeholder=" About Yourself" rows="3" class="inputField lg" value="" required></textarea>
+        </div>
+        <div class="container">
+          <i class="material-icons icon">email</i>
+            <input name="email" placeholder="email" type="email" class="inputField lg" value="" required>
+        </div>
+        <div class="container">
+          <i class="material-icons icon">local_phone</i>
+            <input name="mobile" placeholder="mobile" type="number" class="inputField lg number" value="" pattern="[0-9]{10}">
+        </div>
+      
+    </div>
+      </div>
+    </div>
+
+    <!-- Title Start-->
+    <div class="container">
+    <div><H1>Title</H1></div>
+    <div class="row">
+      <div class="col-sm-3">
+        <i></i>
+        <input type="checkbox" name="title" value="Web Developer"> Web Developer
+      </div>
+      <div class="col-sm-3">
+        <i></i>
+        <input type="checkbox" name="title" value="Frontend Developer"> Frontend Developer
+      </div>
+      <div class="col-sm-3">
+        <i></i>
+        <input type="checkbox" name="title" value="Backend Developer"> Backend Developer
+      </div>
+      <div class="col-sm-3">
+        <i></i>
+        <input type="checkbox" name="title" value="Fullstack Developer"> Fullstack Developer
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3">
+        <i></i>
+        <input type="checkbox" name="title" value="Android Developer"> Android Developer
+      </div>
+      <div class="col-sm-3">
+        <i></i>
+        <input type="checkbox" name="title" value="Python Developer"> Python Developer
+      </div>
+      <div class="col-sm-3">
+        <i></i>
+        <input type="checkbox" name="title" value="JavaScript Developer"> JavaScript Developer
+      </div>
+      <div class="col-sm-3">
+        <i></i>
+        <input type="checkbox" name="title" vlaue="Java Developer"> Java Developer
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3">
+        <i></i>
+        <input type="checkbox" name="title" value="Machine Learning Enthusiast"> Machine Learning Enthusiast
+      </div>
+      <div class="col-sm-3">
+        <i></i>
+        <input type="checkbox" name="title" value="Software Developer"> Software Developer
+      </div>
+      <div class="col-sm-3">
+        <i></i>
+        <input type="checkbox" name="title" value="IOS Developer"> IOS Developer
+      </div>
+      <div class="col-sm-3">
+        <i></i>
+        <input type="checkbox" name="title" value="PHP Developer"> PHP Developer
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3">
+        <i></i>
+        <input type="checkbox" name="title" value="Blockchain Developer"> Blockchain Developer
+      </div>
+      <div class="col-sm-3">
+        <i></i>
+        <input type="checkbox" name="title" value="Wordpress Developer"> Wordpress Developer
+      </div>
+      <div class="col-sm-3">
+        <i></i>
+        <input type="checkbox" name="title" value="Competitive Programmer"> Competitive Programmer
+      </div>
+      <div class="col-sm-3">
+        <i></i>
+        <input type="checkbox" name="title" value="Game Developer"> Game Developer
+      </div>
+    </div>
+
+      </div>
+    </div>
+
+<!--What I'm Doing Starts-->
+    <div class="container">
+      <h1>What I'm Doing</h1>
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>1</h3>
+        
+        <div class="container">
+            <input name="doing1" placeholder="Machine Learning" class="inputField lg" value="">
+        </div>
+        <div class="container">
+          <textarea name="doingDesc1" placeholder=" Machine Learning is one of the most demandable technology so i have started to learn Machine Learning." rows="3" class="inputField lg" value=""></textarea>
+      </div>
+
+        </div>
+        <div class="col-sm-4">
+          <h3>2</h3>
+        
+        <div class="container">
+            <input name="doing2" placeholder="Learning Skill" class="inputField lg" value="">
+        </div>
+        <div class="container">
+          <textarea name="doingDesc2" placeholder=" Skill Description" rows="3" class="inputField lg" value=""></textarea>
+      </div>
+
+        </div>
+        <div class="col-sm-4">
+          <h3>3</h3>
+        
+          <div class="container">
+              <input name="doing3" placeholder="Learning Skill" class="inputField lg" value="">
+          </div>
+          <div class="container">
+            <textarea name="doingDesc3" placeholder=" Skill Description" rows="3" class="inputField lg" value=""></textarea>
+        </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- What I'm Doing End-->
+<div class="container">
+  <div class="container">
+
+    <h1>My Resume</h1>
+  </div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="container">
+      <h3><i class="material-icons">school</i> Education</h3>
+    </div>
+   
+    <div class="container">
+      <div class="container">
+        <input name="degree1" placeholder="M.Tech" class="inputField lg" value="" required>
+    </div>
+    
+    <div class="container">
+        <input name="duration1" placeholder="2015-2017" class="inputField lg" value="">
+    </div>
+    <div class="container">
+      <input name="collegeName1" placeholder=" IIT Patna"  class="inputField lg" value=""></textarea>
+  </div>
+    </div>
+
+    <div class="container">
+      <div class="container">
+        <input name="degree2" placeholder="degree" class="inputField lg" value="">
+    </div>
+    
+    <div class="container">
+        <input name="duration2" placeholder="year-Year" class="inputField lg" value="">
+    </div>
+    <div class="container">
+      <input name="collegeName2" placeholder="Institute Name" class="inputField lg" value=""></textarea>
+  </div>
+    </div>
+
+    <div class="container">
+      <div class="container">
+        <input name="degree3" placeholder="degree" class="inputField lg" value="">
+    </div>
+    
+    <div class="container">
+        <input name="duration3" placeholder="year-Year" class="inputField lg" value="">
+    </div>
+    <div class="container">
+      <input name="collegeName3" placeholder="Institute Name"  class="inputField lg" value=""></textarea>
+  </div>
+    </div>
+
+    <div class="container">
+      <div class="container">
+        <input name="degree4" placeholder="degree" class="inputField lg" value="">
+    </div>
+    
+    <div class="container">
+        <input name="duration4" placeholder="year-Year" class="inputField lg" value="">
+    </div>
+    <div class="container">
+      <input name="collegeName4" placeholder="Institute Name" class="inputField lg" value=""></textarea>
+  </div>
+    </div>
+
+    <div class="container">
+      <h3><i class="fa fa-certificate"></i> Certifications</h3>
+    </div>
+    <div class="container">
+      <div class="container">
+        <input name="certi1" placeholder="Certification Name" class="inputField lg" value="">
+      </div>
+      <div class="container">
+        <input name="credit1" placeholder="Certificate Credential Url" class="inputField lg" value="">
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="container">
+        <input name="certi2" placeholder="Certification Name" class="inputField lg" value="">
+      </div>
+      <div class="container">
+        <input name="credit2" placeholder="Certificate Credential Url" class="inputField lg" value="">
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="container">
+        <input name="certi3" placeholder="Certification Name" class="inputField lg" value="">
+      </div>
+      <div class="container">
+        <input name="credit3" placeholder="Certificate Credential Url" class="inputField lg" value="">
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="container">
+        <input name="certi4" placeholder="Certification Name" class="inputField lg" value="">
+      </div>
+      <div class="container">
+        <input name="credit4" placeholder="Certificate Credential Url" class="inputField lg" value="">
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="container">
+        <input name="certi5" placeholder="Certification Name" class="inputField lg" value="">
+      </div>
+      <div class="container">
+        <input name="credit5" placeholder="Certificate Credential Url" class="inputField lg" value="">
+      </div>
+    </div>
+
+  </div>
+
+
+<div class="col-sm-6">
+
+  <div class="container">
+    <h3><i class="material-icons">school</i> Experiences</h3>
+  </div>
+
+  <div class="container">
+    <div class="container">
+      <input name="jobTitle1" placeholder="title" class="inputField lg" value="" required>
+  </div>
+  
+  <div class="container">
+    <input name="jobType1" placeholder="Employment Type" class="inputField lg" value="">
+</div>
+
+<div class="container">
+    <input name="jobCompany1" placeholder="Company" class="inputField lg" value="" required>
+</div>
+
+<div class="container">
+  <input name="jobDuration1" placeholder="Month/Year-Month/Year" class="inputField lg" value="">
+</div>
+<div class="container">
+  <textarea name="jobDescription1" placeholder=" Description" rows="3" class="inputField lg" value=""></textarea>
+</div>
+  </div>
+
+  <div class="container">
+    <div class="container">
+      <input name="jobTitle2" placeholder="title" class="inputField lg" value="">
+  </div>
+  
+  <div class="container">
+    <input name="jobType2" placeholder="Employment Type" class="inputField lg" value="">
+</div>
+
+<div class="container">
+    <input name="jobCompany2" placeholder="Company" class="inputField lg" value="">
+</div>
+
+<div class="container">
+  <input name="jobDuration2" placeholder="Month/Year-Month/Year" class="inputField lg" value="">
+</div>
+<div class="container">
+  <textarea name="jobDescription2" placeholder=" Description" rows="3" class="inputField lg" value=""></textarea>
+</div>
+  </div>
+
+  <div class="container">
+    <div class="container">
+      <input name="jobTitle3" placeholder="title" class="inputField lg" value="">
+  </div>
+  
+  <div class="container">
+    <input name="jobType3" placeholder="Employment Type" class="inputField lg" value="">
+</div>
+
+<div class="container">
+    <input name="jobCompany3" placeholder="Company" class="inputField lg" value="">
+</div>
+
+<div class="container">
+  <input name="jobDuration3" placeholder="Month/Year-Month/Year" class="inputField lg" value="">
+</div>
+<div class="container">
+  <textarea name="jobDescription3" placeholder=" Description" rows="3" class="inputField lg" value=""></textarea>
+</div>
+  </div>
+
+  <div class="container">
+    <div class="container">
+      <input name="jobTitle4" placeholder="title" class="inputField lg" value="">
+  </div>
+  
+  <div class="container">
+    <input name="jobType4" placeholder="Employment Type" class="inputField lg" value="">
+</div>
+
+<div class="container">
+    <input name="jobCompany4" placeholder="Company" class="inputField lg" value="">
+</div>
+
+<div class="container">
+  <input name="jobDuration4" placeholder="Month/Year-Month/Year" class="inputField lg" value="">
+</div>
+<div class="container">
+  <textarea name="jobDescription4" placeholder=" Description" rows="3" class="inputField lg" value=""></textarea>
+</div>
+  </div>
+
+  <div class="container">
+    <div class="container">
+      <input name="jobTitle5" placeholder="title" class="inputField lg" value="">
+  </div>
+  
+  <div class="container">
+    <input name="jobType5" placeholder="Employment Type" class="inputField lg" value="">
+</div>
+
+<div class="container">
+    <input name="jobCompany5" placeholder="Company" class="inputField lg" value="">
+</div>
+
+<div class="container">
+  <input name="jobDuration5" placeholder="Month/Year-Month/Year" class="inputField lg" value="">
+</div>
+<div class="container">
+  <textarea name="jobDescription5" placeholder=" Description" rows="3" class="inputField lg" value=""></textarea>
+</div>
+  </div>
+
+</div>
+
+
+
+</div>
+</div>
+
+<!--Project Details Start-->
+
+    <div class="container">
+      <h1>Recent Works / Projects</h1>
+      <div class="row">
+        <div class="col-sm-6">
+          <h3>Project 1</h3>
+          
+        <div class="container">
+            <input name="project1" placeholder="Project Name" class="inputField lg" value="" required>
+        </div>
+        
+        <div class="container">
+            <input name="project_u1" placeholder="Github or Live Url" class="inputField lg" value="">
+        </div>
+        <div class="container">
+          <textarea name="project_d1" placeholder=" Project Description" rows="3" class="inputField lg" value=""></textarea>
+      </div>
+
+        </div>
+        <div class="col-sm-6">
+          <h3>Project 2</h3>
+
+          <div class="container">
+            <input name="project2" placeholder="Project Name" class="inputField lg" value="">
+        </div>
+        
+        <div class="container">
+            <input name="project_u2" placeholder="Github or Live Url" class="inputField lg" value="">
+        </div>
+        <div class="container">
+          <textarea name="project_d2" placeholder=" Project Description" rows="3" class="inputField lg" value=""></textarea>
+      </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="row">
+        <div class="col-sm-6">
+          <h3>Project 3</h3>
+
+          <div class="container">
+            <input name="project3" placeholder="Project Name" class="inputField lg" value="">
+        </div>
+        
+        <div class="container">
+            <input name="project_u3" placeholder="Github or Live Url" class="inputField lg" value="">
+        </div>
+        <div class="container">
+          <textarea name="project_d3" placeholder=" Project Description" rows="3" class="inputField lg" value=""></textarea>
+      </div>
+
+        </div>
+        <div class="col-sm-6">
+          <h3>Project 4</h3>
+
+          <div class="container">
+            <input name="project4" placeholder="Project Name" class="inputField lg" value="">
+        </div>
+        
+        <div class="container">
+            <input name="project_u4" placeholder="Github or Live Url" class="inputField lg" value="">
+        </div>
+        <div class="container">
+          <textarea name="project_d4" placeholder=" Project Description" rows="3" class="inputField lg" value=""></textarea>
+      </div>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <h3>Project 5</h3>
+
+          <div class="container">
+            <input name="project5" placeholder="Project Name" class="inputField lg" value="">
+        </div>
+        
+        <div class="container">
+            <input name="project_u5" placeholder="Github or Live Url" class="inputField lg" value="">
+        </div>
+        <div class="container">
+          <textarea name="project_d5" placeholder=" Project Description" rows="3" class="inputField lg" value=""></textarea>
+      </div>
+
+        </div>
+        <div class="col-sm-6">
+          <h3>Project 6</h3>
+
+          <div class="container">
+            <input name="project6" placeholder="Project Name" class="inputField lg" value="">
+        </div>
+        
+        <div class="container">
+            <input name="project_u6" placeholder="Github or Live Url" class="inputField lg" value="">
+        </div>
+        <div class="container">
+          <textarea name="project_d6" placeholder=" Project Description" rows="3" class="inputField lg" value=""></textarea>
+      </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    
+    
+    <!--Project Details End-->
+    <!-- Skill and Languages Start-->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h3><i class="material-icons">work</i> Work Skills</h3>
+          <div class="container">
+            <textarea name="work_skill" placeholder=" Enter Multiple comma separated Skills" rows="3" class="inputField lg" value="" required></textarea>
+        </div>
+        </div>
+
+        <div class="col-sm-6">
+          <h3><i class="material-icons">code</i> Programming Skills</h3>
+          <div class="container">
+            <textarea name="p_language" placeholder=" Enter comma separated Languages Like Java,Python" rows="3" class="inputField lg" value="" required></textarea>
+        </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Skill and Languages End-->
+
+
+    <!-- Certificate and Achivements Start-->
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h3><i class="fa fa-trophy"></i> Achievements and Awards </h3>
+          <div class="container">
+            <textarea name="achivements" placeholder=" Enter Multiple comma separated Achievements" rows="3" class="inputField lg" value=""></textarea>
+        </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Certifiacte and Achivements End-->
+    
+    <div class="container">
+            <h3>Social</h3>
+            <div class="container">
+              <h5>Get In Touch Message</h5>
+              <textarea name="touch_message" placeholder="Enter Message" rows="3" class="inputField lg" value="">I'd love if you reached out to me. Even if it's just to say "Hey!". Don't hesitate! Drop me a line and I’ll get back to you ASAP!
+              </textarea>
+          </div>
+           <div class="row">
+            <div class="col-sm-6">
+                <div class="container">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg" class="icon" alt="github">
+                    <input name="github" placeholder="github username" class="inputField lg" value="">
+                </div>
+                <div class="container">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitter.svg" class="icon" alt="twitter">
+                    <input name="twitter" placeholder="twitter username" class="inputField lg" value="">
+                </div>
+                <div class="container">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/dev-dot-to.svg" class="icon" alt="dev.to">
+                    <input name="dev" placeholder="dev.to username" class="inputField lg" value="">
+                </div>
+                <div class="container">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/codepen.svg" class="icon" alt="codepen">
+                    <input name="codepen" placeholder="codepen username" class="inputField lg" value="">
+                </div>
+                <div class="container">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/codesandbox.svg" class="icon" alt="codesandbox">
+                    <input name="codesandbox" placeholder="codesandbox username link" class="inputField lg" value="">
+                </div>
+               
+                <div class="container">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg" class="icon" alt="linkedin">
+                    <input name="linkedin" placeholder="linkedin username" class="inputField lg" value="">
+                </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="container">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/stackoverflow.svg" class="icon" alt="stackoverflow">
+                <input name="stackoverflow" placeholder="stackoverflow username" class="inputField lg" value="">
+            </div>
+                <div class="container">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/kaggle.svg" class="icon" alt="kaggle">
+                    <input name="kaggle" placeholder="kaggle username" class="inputField lg" value="">
+                </div>
+                <div class="container">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/facebook.svg" class="icon" alt="facebook">
+                    <input name="fb" placeholder="facebook username" class="inputField lg" value="">
+                </div>
+                <div class="container">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/instagram.svg" class="icon" alt="instagram">
+                    <input name="instagram" placeholder="instagram username" class="inputField lg" value="">
+                </div>
+                <div class="container">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/medium.svg" class="icon" alt="medium">
+                    <input name="medium" placeholder="medium username (with @)" class="inputField lg" value="">
+                </div>
+                <div class="container">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/youtube.svg" class="icon" alt="youtube">
+                    <input name="youtube" placeholder="youtube channel Link" class="inputField lg" value="">
+                </div>
+        </div>
+        </div>
+        </div>
+           <div class="container">
+            <button type="submit" class="btn btn-warning">Submit</button>
+           </div>
+          </div>
+        </form>
+       </div>
+   </div>
+   {% endblock %}
