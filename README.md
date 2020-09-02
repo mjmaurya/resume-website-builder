@@ -1,5 +1,8 @@
 # resume-website-builder
 
+![](https://img.shields.io/github/stars/mjmaurya/resume-website-builder)
+![](https://img.shields.io/github/forks/mjmaurya/resume-website-builder)
+![](https://img.shields.io/github/license/mjmaurya/resume-website-builder)
 
 You need a resume that you can update and share at any given moment. On top of that, potential employers should also be able to find you online with a quick search of your name. Having a well-designed CV website that conveys your personality sends a clear message to recruiters that you are serious about your career.
 ![](https://user-images.githubusercontent.com/45433443/91645295-9625ac00-ea61-11ea-8e49-7201dc401e37.png)
