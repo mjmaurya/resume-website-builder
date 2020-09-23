@@ -26,6 +26,9 @@ You need a resume that you can update and share at any given moment. On top of t
 - Click on submit button to create your resume Website.
 - Click on ```Show/Hide Code``` Button and copy your website code by clicking on ```Click to copy``` button
 
+
+![supreme](https://user-images.githubusercontent.com/45433443/94005517-0652f380-fdbc-11ea-9a00-82bc29ac1451.png)
+
 ### Installation
 1. Clone the repository
 
