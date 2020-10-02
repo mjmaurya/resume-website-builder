@@ -1,0 +1,3297 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{{params['yourname']}}</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script>
+    //paste this code under the head tag or in a separate js file.
+      // Wait for window load
+      $(window).load(function() {
+        // Animate loader off screen
+        $(".se-pre-con").fadeOut("slow");;
+      });
+
+    </script>
+<style>
+	.aside .logo a::before{
+		border-top: 4px solid #ec1839;
+		border-left: 4px solid #ec1839;
+	}
+	.aside .logo a::after{
+		border-bottom: 4px solid #ec1839;
+		border-right:  4px solid #ec1839;
+	}
+	 
+	.contact .contact-info-item .icon .fa,
+	.blog .blog-item-inner .blog-info .blog-tags a,
+	
+	.aside .nav li a:hover,
+	.service .service-item .service-item-inner .icon .fa,
+	.about .about-content .about-text h3 span,
+		.aside .nav li a.active
+	{
+		color: #00ff22;
+	}
+	.blog .blog-item-inner .blog-img .blog-date,
+	.service .service-item .service-item-inner:hover .icon .fa,
+	.about .about-content .timeline .circle-dot,
+	.about .about-content .timeline .timeline-item::before,
+	.aside .nav-toggler span,
+	.btn,.about .about-content .skills .skill-item .progress .progress-in,
+	.aside .nav-toggler span::before
+		,.aside .nav-toggler span::after,
+		.section-title h2::before,
+		.section-title h2::after,
+		.home .intro .social-links a{
+			background-color: #ec1839;
+		}
+		.btn{
+			background-color: #068b7a;
+		}
+		
+
+
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Suez+One&display=swap');
+/*General Style*/
+body{
+	margin: 0;
+	line-height: 1.5;
+	font-size: 16px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+}
+*{
+	margin: 0;
+	padding: 0;
+	outline: none;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+::before,::after{
+	box-sizing: border-box;
+	}
+input,textarea,select{
+	font-family: 'Poppins', sans-serif;
+}	
+.section{
+	background-color: #131315;
+	min-height: 100vh;
+	display: block;
+	padding: 0 30px;
+	position: fixed;
+	left: 270px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	opacity:1; 
+	overflow-x:hidden;
+	overflow-y:auto; 
+	-webkit-transition:all 03s ease;
+	transition: all 0.3s ease;
+}
+.section.back-section{
+	z-index: 1;
+}
+.section.active{
+	opacity: 1;
+	z-index: 2;
+	-webkit-animation: slideSection 1s ease;
+    animation: slideSection 1s ease;
+}
+@-webkit-keyframes slideSection{
+	0%{
+		-webkit-transform:translateX(100%);
+		transform: translateX(100%);
+	}
+	100%{
+		-webkit-transform:translateX(0%);
+		transform: translateX(0%);
+	}
+}
+@keyframes slideSection{
+	0%{
+		-webkit-transform:translateX(100%);
+		transform: translateX(100%);
+	}
+	100%{
+		-webkit-transform:translateX(0%);
+		transform: translateX(0%);
+	}
+}
+.section.container{
+    padding-top: 60px;
+    padding-bottom: 70px;
+
+}
+.section-title{
+	-ms-flex:0 0 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
+	margin-bottom: 60px;
+}
+.section-title h2{
+	font-size: 40px;
+	color:#fbf3f4;
+	font-family: 'Suez One', serif;
+	font-weight: 700;
+	margin: 0;
+	position: relative;
+}
+.section-title h2::before{
+	content: '';
+	height:4px;
+	width: 60px;
+	position: absolute;
+	top: 100%;
+	left: 0;
+}
+.section-title h2::after{
+	content: '';
+	height:4px;
+	width: 40px;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	margin-top:8px;
+}
+.row{
+	display: flex;
+	display: -ms-flexbox;
+	-ms-flex-wrap:wrap;
+	flex-wrap: wrap;
+	margin-right: -15px;
+	margin-left: -15px;
+	position: relative;
+}
+.padd-15{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+/*.main-content{
+	padding-left: 270px;
+}*/
+.container{
+	max-width: 1100px;
+	margin: auto;
+	width: 100%;
+}
+.shadow-dark{
+	-webkit-box-shadow: 0 0 20px rgba(48,46,77,8.15);
+	box-shadow: 0 0 20px rgba(48,46,77,8.15);
+}
+.btn{
+	font-size: 16px;
+	font-family: 'Suez One', serif;
+	font-weight: 500;
+	padding: 12px 35px;
+	color: #ffffff;
+	border-radius: 40px;
+    -webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	display: inline-block;
+	white-space: nowrap;
+	border:none;
+	cursor: pointer;
+}
+.btn:hover{
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+.hidden{
+	display: none!important;
+}
+/*Aside*/
+.aside{
+	width: 270px;
+	background-color: #3b3a3c;
+	position: fixed;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	border-right: 1px solid #e8dfec;
+	padding: 30px;
+   -webkit-transition:all 03s ease;
+	transition: all 0.3s ease;
+}
+.aside .logo{
+	padding:30px 0;
+	
+}
+.aside .logo a{
+	font-size: 40px;
+	color:#53b3f7;
+	font-family: 'Suez One', serif;
+	font-weight: 700;
+	text-decoration: none;
+	display: inline-block;
+    position: relative;
+    padding: 0 10px;
+    line-height: 50px;
+
+}
+.aside .logo a::before{
+	content: '';
+	height:20px;
+	width: 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+}
+.aside .logo a::after{
+    content: '';
+	height:20px;
+	width: 20px;
+	position: absolute;
+	bottom:0;
+	right:  0;
+}
+.aside .nav-toggler{
+	height: 40px;
+	width: 40px;
+	border:1px solid #d4d4e3;
+	position: fixed;
+	cursor: pointer;
+	left:300px;
+	top: 20px;
+	z-index: 11;
+	border-radius: 5px;
+	background-color: #fdf9ff;
+   /* display: -ms-flexbox;
+    display: flex;*/
+    display: none;
+    -ms-flex-align:center;
+    align-items: center;
+    -ms-flex-pack:center;
+    justify-content: center;
+    -webkit-transition:all 03s ease;
+	transition: all 0.3s ease;
+}
+.aside .nav-toggler span{
+	height: 2px;
+	width: 18px;
+	display: inline-block;
+	position: relative;
+}
+.aside .nav-toggle.open span{
+	background-color: transparent;
+	
+}
+
+.aside .nav-toggler.open span::before{
+	-webkit-transform:rotate(45deg);
+	transform: rotate(45deg);
+	top: 0px;
+}
+
+.aside .nav-toggler span::before{
+content: '';
+height: 2px;
+width: 18px;
+position: absolute;
+top: -6px;
+left: 0;
+}
+.aside .nav-toggler span::after{
+content: '';
+height: 2px;
+width: 18px;
+position: absolute;
+top: 6px;
+left: 0;
+}
+.aside .nav-toggle.open span::after{
+	-webkit-transform:rotate(-45deg);
+	transform: rotate(-45deg);
+	top: 0px;
+}
+.aside .nav{
+
+	list-style:none;
+	margin:80px 0; 
+	padding: 0;
+}
+.aside .nav li{
+	display: block;
+}
+.aside .nav li a{
+	font-weight: 600;
+	font-size: 16px;
+	color: #fdf9ff;
+	text-decoration: none;
+	line-height: 45px;
+	display: block;
+	border-bottom: 1px solid #e8dfec;
+	transition: all 0.3s ease;
+	text-transform: capitalize;
+}
+.aside .nav li a:not(.active):hover{
+	padding-left: 5px;
+}
+.aside .nav li a .fa{
+	margin-right: 5px;
+}
+.aside .copyright-text{
+	font-size: 13px;
+	color: #e8dfec;
+}
+
+/*home*/
+.home{
+	min-height:100vh;
+	display: -ms-flexbox;
+	display: flex;
+}
+.home .intro{
+	text-align: center;
+}
+.home .intro img{
+	height: 300px;
+	width: 300px;
+	border-radius: 50%;
+	display: inline-block;
+	border:8px solid #ffffff;
+}
+.home .intro h1{
+	font-size: 30px;
+	color:#eee;
+	font-family: 'Suez One', serif;
+	font-weight: 700;
+	margin: 20px 0 5px;
+}
+.home .intro p{
+	font-size: 16px;
+	font-weight: 500;
+	margin: 0;
+	line-height: 22px;
+	color:#06e8f0;
+}
+.home .intro .social-links{
+	margin-top: 25px;
+}
+.home .intro .social-links a{
+	height: 35px;
+	width: 35px;
+	display: inline-block;
+	text-align: center;
+    margin: 0 4px;
+    line-height: 35px;
+    color: #ffffff;
+    border-radius: 50%;
+    text-decoration: none;
+	-webkit-transition:all 0.3s ease;
+	transition: all 0.3s ease;
+
+}
+.home .intro .social-links a:hover{
+	-webkit-transform:scale(1.1);
+	transform: scale(1.1);
+}
+/*about*/
+.about .about-content{
+	-ms-flex:0 0 100%;
+	flex:0 0 100%;
+	max-width: 100%;
+}
+.about .about-content .about-text{
+	-ms-flex:0 0 100%;
+	flex:0 0 100%;
+	max-width: 100%;
+}
+.about .about-content .about-text h3{
+    font-size: 24px;
+    margin-top: 15px;
+    font-weight: 700;
+    color: #eee;
+}
+.about .about-content .about-text p{
+    font-size:16px;
+    line-height: 25px;
+    color: #1dc8f3;
+    margin: 0;
+
+}
+.about .about-content .personal-info{
+	-ms-flex:0 0 60%;
+	flex: 0 0 60%;
+	max-width: 60%;
+	margin-top: 40px;
+}
+.about .about-content .personal-info .info-item{
+-ms-flex:0 0 50%;
+	flex: 0 0 50%;
+	max-width: 50%;
+}
+.about .about-content .personal-info .info-item p{
+font-weight: 600;
+padding: 10px 0;
+font-size: 16px;
+color: #eee;
+margin: 0;
+border-bottom: 1px solid #e8dfec;
+
+}
+.about .about-content .personal-info .info-item p span{
+	font-weight: bold;
+	color: #ff0ad6;
+	margin-left: 4px;
+}
+.about .about-content .personal-info .buttons{
+	margin-top: 30px;
+}
+.about .about-content .personal-info .buttons .btn{
+	margin-right: 15px;
+	margin-top: 10px;
+}
+.about .about-content .skills{
+-ms-flex:0 0 40%;
+	flex: 0 0 40%;
+	max-width: 40%;
+	margin-top: 40px;
+}
+.about .about-content .skills .skill-item{
+-ms-flex:0 0 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+.about .about-content .skills .skill-item h5{
+    line-height: 40px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #eee;
+    text-transform: capitalize;
+    margin: 0;
+}
+.about .about-content .skills .skill-item .progress{
+	background-color: #e3e3e3;
+	height: 8px;
+	border-radius: 4px;
+	width: 100%;
+	position: relative;
+}
+.about .about-content .skills .skill-item{
+	margin-bottom: 30px;
+}
+.about .about-content .skills .skill-item .progress .progress-in{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	border-radius: 4px;
+}
+.about .about-content .skills .skill-item .skill-percent{
+	line-height: 40px;
+	position: absolute;
+	right: 0;
+	top: -40px;
+	font-weight: 400;
+	color: #eee;
+
+}
+.about .about-content .education{
+-ms-flex:0 0 50%;
+	flex: 0 0 50%;
+	max-width: 50%;
+	margin-top: 30px;
+}
+.about .about-content .exprience{
+	-ms-flex:0 0 50%;
+	flex: 0 0 50%;
+	max-width: 50%;
+	margin-top: 30px;
+}
+.about .about-content h3.title{
+	font-size: 24px;
+	font-weight: 700;
+	color: #fbf3f4;
+	margin-bottom: 30px;
+}
+.about .about-content .timeline-box{
+	-ms-flex:0 0 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+.about .about-content .timeline{
+background-color: #131315;
+padding: 30px 15px;
+border:1px solid #d4d4e3;
+border-radius: 10px;
+position: relative;
+}
+.about .about-content .timeline .timeline-item{
+	position: relative;
+	padding-left: 37px;
+	padding-bottom: 50px;
+}
+.timeline-item p{
+	font-size: 16px;
+	line-height: 25px;
+	color: #f7fcf7;
+	margin: 0;
+}
+.about .about-content .timeline .timeline-item::before{
+	content: '';
+	width: 1px;
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+.about .about-content .timeline .circle-dot{
+position: absolute;
+left: 0;
+top: 0;
+height: 15px;
+width: 15px;
+left: -7px;
+border-radius: 50%;
+}
+.about .about-content .timeline .timeline-date{
+font-weight: 400;
+font-size: 14px;
+margin-bottom: 12px;
+color: #fdf590;
+}
+.about .about-content .timeline .timeline-date .fa{
+	margin-right: 5px;
+}
+.about .about-content .timeline .timeline-title{
+font-weight: 700;
+font-size: 18px;
+margin-bottom: 15px;
+text-transform: capitalize;
+color:#fdf9ff;
+}
+.about .about-content .timeline .timeline-text{
+font-size: 16px;
+line-height: 25px;
+color: #53b3f7;
+margin: 0;
+}
+/*Service*/
+.service .container{
+	padding-bottom: 40px;
+}
+.service .service-item{
+margin-bottom: 30px;
+-ms-flex:0 0 33.33%;
+flex: 0 0 33.33%;
+max-width: 33.33%;
+}
+.service .service-item .service-item-inner{
+background-color: #131315;
+border:1px solid #d4d4e3;
+border-radius: 10px;
+padding: 30px 15px;
+text-align: center;
+-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ea
+}
+.service .service-item .service-item-inner:hover{
+	-webkit-box-shadow: 0 0 20px rgba(48,46,77,8.15);
+	box-shadow: 0 0 20px rgba(48,46,77,8.15);
+
+}
+.project-button{
+	position:absolute;
+}
+.service .service-item .service-item-inner h4{
+	font-size: 16px;
+	margin-bottom: 15px;
+	color: #eee;
+	font-weight: 700;
+	text-transform: capitalize;
+}
+.service .service-item .service-item-inner p{
+	font-size: 16px;
+	color: #f5a511;
+	line-height:25px; 
+	margin: 0;
+}
+
+/*start blog*/
+
+.certi_data{
+	margin:5px;
+	display:flexbox;
+	background:#fff;
+	box-shadow: 0px 0px 10px #25ffff;
+	border-radius: 10px;
+
+}
+.skills__names{
+  align-items: center;
+  padding:4px;
+}
+.skills__name{
+	font-weight:bold;
+	margin-left:5px;
+}
+.blog .container{
+	padding-bottom: 30px;
+}
+.blog .blog-item{
+	flex: 0 0 33.33%;
+	max-width: 33.33%;
+}
+.blog .blog-item-inner{
+	border-radius: 10px;
+	overflow: hidden;
+	border:1px solid #d4d4e3;
+}
+.blog .blog-item-inner .blog-img{
+	position: relative;
+	overflow: hidden;
+}
+.blog .blog-item-inner .blog-img img{
+	width: 100%;
+	display: block;
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+.blog .blog-item-inner:hover .blog-img img{
+	-webkit-transform: scale(1.1); 
+	transform: scale(1.1); 
+}
+.blog .blog-item-inner .blog-img .blog-date{
+	position: absolute;
+	padding: 4px 10px;
+	border-radius: 5px;
+	color: #ffffff;
+	font-weight: 600;
+	font-size: 14px;
+	left: 15px;
+	bottom: 15px;
+}
+.blog .blog-item-inner .blog-info{
+	padding:30px 15px;
+	background-color: #131315;
+}
+.blog .blog-item-inner .blog-info .blog-title{
+	font-size: 18px;
+	font-weight: 700;
+	color: #eee;
+	text-transform: capitalize;
+	margin-bottom: 10px;
+}
+.blog .blog-item-inner .blog-info .blog-description{
+	font-size: 16px;
+	line-height: 25px;
+	color:#1164c4;
+	font-weight: 400;
+	margin-bottom: 15px;
+
+}
+.blog .blog-item-inner .blog-info .blog-tags{
+	font-size: 14px;
+	line-height: 25px;
+	color: #eee;
+	font-weight: 400;
+	text-transform: capitalize;
+}
+.blog .blog-item-inner .blog-info .blog-tags a{
+	text-decoration:none;
+	font-weight:600;
+}	
+/*contact section*/
+.contact .contact-info-item{
+	-ms-flex:0 0 33.33%;
+	flex: 0 0 33.33%;
+	max-width: 33.33%;
+	text-align: center;
+	margin-bottom: 40px;
+}
+.contact .contact-info-item .icon{
+	display: inline-block;
+}
+.contact .contact-info-item .icon .fa{
+	font-size: 40px;
+}
+.contact .contact-info-item h4{
+	font-weight: 700;
+	font-size: 18px;
+	color: #fbf3f4;
+	text-transform: capitalize;
+	margin:15px 0 5px;
+}
+.contact .contact-info-item p{
+	font-size: 16px;
+	line-height: 25px;
+	color: #f106d2;
+	margin: 0;
+	font-weight: 400;
+}
+.contacts{
+	max-width: 100%;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 40px;
+}
+.contacts .social-links a{
+	height: 35px;
+	width: 35px;
+	display: inline-block;
+	text-align: center;
+	background:#d3088f;
+    margin: 4px 4px;
+    line-height: 35px;
+    color: #ffffff;
+    border-radius: 50%;
+    text-decoration: none;
+	-webkit-transition:all 0.3s ease;
+	transition: all 0.3s ease;
+
+}
+.contacts .social-links a:hover{
+	-webkit-transform:scale(1.1);
+	transform: scale(1.1);
+	background:#d36308;
+}
+
+.contact .contact-form{
+    -ms-flex:0 0 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+.contact .contact-form .col-6{
+    -ms-flex:0 0 50%;
+	flex: 0 0 50%;
+	max-width: 50%;
+}
+.contact .contact-form .col-12{
+    -ms-flex:0 0 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+.contact .contact-form .form-item{
+	margin-bottom: 30px;
+}
+.contact .contact-form .form-item .form-control{
+	width: 100%;
+	border-radius: 25px;
+	height: 50px;
+	border:1px solid #d4d4e3;
+	padding: 10px 25px;
+	font-size: 16px;
+	color: #504e70;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	background-color: #131315;
+}
+.contact .contact-form .form-item .form-control:focus{
+	-webkit-box-shadow: 0 0 20px rgba(48,46,77,0.15);
+	box-shadow: 0 0 20px rgba(48,46,77,0.15);
+}
+.contact .contact-form .form-item textarea.form-control{
+	height: 120px;
+
+}
+.cntact .contact-form .btn{
+	height: 50px;
+	padding: 0 50px;
+}
+
+
+/*MEDIA Queary*/
+@media(max-width: 1199px)
+{
+	.section .container{
+		padding-top:70px;
+	}
+	.aside .nav-toggler{
+		display: -ms-flexbox;
+		display: flex;
+		left: 30px;
+	}
+	.aside{
+		left:-270px;
+	}
+	.aside .nav-toggler.open{
+		left: 300px;
+	}
+	.aside.open{
+		left: 0px;
+	}
+	.section{
+		left: 0;
+	}
+	.section.open{
+		left: 270px;
+	}
+	.main-content{
+		padding-left: 0;
+	}
+	.about .about-content .personal-info .info-item p span{
+		display: block;
+		margin-left: 0;
+	}
+}
+@media(max-width: 991px){
+	.blog .blog-item,
+	.service .service-item{
+	   -ms-flex:0 0 50%;
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+}
+@media(max-width: 767px){
+	.contact .contact-form .col-6,
+	.blog .blog-item,
+	.service .service-item,
+	.about .about-content .exprience,
+	.about .about-content .education,
+	.about .about-content .skills,
+	.about .about-content .personal-info{
+		-ms-flex:0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
+@media(max-width: 575px)
+{
+	.contact .contact-info-item{
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
+.code__toggler{
+	background:#f502e1;
+	padding:5px;
+}
+#button1{
+	background:#00ff22;
+	padding:5px;
+	margin-top:10px;
+}
+
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+  z-index: 9999;
+  
+	background: url(/static/Image/loader.gif) center no-repeat rgb(3, 3, 3);
+}
+</style>
+</head>
+<body>
+
+	<div  class="se-pre-con"></div>
+<div class="aside">
+	<!--logo-->
+	<button class="code__toggler">Show/Hide Code</button>
+	<div class="logo">
+		<a href="#home">{{params['yourname'].split()[0]}}</a>
+	</div>
+	<div class="nav-toggler">
+		<span></span>
+	</div>
+	<ul class="nav">
+		<li><a href="#home" class="active"><i class="fa fa-home"></i>Home</a></li>
+		<li><a href="#about"><i class="fa fa-user"></i>About</a></li>
+		<li><a href="#project"><i class="fa fa-list"></i>Project</a></li>
+		<li><a href="#blog"><i class="fa fa-envelope"></i>Certificate/Blogs</a></li>
+		<li><a href="#contact"><i class="fa fa-comments"></i>Contact</a></li>
+	</ul>
+	<!--copyright-->
+	<div class="copyright-text">@copy; 2020 {{params['yourname']}}
+		Powered by
+              <a style="text-decoration: none; color: tomato; font-weight: bold;" href="http://www.codescript.run/"> CodeScript</a>
+	</div>
+</div>
+<!--Aside End-->
+<!--main content-->
+<div class="main-content">
+	<div class="show">
+	<section class="home section active" id="home">
+		<div class="container">
+			<div class="intro">
+				<img src="{{params['profile']}}" alt="Profile Image" class="shadow-dark">
+				<h1>{{params['yourname']}}</h1>
+				<p id="typing"></p>
+				<div class="social-links">
+					{% if params["linkedin"] %}
+                    <a href="https://www.linkedin.com/in/{{params['linkedin']}}" ><i class="fa fa-linkedin" ></i></a>
+                    {% endif %}
+                    {% if params["fb"] %}
+                    <a href="https://www.facebook.com/{{params['fb']}}" ><i class='fa fa-facebook' ></i></a>
+                    {% endif %}
+                    {% if (params["github"]) %}
+                    <a href="https://github.com/{{params['github']}}" ><i class='fa fa-github' ></i></a>
+                    {% endif %}
+                    {% if params["twitter"] %}
+                     <a href="https://twitter.com/{{params['twitter']}}"><i class='fa fa-twitter'></i></a>
+                     {% endif %}
+                     {% if params["instagram"] %}
+                     <a href="https://www.instagram.com/{{params['instagram']}}"><i class='fa fa-instagram'></i></a>
+                     {% endif %}
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--About-->
+	<section class="about section" id="about">
+		<div class="container">
+			<div class="row">
+				<div class="section-title padd-15">
+					<h2>About Me</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="about-content padd-15">
+					<div class="row">
+						<div class="about-text padd-15">
+							<h3>I Am {{params['yourname']}}</h3>
+								<p>{{params["about"]}}</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="personal-info padd-15">
+							<div class="row">
+								<div class="info-item padd-15">
+									<p>Email:<span>{{params["email"]}}</span></p>
+								</div>
+								<div class="info-item padd-15">
+									<p>Degree:<span>{{params["degree"]}}</span></p>
+								</div>
+								<div class="info-item padd-15">
+									<p>Phone:<span>{{params["mobile"]}}</span></p>
+								</div>
+								<div class="info-item padd-15">
+									<p>City:<span>{{params["city"]}}</span></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="buttons padd-15">
+									<a href="{{params['resume']}}"class="btn">Download CV</a>
+									<a href="mailto:{{params['email']}}" data-section-index="1"class="btn hire-me">Hire me</a>
+								</div>
+							</div>
+						</div>
+						<div class="skills padd-15">
+							<h3 style="color:#fff;">Skills</h3>
+							<div class="row">
+								{% for i in params["work_skill"] %}
+								<div class="certi_data padd-15">
+									<div class="skills__names">
+										<span class="skills__name"> {{i}}</span>
+									</div>
+								</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+						<div class="row">
+						<div class="education padd-15">
+							<h3 class="title">Education</h3>
+							<div class="row">
+								<div class="timeline-box padd-15">
+								<div class="timeline shadow-dark">
+									{% if (params["degreeone"][0]) %}
+									<div class="timeline-item">
+										<div class="circle-dot">
+										</div>
+										<h6 class="timeline-date">
+											{% if params["degreeone"][1] %}
+											<i class="fa fa-calendar"></i>{{params["degreeone"][1]}}
+											{% endif %}
+										</h6>
+										{% if params["degreeone"][0] %}
+										<h4 class="timeline-title">{{params["degreeone"][0]}}</h4>
+										{% endif %}
+										{% if params["degreeone"][2] %}
+										<p class="timeline-text">{{params["degreeone"][2]}}</p>
+										{% endif %}
+									</div>
+									{% endif %}
+									{% if (params["degreetwo"][0]) %}
+									<div class="timeline-item">
+										<div class="circle-dot">
+										</div>
+										<h6 class="timeline-date">
+											{% if params["degreetwo"][1] %}
+											<i class="fa fa-calendar"></i>{{params["degreetwo"][1]}}
+											{% endif %}
+										</h6>
+										{% if params["degreetwo"][0] %}
+										<h4 class="timeline-title">{{params["degreetwo"][0]}}</h4>
+										{% endif %}
+										{% if params["degreetwo"][2] %}
+										<p class="timeline-text">{{params["degreetwo"][2]}}</p>
+										{% endif %}
+									</div>
+									{% endif %}
+									{% if (params["degreethree"][0]) %}
+									<div class="timeline-item">
+										<div class="circle-dot">
+										</div>
+										<h6 class="timeline-date">
+											{% if params["degreethree"][1] %}
+											<i class="fa fa-calendar"></i>{{params["degreethree"][1]}}
+											{% endif %}
+										</h6>
+										{% if params["degreethree"][0] %}
+										<h4 class="timeline-title">{{params["degreethree"][0]}}</h4>
+										{% endif %}
+										{% if params["degreethree"][2] %}
+										<p class="timeline-text">{{params["degreethree"][2]}}</p>
+										{% endif %}
+									</div>
+									{% endif %}
+
+									{% if (params["degreefour"][0]) %}
+									<div class="timeline-item">
+										<div class="circle-dot">
+										</div>
+										<h6 class="timeline-date">
+											{% if params["degreefour"][1] %}
+											<i class="fa fa-calendar"></i>{{params["degreefour"][1]}}
+											{% endif %}
+										</h6>
+										{% if params["degreefour"][0] %}
+										<h4 class="timeline-title">{{params["degreefour"][0]}}</h4>
+										{% endif %}
+										{% if params["degreefour"][2] %}
+										<p class="timeline-text">{{params["degreefour"][2]}}</p>
+										{% endif %}
+									</div>
+									{% endif %}
+
+
+								</div>
+							</div>
+							</div>
+					</div>
+					<div class="exprience padd-15">
+							<h3 class="title">Experience</h3>
+							<div class="row">
+								<div class="timeline-box padd-15">
+								<div class="timeline shadow-dark">
+									{% if (params["jobone"][0]) %}
+									<div class="timeline-item">
+										<div class="circle-dot">
+										</div>
+										<h6 class="timeline-date">
+											{% if params["jobone"][3] %}
+											<i class="fa fa-calendar"></i>{{params["jobone"][3]}}
+											{% endif %}
+										</h6>
+										{% if params["jobone"][0] %}
+										<h4 class="timeline-title">{{params["jobone"][0]}}</h4>
+										{% endif %}
+										{% if params["jobone"][1] %}
+										<b class="timeline-text">{{params["jobone"][1]}}</b>
+										{% endif %}
+										{% if params["jobone"][2] %}
+										<h6 class="timeline-text">{{params["jobone"][2]}}</h6>
+										{% endif %}
+										{% if params["jobone"][4] %}
+										<p >{{params["jobone"][4]}}</p>
+										{% endif %}
+									</div>
+									{% endif %}
+
+									{% if (params["jobtwo"][0]) %}
+									<div class="timeline-item">
+										<div class="circle-dot">
+										</div>
+										<h6 class="timeline-date">
+											{% if params["jobtwo"][3] %}
+											<i class="fa fa-calendar"></i>{{params["jobtwo"][3]}}
+											{% endif %}
+										</h6>
+										{% if params["jobtwo"][0] %}
+										<h4 class="timeline-title">{{params["jobtwo"][0]}}</h4>
+										{% endif %}
+										{% if params["jobtwo"][1] %}
+										<b class="timeline-text">{{params["jobtwo"][1]}}</b>
+										{% endif %}
+										{% if params["jobtwo"][2] %}
+										<h6 class="timeline-text">{{params["jobtwo"][2]}}</h6>
+										{% endif %}
+										{% if params["jobtwo"][4] %}
+										<p >{{params["jobtwo"][4]}}</p>
+										{% endif %}
+									</div>
+									{% endif %}
+
+									{% if (params["jobthree"][0]) %}
+									<div class="timeline-item">
+										<div class="circle-dot">
+										</div>
+										<h6 class="timeline-date">
+											{% if params["jobthree"][3] %}
+											<i class="fa fa-calendar"></i>{{params["jobthree"][3]}}
+											{% endif %}
+										</h6>
+										{% if params["jobthree"][0] %}
+										<h4 class="timeline-title">{{params["jobthree"][0]}}</h4>
+										{% endif %}
+										{% if params["jobthree"][1] %}
+										<b class="timeline-text">{{params["jobthree"][1]}}</b>
+										{% endif %}
+										{% if params["jobthree"][2] %}
+										<h6 class="timeline-text">{{params["jobthree"][2]}}</h6>
+										{% endif %}
+										{% if params["jobthree"][4] %}
+										<p >{{params["jobthree"][4]}}</p>
+										{% endif %}
+									</div>
+									{% endif %}
+
+									{% if (params["jobfour"][0]) %}
+									<div class="timeline-item">
+										<div class="circle-dot">
+										</div>
+										<h6 class="timeline-date">
+											{% if params["jobfour"][3] %}
+											<i class="fa fa-calendar"></i>{{params["jobfour"][3]}}
+											{% endif %}
+										</h6>
+										{% if params["jobfour"][0] %}
+										<h4 class="timeline-title">{{params["jobfour"][0]}}</h4>
+										{% endif %}
+										{% if params["jobfour"][1] %}
+										<b class="timeline-text">{{params["jobfour"][1]}}</b>
+										{% endif %}
+										{% if params["jobfour"][2] %}
+										<h6 class="timeline-text">{{params["jobfour"][2]}}</h6>
+										{% endif %}
+										{% if params["jobfour"][4] %}
+										<p >{{params["jobfour"][4]}}</p>
+										{% endif %}
+									</div>
+									{% endif %}
+
+									{% if (params["jobfive"][0]) %}
+									<div class="timeline-item">
+										<div class="circle-dot">
+										</div>
+										<h6 class="timeline-date">
+											{% if params["jobfive"][3] %}
+											<i class="fa fa-calendar"></i>{{params["jobfive"][3]}}
+											{% endif %}
+										</h6>
+										{% if params["jobfive"][0] %}
+										<h4 class="timeline-title">{{params["jobfive"][0]}}</h4>
+										{% endif %}
+										{% if params["jobfive"][1] %}
+										<b class="timeline-text">{{params["jobfive"][1]}}</b>
+										{% endif %}
+										{% if params["jobfive"][2] %}
+										<h6 class="timeline-text">{{params["jobfive"][2]}}</h6>
+										{% endif %}
+										{% if params["jobfive"][4] %}
+										<p >{{params["jobfive"][4]}}</p>
+										{% endif %}
+									</div>
+									{% endif %}
+									
+								</div>
+							</div>
+							</div>
+				</div>
+					</div>
+				</div>
+		</div>
+	</section>
+	<!--About-->
+	<!--Service-->
+	<section class="service section" id="project">
+		<div class="container">
+			<div class="row">
+				<div class="section-title padd-15">
+					<h2>Recent Projects</h2>
+				</div>
+			</div>
+			<div class="row">
+				{% if (params["projectone"][0]) %}
+				<div class="service-item padd-15">
+					<div class="service-item-inner">
+						<div class="icon">
+							<img src="https://source.unsplash.com/400x300/?project,coding" width="100%"/>
+						</div>
+						{% if params["projectone"][0] %}
+						<h4>{{params["projectone"][0]}}</h4>
+						{% endif %}
+						{% if params["projectone"][2] %}
+						<p>{{params["projectone"][2]}}</p>
+						{% endif %}
+						{% if params["projectone"][1] %}
+						<a href="{{params['projectone'][1]}}"><button style="background:#d3088f; padding:3px; cursor:pointer;"><b>View Source/Live</b></button></a>
+						{% endif %}
+					</div>
+				</div>
+				{% endif %}
+				
+				{% if (params["projecttwo"][0]) %}
+				<div class="service-item padd-15">
+					<div class="service-item-inner">
+						<div class="icon">
+							<img src="https://source.unsplash.com/400x300/?code" width="100%"/>
+						</div>
+						{% if params["projecttwo"][0] %}
+						<h4>{{params["projecttwo"][0]}}</h4>
+						{% endif %}
+						{% if params["projecttwo"][2] %}
+						<p>{{params["projecttwo"][2]}}</p>
+						{% endif %}
+						{% if params["projecttwo"][1] %}
+						<a href="{{params['projecttwo'][1]}}"><button style="background:#53b3f7; padding:2px; cursor:pointer;"><b>View Source/Live</b></button></a>
+						{% endif %}
+					</div>
+				</div>
+				{% endif %}
+
+				{% if (params["projectthree"][0]) %}
+				<div class="service-item padd-15">
+					<div class="service-item-inner">
+						<div class="icon">
+							<img src="https://source.unsplash.com/400x300/?coding" width="100%"/>
+						</div>
+						{% if params["projectthree"][0] %}
+						<h4>{{params["projectthree"][0]}}</h4>
+						{% endif %}
+						{% if params["projectthree"][2] %}
+						<p>{{params["projectthree"][2]}}</p>
+						{% endif %}
+						{% if params["projectthree"][1] %}
+						<a href="{{params['projectthree'][1]}}"><button style="background:#53b3f7; padding:2px; cursor:pointer;"><b>View Source/Live</b></button></a>
+						{% endif %}
+					</div>
+				</div>
+				{% endif %}
+
+				{% if (params["projectfour"][0]) %}
+				<div class="service-item padd-15">
+					<div class="service-item-inner">
+						<div class="icon">
+							<img src="https://source.unsplash.com/400x300/?project,coding" width="100%"/>
+						</div>
+						{% if params["projectfour"][0] %}
+						<h4>{{params["projectfour"][0]}}</h4>
+						{% endif %}
+						{% if params["projectfour"][2] %}
+						<p>{{params["projectfour"][2]}}</p>
+						{% endif %}
+						{% if params["projectfour"][1] %}
+						<a href="{{params['projectone'][1]}}"><button style="background:#53b3f7; padding:2px; cursor:pointer;"><b>View Source/Live</b></button></a>
+						{% endif %}
+					</div>
+				</div>
+				{% endif %}
+
+				{% if (params["projectfive"][0]) %}
+				<div class="service-item padd-15">
+					<div class="service-item-inner">
+						<div class="icon">
+							<img src="https://source.unsplash.com/400x300/?project,coding" width="100%"/>
+						</div>
+						{% if params["projectfive"][0] %}
+						<h4>{{params["projectfive"][0]}}</h4>
+						{% endif %}
+						{% if params["projectfive"][2] %}
+						<p>{{params["projectfive"][2]}}</p>
+						{% endif %}
+						{% if params["projectfive"][1] %}
+						<a href="{{params['projectfive'][1]}}"><button style="background:#53b3f7; padding:2px; cursor:pointer;"><b>View Source/Live</b></button></a>
+						{% endif %}
+					</div>
+				</div>
+				{% endif %}
+
+				{% if (params["projectsix"][0]) %}
+				<div class="service-item padd-15">
+					<div class="service-item-inner">
+						<div class="icon">
+							<img src="https://source.unsplash.com/400x300/?project,coding" width="100%"/>
+						</div>
+						{% if params["projectsix"][0] %}
+						<h4>{{params["projectsix"][0]}}</h4>
+						{% endif %}
+						{% if params["projectsix"][2] %}
+						<p>{{params["projectsix"][2]}}</p>
+						{% endif %}
+						{% if params["projectsix"][1] %}
+						<a href="{{params['projectsix'][1]}}"><button style="background:#53b3f7; padding:2px; cursor:pointer;"><b>View Source/Live</b></button></a>
+						{% endif %}
+					</div>
+				</div>
+				{% endif %}
+
+			</div>
+			</div>
+	</section>
+	<!-- end Service-->
+	
+	<!--Blog Section-->
+    <section class="blog section" id="blog">
+		<div class="container">
+			{% if params["certificates"][0][0] %}
+			<div class="row">
+				<div class="section-title padd-15">
+					<h2>Certifications</h2>
+				</div>
+			</div>
+			<div class="row">
+				{% for i in params["certificates"] %}
+                {% if i[0] %}
+				<div class="certi_data padd-15">
+					<div class="skills__names">
+						<img src="https://img.icons8.com/fluent/24/000000/contract.png"/>
+                        <span class="skills__name"> {{i[0]}}</span>
+                        <span style="margin-left:10px;"><a href="{{i[1]}}">Verify</a></span>
+					</div>
+				</div>
+				{% endif %}
+                {% endfor %}
+			</div>
+			{% endif %}
+
+			{% if params["achivements"][0][0] %}
+			<div class="row">
+				<div class="section-title padd-15">
+					<h2>Achievements and Awards</h2>
+				</div>
+			</div>
+			<div class="row">
+				{% for i in params["achivements"] %}
+                {% if i%}
+				<div class="certi_data padd-15">
+					<div class="skills__names">
+						<img src="https://img.icons8.com/color/24/000000/medal.png"/>
+                        <span class="skills__name"> {{i}}</span>
+					</div>
+				</div>
+				{% endif %}
+                {% endfor %}
+			</div>
+			{% endif %}
+			<div class="row">
+				<div class="section-title padd-15">
+					<h2>Lastest Blog</h2>
+				</div>
+			</div>
+			<div class="row">
+				{% if params["doingone"][0] %}
+				<div class="blog-item padd-15">
+					<div class="blog-item-inner shadow-dark">
+						<div class="blog-img">
+							<img src="https://source.unsplash.com/400x300/?blog" alt="blog">
+						</div>
+							<div class="blog-info">
+								<a href="{{params['doingone'][0]}}"><p class="blog-description">{{params["doingone"][1]}}</p></a>
+							</div>
+						</div>
+					</div>
+					{% endif %}
+					{% if params["doingtwo"][0] %}
+				<div class="blog-item padd-15">
+					<div class="blog-item-inner shadow-dark">
+						<div class="blog-img">
+							<img src="https://source.unsplash.com/400x300/?blog,tech" alt="blog">
+						</div>
+							<div class="blog-info">
+								<a href="{{params['doingtwo'][0]}}"><p class="blog-description">{{params["doingtwo"][1]}}</p></a>
+							</div>
+						</div>
+					</div>
+					{% endif %}
+					{% if params["doingtwo"][0] %}
+				<div class="blog-item padd-15">
+					<div class="blog-item-inner shadow-dark">
+						<div class="blog-img">
+							<img src="https://source.unsplash.com/400x300/?blog,code" alt="blog">
+						</div>
+							<div class="blog-info">
+								<a href="{{params['doingthree'][0]}}"><p class="blog-description">{{params["doingthree"][1]}}</p></a>
+							</div>
+						</div>
+					</div>
+					{% endif %}
+			</div>
+		</div>
+	</section>
+	<!--end blog-->
+	<!--Contact section-->
+	 <section class="contact section" id="contact">
+		<div class="container">
+			<div class="row">
+				<div class="section-title padd-15">
+					<h2>Contact Me</h2>
+				</div>
+			</div>
+			<div class="row">
+			<div class="contact-info-item padd-15">
+				<div class="icon"><i class="fa fa-phone"></i></div>
+				<h4>Call Us On</h4>
+				<p>{{params["mobile"]}}</p>
+			</div>
+			<div class="contact-info-item padd-15">
+				<div class="icon"><i class="fa fa-map-marker"></i></div>
+				<h4>Address</h4>
+				<p>{{params["city"]}}</p>
+			</div>
+			<div class="contact-info-item padd-15">
+				<div class="icon"><i class="fa fa-envelope"></i></div>
+				<h4>Email</h4>
+				<p>{{params["email"]}}</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="contacts padd-15">
+				<div class="social-links">
+					{% if params["linkedin"] %}
+                    <a href="https://www.linkedin.com/in/{{params['linkedin']}}" ><i class="fa fa-linkedin" ></i></a>
+                    {% endif %}
+                    {% if params["fb"] %}
+                    <a href="https://www.facebook.com/{{params['fb']}}" ><i class='fa fa-facebook' ></i></a>
+                    {% endif %}
+                    {% if (params["github"]) %}
+                    <a href="https://github.com/{{params['github']}}" ><i class='fa fa-github' ></i></a>
+                    {% endif %}
+                    {% if params["twitter"] %}
+                     <a href="https://twitter.com/{{params['twitter']}}"><i class='fa fa-twitter'></i></a>
+                     {% endif %}
+                     {% if params["instagram"] %}
+                     <a href="https://www.instagram.com/{{params['instagram']}}"><i class='fa fa-instagram'></i></a>
+					 {% endif %}
+
+                     {% if params['dev'] %}
+                     <a href="https://dev.to/{{params['dev']}}" class="home__social-icon"><i class='fa fa-dev-to'>dev</i></a>
+                     {% endif %}
+                     {% if params['codepen'] %}
+                     <a href="https://codepen.io/{{params['codepen']}}" class="home__social-icon"><i class='fa fa-codepen' ></i></a>
+                     {% endif %}
+                     {% if (params["stackoverflow"]) %}
+                     <a href="https://stackoverflow.com/users/{{params['stackoverflow']}}" class="home__social-icon"><i class='fa fa-stack-overflow' ></i></a>
+                     {% endif %}
+                     {% if params["medium"] %}
+                      <a href="https://medium.com/{{params['medium']}}" class="home__social-icon"><i class='fa fa-medium'></i></a>
+                      {% endif %}
+                      {% if params["youtube"] %}
+                      <a href="{{params['youtube']}}" class="home__social-icon"><i class='fa fa-youtube'></i></a>
+                      {% endif %}
+				</div>
+			</div>
+
+		</div>
+		<!--form-->
+		<div class="row">
+			<form class="contact-form padd-15">
+				<div class="row">
+					<div class="form-item col-6 padd-15">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Name">
+						</div>
+					</div>
+					<div class="form-item col-6 padd-15">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Email">
+						</div>
+					</div>
+					</div>
+					<div class="row">
+						<div class="form-item col-12 padd-15">
+						<div class="form-group">
+							<input type="text" class="form-control"placeholder="Subject">
+						</div>
+					</div>
+					
+				</div>
+				<div class="row">
+						<div class="form-item col-12 padd-15">
+						<div class="form-group">
+							<textarea class="form-control"  placeholder="Your Message.....">
+							</textarea>
+						</div>
+					</div>
+					</div>
+                 <div class="row">
+						<div class="form-item col-12 padd-15">
+							<button type="Submit" class="btn">Send Message</button>
+					</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<!--end contact section-->
+</div>
+<div class="code section">
+	<button id="button1" onclick="CopyToClipboard('content')">Click to copy</button>
+	<br /><br />
+	<pre id="content" style="color: #fff;background:rgb(0, 0, 0); height:550px; overflow:scroll; padding:10px;">
+		&lt!DOCTYPE html&gt
+		&lthtml&gt
+		&lthead&gt
+			&ltmeta charset="utf-8"&gt
+			&lttitle&gt{{params['yourname']}}&lt/title&gt
+		
+			&ltlink rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt
+			&ltlink href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'&gt
+		&ltstyle&gt
+			.aside .logo a::before{
+				border-top: 4px solid #ec1839;
+				border-left: 4px solid #ec1839;
+			}
+			.aside .logo a::after{
+				border-bottom: 4px solid #ec1839;
+				border-right:  4px solid #ec1839;
+			}
+			 
+			.contact .contact-info-item .icon .fa,
+			.blog .blog-item-inner .blog-info .blog-tags a,
+			
+			.aside .nav li a:hover,
+			.service .service-item .service-item-inner .icon .fa,
+			.about .about-content .about-text h3 span,
+				.aside .nav li a.active
+			{
+				color: #00ff22;
+			}
+			.blog .blog-item-inner .blog-img .blog-date,
+			.service .service-item .service-item-inner:hover .icon .fa,
+			.about .about-content .timeline .circle-dot,
+			.about .about-content .timeline .timeline-item::before,
+			.aside .nav-toggler span,
+			.btn,.about .about-content .skills .skill-item .progress .progress-in,
+			.aside .nav-toggler span::before
+				,.aside .nav-toggler span::after,
+				.section-title h2::before,
+				.section-title h2::after,
+				.home .intro .social-links a{
+					background-color: #ec1839;
+				}
+				.btn{
+					background-color: #068b7a;
+				}
+				
+		
+		
+		@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Suez+One&display=swap');
+		/*General Style*/
+		body{
+			margin: 0;
+			line-height: 1.5;
+			font-size: 16px;
+			font-family: 'Poppins', sans-serif;
+			font-weight: 400;
+		}
+		*{
+			margin: 0;
+			padding: 0;
+			outline: none;
+			text-decoration: none;
+			box-sizing: border-box;
+		}
+		::before,::after{
+			box-sizing: border-box;
+			}
+		input,textarea,select{
+			font-family: 'Poppins', sans-serif;
+		}	
+		.section{
+			background-color: #131315;
+			min-height: 100vh;
+			display: block;
+			padding: 0 30px;
+			position: fixed;
+			left: 270px;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 0;
+			opacity:1; 
+			overflow-x:hidden;
+			overflow-y:auto; 
+			-webkit-transition:all 03s ease;
+			transition: all 0.3s ease;
+		}
+		.section.back-section{
+			z-index: 1;
+		}
+		.section.active{
+			opacity: 1;
+			z-index: 2;
+			-webkit-animation: slideSection 1s ease;
+			animation: slideSection 1s ease;
+		}
+		@-webkit-keyframes slideSection{
+			0%{
+				-webkit-transform:translateX(100%);
+				transform: translateX(100%);
+			}
+			100%{
+				-webkit-transform:translateX(0%);
+				transform: translateX(0%);
+			}
+		}
+		@keyframes slideSection{
+			0%{
+				-webkit-transform:translateX(100%);
+				transform: translateX(100%);
+			}
+			100%{
+				-webkit-transform:translateX(0%);
+				transform: translateX(0%);
+			}
+		}
+		.section.container{
+			padding-top: 60px;
+			padding-bottom: 70px;
+		
+		}
+		.section-title{
+			-ms-flex:0 0 100%;
+			flex: 0 0 100%;
+			max-width: 100%;
+			margin-bottom: 60px;
+		}
+		.section-title h2{
+			font-size: 40px;
+			color:#fbf3f4;
+			font-family: 'Suez One', serif;
+			font-weight: 700;
+			margin: 0;
+			position: relative;
+		}
+		.section-title h2::before{
+			content: '';
+			height:4px;
+			width: 60px;
+			position: absolute;
+			top: 100%;
+			left: 0;
+		}
+		.section-title h2::after{
+			content: '';
+			height:4px;
+			width: 40px;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			margin-top:8px;
+		}
+		.row{
+			display: flex;
+			display: -ms-flexbox;
+			-ms-flex-wrap:wrap;
+			flex-wrap: wrap;
+			margin-right: -15px;
+			margin-left: -15px;
+			position: relative;
+		}
+		.padd-15{
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		/*.main-content{
+			padding-left: 270px;
+		}*/
+		.container{
+			max-width: 1100px;
+			margin: auto;
+			width: 100%;
+		}
+		.shadow-dark{
+			-webkit-box-shadow: 0 0 20px rgba(48,46,77,8.15);
+			box-shadow: 0 0 20px rgba(48,46,77,8.15);
+		}
+		.btn{
+			font-size: 16px;
+			font-family: 'Suez One', serif;
+			font-weight: 500;
+			padding: 12px 35px;
+			color: #ffffff;
+			border-radius: 40px;
+			-webkit-transition: all 0.3s ease;
+			transition: all 0.3s ease;
+			display: inline-block;
+			white-space: nowrap;
+			border:none;
+			cursor: pointer;
+		}
+		.btn:hover{
+			-webkit-transform: scale(1.1);
+			transform: scale(1.1);
+		}
+		.hidden{
+			display: none!important;
+		}
+		/*Aside*/
+		.aside{
+			width: 270px;
+			background-color: #3b3a3c;
+			position: fixed;
+			height: 100%;
+			left: 0;
+			top: 0;
+			z-index: 10;
+			border-right: 1px solid #e8dfec;
+			padding: 30px;
+		   -webkit-transition:all 03s ease;
+			transition: all 0.3s ease;
+		}
+		.aside .logo{
+			padding:30px 0;
+			
+		}
+		.aside .logo a{
+			font-size: 40px;
+			color:#53b3f7;
+			font-family: 'Suez One', serif;
+			font-weight: 700;
+			text-decoration: none;
+			display: inline-block;
+			position: relative;
+			padding: 0 10px;
+			line-height: 50px;
+		
+		}
+		.aside .logo a::before{
+			content: '';
+			height:20px;
+			width: 20px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		
+		}
+		.aside .logo a::after{
+			content: '';
+			height:20px;
+			width: 20px;
+			position: absolute;
+			bottom:0;
+			right:  0;
+		}
+		.aside .nav-toggler{
+			height: 40px;
+			width: 40px;
+			border:1px solid #d4d4e3;
+			position: fixed;
+			cursor: pointer;
+			left:300px;
+			top: 20px;
+			z-index: 11;
+			border-radius: 5px;
+			background-color: #fdf9ff;
+		   /* display: -ms-flexbox;
+			display: flex;*/
+			display: none;
+			-ms-flex-align:center;
+			align-items: center;
+			-ms-flex-pack:center;
+			justify-content: center;
+			-webkit-transition:all 03s ease;
+			transition: all 0.3s ease;
+		}
+		.aside .nav-toggler span{
+			height: 2px;
+			width: 18px;
+			display: inline-block;
+			position: relative;
+		}
+		.aside .nav-toggle.open span{
+			background-color: transparent;
+			
+		}
+		
+		.aside .nav-toggler.open span::before{
+			-webkit-transform:rotate(45deg);
+			transform: rotate(45deg);
+			top: 0px;
+		}
+		
+		.aside .nav-toggler span::before{
+		content: '';
+		height: 2px;
+		width: 18px;
+		position: absolute;
+		top: -6px;
+		left: 0;
+		}
+		.aside .nav-toggler span::after{
+		content: '';
+		height: 2px;
+		width: 18px;
+		position: absolute;
+		top: 6px;
+		left: 0;
+		}
+		.aside .nav-toggle.open span::after{
+			-webkit-transform:rotate(-45deg);
+			transform: rotate(-45deg);
+			top: 0px;
+		}
+		.aside .nav{
+		
+			list-style:none;
+			margin:80px 0; 
+			padding: 0;
+		}
+		.aside .nav li{
+			display: block;
+		}
+		.aside .nav li a{
+			font-weight: 600;
+			font-size: 16px;
+			color: #fdf9ff;
+			text-decoration: none;
+			line-height: 45px;
+			display: block;
+			border-bottom: 1px solid #e8dfec;
+			transition: all 0.3s ease;
+			text-transform: capitalize;
+		}
+		.aside .nav li a:not(.active):hover{
+			padding-left: 5px;
+		}
+		.aside .nav li a .fa{
+			margin-right: 5px;
+		}
+		.aside .copyright-text{
+			font-size: 13px;
+			color: #e8dfec;
+		}
+		
+		/*home*/
+		.home{
+			min-height:100vh;
+			display: -ms-flexbox;
+			display: flex;
+		}
+		.home .intro{
+			text-align: center;
+		}
+		.home .intro img{
+			height: 300px;
+			width: 300px;
+			border-radius: 50%;
+			display: inline-block;
+			border:8px solid #ffffff;
+		}
+		.home .intro h1{
+			font-size: 30px;
+			color:#eee;
+			font-family: 'Suez One', serif;
+			font-weight: 700;
+			margin: 20px 0 5px;
+		}
+		.home .intro p{
+			font-size: 16px;
+			font-weight: 500;
+			margin: 0;
+			line-height: 22px;
+			color:#06e8f0;
+		}
+		.home .intro .social-links{
+			margin-top: 25px;
+		}
+		.home .intro .social-links a{
+			height: 35px;
+			width: 35px;
+			display: inline-block;
+			text-align: center;
+			margin: 0 4px;
+			line-height: 35px;
+			color: #ffffff;
+			border-radius: 50%;
+			text-decoration: none;
+			-webkit-transition:all 0.3s ease;
+			transition: all 0.3s ease;
+		
+		}
+		.home .intro .social-links a:hover{
+			-webkit-transform:scale(1.1);
+			transform: scale(1.1);
+		}
+		/*about*/
+		.about .about-content{
+			-ms-flex:0 0 100%;
+			flex:0 0 100%;
+			max-width: 100%;
+		}
+		.about .about-content .about-text{
+			-ms-flex:0 0 100%;
+			flex:0 0 100%;
+			max-width: 100%;
+		}
+		.about .about-content .about-text h3{
+			font-size: 24px;
+			margin-top: 15px;
+			font-weight: 700;
+			color: #eee;
+		}
+		.about .about-content .about-text p{
+			font-size:16px;
+			line-height: 25px;
+			color: #1dc8f3;
+			margin: 0;
+		
+		}
+		.about .about-content .personal-info{
+			-ms-flex:0 0 60%;
+			flex: 0 0 60%;
+			max-width: 60%;
+			margin-top: 40px;
+		}
+		.about .about-content .personal-info .info-item{
+		-ms-flex:0 0 50%;
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+		.about .about-content .personal-info .info-item p{
+		font-weight: 600;
+		padding: 10px 0;
+		font-size: 16px;
+		color: #eee;
+		margin: 0;
+		border-bottom: 1px solid #e8dfec;
+		
+		}
+		.about .about-content .personal-info .info-item p span{
+			font-weight: bold;
+			color: #ff0ad6;
+			margin-left: 4px;
+		}
+		.about .about-content .personal-info .buttons{
+			margin-top: 30px;
+		}
+		.about .about-content .personal-info .buttons .btn{
+			margin-right: 15px;
+			margin-top: 10px;
+		}
+		.about .about-content .skills{
+		-ms-flex:0 0 40%;
+			flex: 0 0 40%;
+			max-width: 40%;
+			margin-top: 40px;
+		}
+		.about .about-content .skills .skill-item{
+		-ms-flex:0 0 100%;
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+		.about .about-content .skills .skill-item h5{
+			line-height: 40px;
+			font-weight: 600;
+			font-size: 16px;
+			color: #eee;
+			text-transform: capitalize;
+			margin: 0;
+		}
+		.about .about-content .skills .skill-item .progress{
+			background-color: #e3e3e3;
+			height: 8px;
+			border-radius: 4px;
+			width: 100%;
+			position: relative;
+		}
+		.about .about-content .skills .skill-item{
+			margin-bottom: 30px;
+		}
+		.about .about-content .skills .skill-item .progress .progress-in{
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			border-radius: 4px;
+		}
+		.about .about-content .skills .skill-item .skill-percent{
+			line-height: 40px;
+			position: absolute;
+			right: 0;
+			top: -40px;
+			font-weight: 400;
+			color: #eee;
+		
+		}
+		.about .about-content .education{
+		-ms-flex:0 0 50%;
+			flex: 0 0 50%;
+			max-width: 50%;
+			margin-top: 30px;
+		}
+		.about .about-content .exprience{
+			-ms-flex:0 0 50%;
+			flex: 0 0 50%;
+			max-width: 50%;
+			margin-top: 30px;
+		}
+		.about .about-content h3.title{
+			font-size: 24px;
+			font-weight: 700;
+			color: #fbf3f4;
+			margin-bottom: 30px;
+		}
+		.about .about-content .timeline-box{
+			-ms-flex:0 0 100%;
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+		.about .about-content .timeline{
+		background-color: #131315;
+		padding: 30px 15px;
+		border:1px solid #d4d4e3;
+		border-radius: 10px;
+		position: relative;
+		}
+		.about .about-content .timeline .timeline-item{
+			position: relative;
+			padding-left: 37px;
+			padding-bottom: 50px;
+		}
+		.timeline-item p{
+			font-size: 16px;
+			line-height: 25px;
+			color: #f7fcf7;
+			margin: 0;
+		}
+		.about .about-content .timeline .timeline-item::before{
+			content: '';
+			width: 1px;
+			position: absolute;
+			height: 100%;
+			left: 0;
+			top: 0;
+		}
+		.about .about-content .timeline .circle-dot{
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 15px;
+		width: 15px;
+		left: -7px;
+		border-radius: 50%;
+		}
+		.about .about-content .timeline .timeline-date{
+		font-weight: 400;
+		font-size: 14px;
+		margin-bottom: 12px;
+		color: #fdf590;
+		}
+		.about .about-content .timeline .timeline-date .fa{
+			margin-right: 5px;
+		}
+		.about .about-content .timeline .timeline-title{
+		font-weight: 700;
+		font-size: 18px;
+		margin-bottom: 15px;
+		text-transform: capitalize;
+		color:#fdf9ff;
+		}
+		.about .about-content .timeline .timeline-text{
+		font-size: 16px;
+		line-height: 25px;
+		color: #53b3f7;
+		margin: 0;
+		}
+		/*Service*/
+		.service .container{
+			padding-bottom: 40px;
+		}
+		.service .service-item{
+		margin-bottom: 30px;
+		-ms-flex:0 0 33.33%;
+		flex: 0 0 33.33%;
+		max-width: 33.33%;
+		}
+		.service .service-item .service-item-inner{
+		background-color: #131315;
+		border:1px solid #d4d4e3;
+		border-radius: 10px;
+		padding: 30px 15px;
+		text-align: center;
+		-webkit-transition: all 0.3s ease;
+			transition: all 0.3s ea
+		}
+		.service .service-item .service-item-inner:hover{
+			-webkit-box-shadow: 0 0 20px rgba(48,46,77,8.15);
+			box-shadow: 0 0 20px rgba(48,46,77,8.15);
+		
+		}
+		.project-button{
+			position:absolute;
+		}
+		.service .service-item .service-item-inner h4{
+			font-size: 16px;
+			margin-bottom: 15px;
+			color: #eee;
+			font-weight: 700;
+			text-transform: capitalize;
+		}
+		.service .service-item .service-item-inner p{
+			font-size: 16px;
+			color: #f5a511;
+			line-height:25px; 
+			margin: 0;
+		}
+		
+		/*start blog*/
+		
+		.certi_data{
+			margin:5px;
+			display:flexbox;
+			background:#fff;
+			box-shadow: 0px 0px 10px #25ffff;
+			border-radius: 10px;
+		
+		}
+		.skills__names{
+		  align-items: center;
+		  padding:4px;
+		}
+		.skills__name{
+			font-weight:bold;
+			margin-left:5px;
+		}
+		.blog .container{
+			padding-bottom: 30px;
+		}
+		.blog .blog-item{
+			flex: 0 0 33.33%;
+			max-width: 33.33%;
+		}
+		.blog .blog-item-inner{
+			border-radius: 10px;
+			overflow: hidden;
+			border:1px solid #d4d4e3;
+		}
+		.blog .blog-item-inner .blog-img{
+			position: relative;
+			overflow: hidden;
+		}
+		.blog .blog-item-inner .blog-img img{
+			width: 100%;
+			display: block;
+			-webkit-transition: all 0.5s ease;
+			transition: all 0.5s ease;
+		}
+		.blog .blog-item-inner:hover .blog-img img{
+			-webkit-transform: scale(1.1); 
+			transform: scale(1.1); 
+		}
+		.blog .blog-item-inner .blog-img .blog-date{
+			position: absolute;
+			padding: 4px 10px;
+			border-radius: 5px;
+			color: #ffffff;
+			font-weight: 600;
+			font-size: 14px;
+			left: 15px;
+			bottom: 15px;
+		}
+		.blog .blog-item-inner .blog-info{
+			padding:30px 15px;
+			background-color: #131315;
+		}
+		.blog .blog-item-inner .blog-info .blog-title{
+			font-size: 18px;
+			font-weight: 700;
+			color: #eee;
+			text-transform: capitalize;
+			margin-bottom: 10px;
+		}
+		.blog .blog-item-inner .blog-info .blog-description{
+			font-size: 16px;
+			line-height: 25px;
+			color:#1164c4;
+			font-weight: 400;
+			margin-bottom: 15px;
+		
+		}
+		.blog .blog-item-inner .blog-info .blog-tags{
+			font-size: 14px;
+			line-height: 25px;
+			color: #eee;
+			font-weight: 400;
+			text-transform: capitalize;
+		}
+		.blog .blog-item-inner .blog-info .blog-tags a{
+			text-decoration:none;
+			font-weight:600;
+		}	
+		/*contact section*/
+		.contact .contact-info-item{
+			-ms-flex:0 0 33.33%;
+			flex: 0 0 33.33%;
+			max-width: 33.33%;
+			text-align: center;
+			margin-bottom: 40px;
+		}
+		.contact .contact-info-item .icon{
+			display: inline-block;
+		}
+		.contact .contact-info-item .icon .fa{
+			font-size: 40px;
+		}
+		.contact .contact-info-item h4{
+			font-weight: 700;
+			font-size: 18px;
+			color: #fbf3f4;
+			text-transform: capitalize;
+			margin:15px 0 5px;
+		}
+		.contact .contact-info-item p{
+			font-size: 16px;
+			line-height: 25px;
+			color: #f106d2;
+			margin: 0;
+			font-weight: 400;
+		}
+		.contacts{
+			max-width: 100%;
+			width: 100%;
+			text-align: center;
+			margin-bottom: 40px;
+		}
+		.contacts .social-links a{
+			height: 35px;
+			width: 35px;
+			display: inline-block;
+			text-align: center;
+			background:#d3088f;
+			margin: 4px 4px;
+			line-height: 35px;
+			color: #ffffff;
+			border-radius: 50%;
+			text-decoration: none;
+			-webkit-transition:all 0.3s ease;
+			transition: all 0.3s ease;
+		
+		}
+		.contacts .social-links a:hover{
+			-webkit-transform:scale(1.1);
+			transform: scale(1.1);
+			background:#d36308;
+		}
+		
+		.contact .contact-form{
+			-ms-flex:0 0 100%;
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+		.contact .contact-form .col-6{
+			-ms-flex:0 0 50%;
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+		.contact .contact-form .col-12{
+			-ms-flex:0 0 100%;
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+		.contact .contact-form .form-item{
+			margin-bottom: 30px;
+		}
+		.contact .contact-form .form-item .form-control{
+			width: 100%;
+			border-radius: 25px;
+			height: 50px;
+			border:1px solid #d4d4e3;
+			padding: 10px 25px;
+			font-size: 16px;
+			color: #504e70;
+			-webkit-transition: all 0.3s ease;
+			transition: all 0.3s ease;
+			background-color: #131315;
+		}
+		.contact .contact-form .form-item .form-control:focus{
+			-webkit-box-shadow: 0 0 20px rgba(48,46,77,0.15);
+			box-shadow: 0 0 20px rgba(48,46,77,0.15);
+		}
+		.contact .contact-form .form-item textarea.form-control{
+			height: 120px;
+		
+		}
+		.cntact .contact-form .btn{
+			height: 50px;
+			padding: 0 50px;
+		}
+		
+		
+		/*MEDIA Queary*/
+		@media(max-width: 1199px)
+		{
+			.section .container{
+				padding-top:70px;
+			}
+			.aside .nav-toggler{
+				display: -ms-flexbox;
+				display: flex;
+				left: 30px;
+			}
+			.aside{
+				left:-270px;
+			}
+			.aside .nav-toggler.open{
+				left: 300px;
+			}
+			.aside.open{
+				left: 0px;
+			}
+			.section{
+				left: 0;
+			}
+			.section.open{
+				left: 270px;
+			}
+			.main-content{
+				padding-left: 0;
+			}
+			.about .about-content .personal-info .info-item p span{
+				display: block;
+				margin-left: 0;
+			}
+		}
+		@media(max-width: 991px){
+			.blog .blog-item,
+			.service .service-item{
+			   -ms-flex:0 0 50%;
+				flex: 0 0 50%;
+				max-width: 50%;
+			}
+		}
+		@media(max-width: 767px){
+			.contact .contact-form .col-6,
+			.blog .blog-item,
+			.service .service-item,
+			.about .about-content .exprience,
+			.about .about-content .education,
+			.about .about-content .skills,
+			.about .about-content .personal-info{
+				-ms-flex:0 0 100%;
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
+		@media(max-width: 575px)
+		{
+			.contact .contact-info-item{
+				-ms-flex: 0 0 100%;
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
+		
+		
+		&lt/style&gt
+		&lt/head&gt
+		&ltbody&gt
+		&ltdiv class="aside"&gt
+			&lt!--logo--&gt
+			&ltdiv class="logo"&gt
+				&lta href="#home"&gt{{params['yourname'].split()[0]}}&lt/a&gt
+			&lt/div&gt
+			&ltdiv class="nav-toggler"&gt
+				&ltspan&gt&lt/span&gt
+			&lt/div&gt
+			&ltul class="nav"&gt
+				&ltli&gt&lta href="#home" class="active"&gt&lti class="fa fa-home"&gt&lt/i&gtHome&lt/a&gt&lt/li&gt
+				&ltli&gt&lta href="#about"&gt&lti class="fa fa-user"&gt&lt/i&gtAbout&lt/a&gt&lt/li&gt
+				&ltli&gt&lta href="#project"&gt&lti class="fa fa-list"&gt&lt/i&gtProject&lt/a&gt&lt/li&gt
+				&ltli&gt&lta href="#blog"&gt&lti class="fa fa-envelope"&gt&lt/i&gtCertificate/Blogs&lt/a&gt&lt/li&gt
+				&ltli&gt&lta href="#contact"&gt&lti class="fa fa-comments"&gt&lt/i&gtContact&lt/a&gt&lt/li&gt
+			&lt/ul&gt
+			&lt!--copyright--&gt
+			&ltdiv class="copyright-text"&gt@copy; 2020 {{params['yourname']}}
+				Powered by
+					  &lta style="text-decoration: none; color: tomato; font-weight: bold;" href="http://www.codescript.run/"&gt CodeScript&lt/a&gt
+			&lt/div&gt
+		&lt/div&gt
+		&lt!--Aside End--&gt
+		&lt!--main content--&gt
+		&ltdiv class="main-content show"&gt
+			&ltsection class="home section active" id="home"&gt
+				&ltdiv class="container"&gt
+					&ltdiv class="intro"&gt
+						&ltimg src="{{params['profile']}}" alt="Profile Image" class="shadow-dark"&gt
+						&lth1&gt{{params['yourname']}}&lt/h1&gt
+						&ltp id="typing"&gt&lt/p&gt
+						&ltdiv class="social-links"&gt
+							{% if params["linkedin"] %}
+							&lta href="https://www.linkedin.com/in/{{params['linkedin']}}" &gt&lti class="fa fa-linkedin" &gt&lt/i&gt&lt/a&gt
+							{% endif %}
+							{% if params["fb"] %}
+							&lta href="https://www.facebook.com/{{params['fb']}}" &gt&lti class='fa fa-facebook' &gt&lt/i&gt&lt/a&gt
+							{% endif %}
+							{% if (params["github"]) %}
+							&lta href="https://github.com/{{params['github']}}" &gt&lti class='fa fa-github' &gt&lt/i&gt&lt/a&gt
+							{% endif %}
+							{% if params["twitter"] %}
+							 &lta href="https://twitter.com/{{params['twitter']}}"&gt&lti class='fa fa-twitter'&gt&lt/i&gt&lt/a&gt
+							 {% endif %}
+							 {% if params["instagram"] %}
+							 &lta href="https://www.instagram.com/{{params['instagram']}}"&gt&lti class='fa fa-instagram'&gt&lt/i&gt&lt/a&gt
+							 {% endif %}
+						&lt/div&gt
+					&lt/div&gt
+				&lt/div&gt
+			&lt/section&gt
+			&lt!--About--&gt
+			&ltsection class="about section" id="about"&gt
+				&ltdiv class="container"&gt
+					&ltdiv class="row"&gt
+						&ltdiv class="section-title padd-15"&gt
+							&lth2&gtAbout Me&lt/h2&gt
+						&lt/div&gt
+					&lt/div&gt
+					&ltdiv class="row"&gt
+						&ltdiv class="about-content padd-15"&gt
+							&ltdiv class="row"&gt
+								&ltdiv class="about-text padd-15"&gt
+									&lth3&gtI Am {{params['yourname']}}&lt/h3&gt
+										&ltp&gt{{params["about"]}}&lt/p&gt
+								&lt/div&gt
+							&lt/div&gt
+							&ltdiv class="row"&gt
+								&ltdiv class="personal-info padd-15"&gt
+									&ltdiv class="row"&gt
+										&ltdiv class="info-item padd-15"&gt
+											&ltp&gtEmail:&ltspan&gt{{params["email"]}}&lt/span&gt&lt/p&gt
+										&lt/div&gt
+										&ltdiv class="info-item padd-15"&gt
+											&ltp&gtDegree:&ltspan&gt{{params["degree"]}}&lt/span&gt&lt/p&gt
+										&lt/div&gt
+										&ltdiv class="info-item padd-15"&gt
+											&ltp&gtPhone:&ltspan&gt{{params["mobile"]}}&lt/span&gt&lt/p&gt
+										&lt/div&gt
+										&ltdiv class="info-item padd-15"&gt
+											&ltp&gtCity:&ltspan&gt{{params["city"]}}&lt/span&gt&lt/p&gt
+										&lt/div&gt
+									&lt/div&gt
+									&ltdiv class="row"&gt
+										&ltdiv class="buttons padd-15"&gt
+											&lta href="{{params['resume']}}"class="btn"&gtDownload CV&lt/a&gt
+											&lta href="mailto:{{params['email']}}" data-section-index="1"class="btn hire-me"&gtHire me&lt/a&gt
+										&lt/div&gt
+									&lt/div&gt
+								&lt/div&gt
+								&ltdiv class="skills padd-15"&gt
+									&lth3 style="color:#fff;"&gtSkills&lt/h3&gt
+									&ltdiv class="row"&gt
+										{% for i in params["work_skill"] %}
+										&ltdiv class="certi_data padd-15"&gt
+											&ltdiv class="skills__names"&gt
+												&ltspan class="skills__name"&gt {{i}}&lt/span&gt
+											&lt/div&gt
+										&lt/div&gt
+											{% endfor %}
+										&lt/div&gt
+									&lt/div&gt
+								&lt/div&gt
+								&ltdiv class="row"&gt
+								&ltdiv class="education padd-15"&gt
+									&lth3 class="title"&gtEducation&lt/h3&gt
+									&ltdiv class="row"&gt
+										&ltdiv class="timeline-box padd-15"&gt
+										&ltdiv class="timeline shadow-dark"&gt
+											{% if (params["degreeone"][0]) %}
+											&ltdiv class="timeline-item"&gt
+												&ltdiv class="circle-dot"&gt
+												&lt/div&gt
+												&lth6 class="timeline-date"&gt
+													{% if params["degreeone"][1] %}
+													&lti class="fa fa-calendar"&gt&lt/i&gt{{params["degreeone"][1]}}
+													{% endif %}
+												&lt/h6&gt
+												{% if params["degreeone"][0] %}
+												&lth4 class="timeline-title"&gt{{params["degreeone"][0]}}&lt/h4&gt
+												{% endif %}
+												{% if params["degreeone"][2] %}
+												&ltp class="timeline-text"&gt{{params["degreeone"][2]}}&lt/p&gt
+												{% endif %}
+											&lt/div&gt
+											{% endif %}
+											{% if (params["degreetwo"][0]) %}
+											&ltdiv class="timeline-item"&gt
+												&ltdiv class="circle-dot"&gt
+												&lt/div&gt
+												&lth6 class="timeline-date"&gt
+													{% if params["degreetwo"][1] %}
+													&lti class="fa fa-calendar"&gt&lt/i&gt{{params["degreetwo"][1]}}
+													{% endif %}
+												&lt/h6&gt
+												{% if params["degreetwo"][0] %}
+												&lth4 class="timeline-title"&gt{{params["degreetwo"][0]}}&lt/h4&gt
+												{% endif %}
+												{% if params["degreetwo"][2] %}
+												&ltp class="timeline-text"&gt{{params["degreetwo"][2]}}&lt/p&gt
+												{% endif %}
+											&lt/div&gt
+											{% endif %}
+											{% if (params["degreethree"][0]) %}
+											&ltdiv class="timeline-item"&gt
+												&ltdiv class="circle-dot"&gt
+												&lt/div&gt
+												&lth6 class="timeline-date"&gt
+													{% if params["degreethree"][1] %}
+													&lti class="fa fa-calendar"&gt&lt/i&gt{{params["degreethree"][1]}}
+													{% endif %}
+												&lt/h6&gt
+												{% if params["degreethree"][0] %}
+												&lth4 class="timeline-title"&gt{{params["degreethree"][0]}}&lt/h4&gt
+												{% endif %}
+												{% if params["degreethree"][2] %}
+												&ltp class="timeline-text"&gt{{params["degreethree"][2]}}&lt/p&gt
+												{% endif %}
+											&lt/div&gt
+											{% endif %}
+		
+											{% if (params["degreefour"][0]) %}
+											&ltdiv class="timeline-item"&gt
+												&ltdiv class="circle-dot"&gt
+												&lt/div&gt
+												&lth6 class="timeline-date"&gt
+													{% if params["degreefour"][1] %}
+													&lti class="fa fa-calendar"&gt&lt/i&gt{{params["degreefour"][1]}}
+													{% endif %}
+												&lt/h6&gt
+												{% if params["degreefour"][0] %}
+												&lth4 class="timeline-title"&gt{{params["degreefour"][0]}}&lt/h4&gt
+												{% endif %}
+												{% if params["degreefour"][2] %}
+												&ltp class="timeline-text"&gt{{params["degreefour"][2]}}&lt/p&gt
+												{% endif %}
+											&lt/div&gt
+											{% endif %}
+		
+		
+										&lt/div&gt
+									&lt/div&gt
+									&lt/div&gt
+							&lt/div&gt
+							&ltdiv class="exprience padd-15"&gt
+									&lth3 class="title"&gtExperience&lt/h3&gt
+									&ltdiv class="row"&gt
+										&ltdiv class="timeline-box padd-15"&gt
+										&ltdiv class="timeline shadow-dark"&gt
+											{% if (params["jobone"][0]) %}
+											&ltdiv class="timeline-item"&gt
+												&ltdiv class="circle-dot"&gt
+												&lt/div&gt
+												&lth6 class="timeline-date"&gt
+													{% if params["jobone"][3] %}
+													&lti class="fa fa-calendar"&gt&lt/i&gt{{params["jobone"][3]}}
+													{% endif %}
+												&lt/h6&gt
+												{% if params["jobone"][0] %}
+												&lth4 class="timeline-title"&gt{{params["jobone"][0]}}&lt/h4&gt
+												{% endif %}
+												{% if params["jobone"][1] %}
+												&ltb class="timeline-text"&gt{{params["jobone"][1]}}&lt/b&gt
+												{% endif %}
+												{% if params["jobone"][2] %}
+												&lth6 class="timeline-text"&gt{{params["jobone"][2]}}&lt/h6&gt
+												{% endif %}
+												{% if params["jobone"][4] %}
+												&ltp &gt{{params["jobone"][4]}}&lt/p&gt
+												{% endif %}
+											&lt/div&gt
+											{% endif %}
+		
+											{% if (params["jobtwo"][0]) %}
+											&ltdiv class="timeline-item"&gt
+												&ltdiv class="circle-dot"&gt
+												&lt/div&gt
+												&lth6 class="timeline-date"&gt
+													{% if params["jobtwo"][3] %}
+													&lti class="fa fa-calendar"&gt&lt/i&gt{{params["jobtwo"][3]}}
+													{% endif %}
+												&lt/h6&gt
+												{% if params["jobtwo"][0] %}
+												&lth4 class="timeline-title"&gt{{params["jobtwo"][0]}}&lt/h4&gt
+												{% endif %}
+												{% if params["jobtwo"][1] %}
+												&ltb class="timeline-text"&gt{{params["jobtwo"][1]}}&lt/b&gt
+												{% endif %}
+												{% if params["jobtwo"][2] %}
+												&lth6 class="timeline-text"&gt{{params["jobtwo"][2]}}&lt/h6&gt
+												{% endif %}
+												{% if params["jobtwo"][4] %}
+												&ltp &gt{{params["jobtwo"][4]}}&lt/p&gt
+												{% endif %}
+											&lt/div&gt
+											{% endif %}
+		
+											{% if (params["jobthree"][0]) %}
+											&ltdiv class="timeline-item"&gt
+												&ltdiv class="circle-dot"&gt
+												&lt/div&gt
+												&lth6 class="timeline-date"&gt
+													{% if params["jobthree"][3] %}
+													&lti class="fa fa-calendar"&gt&lt/i&gt{{params["jobthree"][3]}}
+													{% endif %}
+												&lt/h6&gt
+												{% if params["jobthree"][0] %}
+												&lth4 class="timeline-title"&gt{{params["jobthree"][0]}}&lt/h4&gt
+												{% endif %}
+												{% if params["jobthree"][1] %}
+												&ltb class="timeline-text"&gt{{params["jobthree"][1]}}&lt/b&gt
+												{% endif %}
+												{% if params["jobthree"][2] %}
+												&lth6 class="timeline-text"&gt{{params["jobthree"][2]}}&lt/h6&gt
+												{% endif %}
+												{% if params["jobthree"][4] %}
+												&ltp &gt{{params["jobthree"][4]}}&lt/p&gt
+												{% endif %}
+											&lt/div&gt
+											{% endif %}
+		
+											{% if (params["jobfour"][0]) %}
+											&ltdiv class="timeline-item"&gt
+												&ltdiv class="circle-dot"&gt
+												&lt/div&gt
+												&lth6 class="timeline-date"&gt
+													{% if params["jobfour"][3] %}
+													&lti class="fa fa-calendar"&gt&lt/i&gt{{params["jobfour"][3]}}
+													{% endif %}
+												&lt/h6&gt
+												{% if params["jobfour"][0] %}
+												&lth4 class="timeline-title"&gt{{params["jobfour"][0]}}&lt/h4&gt
+												{% endif %}
+												{% if params["jobfour"][1] %}
+												&ltb class="timeline-text"&gt{{params["jobfour"][1]}}&lt/b&gt
+												{% endif %}
+												{% if params["jobfour"][2] %}
+												&lth6 class="timeline-text"&gt{{params["jobfour"][2]}}&lt/h6&gt
+												{% endif %}
+												{% if params["jobfour"][4] %}
+												&ltp &gt{{params["jobfour"][4]}}&lt/p&gt
+												{% endif %}
+											&lt/div&gt
+											{% endif %}
+		
+											{% if (params["jobfive"][0]) %}
+											&ltdiv class="timeline-item"&gt
+												&ltdiv class="circle-dot"&gt
+												&lt/div&gt
+												&lth6 class="timeline-date"&gt
+													{% if params["jobfive"][3] %}
+													&lti class="fa fa-calendar"&gt&lt/i&gt{{params["jobfive"][3]}}
+													{% endif %}
+												&lt/h6&gt
+												{% if params["jobfive"][0] %}
+												&lth4 class="timeline-title"&gt{{params["jobfive"][0]}}&lt/h4&gt
+												{% endif %}
+												{% if params["jobfive"][1] %}
+												&ltb class="timeline-text"&gt{{params["jobfive"][1]}}&lt/b&gt
+												{% endif %}
+												{% if params["jobfive"][2] %}
+												&lth6 class="timeline-text"&gt{{params["jobfive"][2]}}&lt/h6&gt
+												{% endif %}
+												{% if params["jobfive"][4] %}
+												&ltp &gt{{params["jobfive"][4]}}&lt/p&gt
+												{% endif %}
+											&lt/div&gt
+											{% endif %}
+											
+										&lt/div&gt
+									&lt/div&gt
+									&lt/div&gt
+						&lt/div&gt
+							&lt/div&gt
+						&lt/div&gt
+				&lt/div&gt
+			&lt/section&gt
+			&lt!--About--&gt
+			&lt!--Service--&gt
+			&ltsection class="service section" id="project"&gt
+				&ltdiv class="container"&gt
+					&ltdiv class="row"&gt
+						&ltdiv class="section-title padd-15"&gt
+							&lth2&gtRecent Projects&lt/h2&gt
+						&lt/div&gt
+					&lt/div&gt
+					&ltdiv class="row"&gt
+						{% if (params["projectone"][0]) %}
+						&ltdiv class="service-item padd-15"&gt
+							&ltdiv class="service-item-inner"&gt
+								&ltdiv class="icon"&gt
+									&ltimg src="https://source.unsplash.com/400x300/?project,coding" width="100%"/&gt
+								&lt/div&gt
+								{% if params["projectone"][0] %}
+								&lth4&gt{{params["projectone"][0]}}&lt/h4&gt
+								{% endif %}
+								{% if params["projectone"][2] %}
+								&ltp&gt{{params["projectone"][2]}}&lt/p&gt
+								{% endif %}
+								{% if params["projectone"][1] %}
+								&lta href="{{params['projectone'][1]}}"&gt&ltbutton style="background:#d3088f; padding:3px; cursor:pointer;"&gt&ltb&gtView Source/Live&lt/b&gt&lt/button&gt&lt/a&gt
+								{% endif %}
+							&lt/div&gt
+						&lt/div&gt
+						{% endif %}
+						
+						{% if (params["projecttwo"][0]) %}
+						&ltdiv class="service-item padd-15"&gt
+							&ltdiv class="service-item-inner"&gt
+								&ltdiv class="icon"&gt
+									&ltimg src="https://source.unsplash.com/400x300/?code" width="100%"/&gt
+								&lt/div&gt
+								{% if params["projecttwo"][0] %}
+								&lth4&gt{{params["projecttwo"][0]}}&lt/h4&gt
+								{% endif %}
+								{% if params["projecttwo"][2] %}
+								&ltp&gt{{params["projecttwo"][2]}}&lt/p&gt
+								{% endif %}
+								{% if params["projecttwo"][1] %}
+								&lta href="{{params['projecttwo'][1]}}"&gt&ltbutton style="background:#53b3f7; padding:2px; cursor:pointer;"&gt&ltb&gtView Source/Live&lt/b&gt&lt/button&gt&lt/a&gt
+								{% endif %}
+							&lt/div&gt
+						&lt/div&gt
+						{% endif %}
+		
+						{% if (params["projectthree"][0]) %}
+						&ltdiv class="service-item padd-15"&gt
+							&ltdiv class="service-item-inner"&gt
+								&ltdiv class="icon"&gt
+									&ltimg src="https://source.unsplash.com/400x300/?coding" width="100%"/&gt
+								&lt/div&gt
+								{% if params["projectthree"][0] %}
+								&lth4&gt{{params["projectthree"][0]}}&lt/h4&gt
+								{% endif %}
+								{% if params["projectthree"][2] %}
+								&ltp&gt{{params["projectthree"][2]}}&lt/p&gt
+								{% endif %}
+								{% if params["projectthree"][1] %}
+								&lta href="{{params['projectthree'][1]}}"&gt&ltbutton style="background:#53b3f7; padding:2px; cursor:pointer;"&gt&ltb&gtView Source/Live&lt/b&gt&lt/button&gt&lt/a&gt
+								{% endif %}
+							&lt/div&gt
+						&lt/div&gt
+						{% endif %}
+		
+						{% if (params["projectfour"][0]) %}
+						&ltdiv class="service-item padd-15"&gt
+							&ltdiv class="service-item-inner"&gt
+								&ltdiv class="icon"&gt
+									&ltimg src="https://source.unsplash.com/400x300/?project,coding" width="100%"/&gt
+								&lt/div&gt
+								{% if params["projectfour"][0] %}
+								&lth4&gt{{params["projectfour"][0]}}&lt/h4&gt
+								{% endif %}
+								{% if params["projectfour"][2] %}
+								&ltp&gt{{params["projectfour"][2]}}&lt/p&gt
+								{% endif %}
+								{% if params["projectfour"][1] %}
+								&lta href="{{params['projectone'][1]}}"&gt&ltbutton style="background:#53b3f7; padding:2px; cursor:pointer;"&gt&ltb&gtView Source/Live&lt/b&gt&lt/button&gt&lt/a&gt
+								{% endif %}
+							&lt/div&gt
+						&lt/div&gt
+						{% endif %}
+		
+						{% if (params["projectfive"][0]) %}
+						&ltdiv class="service-item padd-15"&gt
+							&ltdiv class="service-item-inner"&gt
+								&ltdiv class="icon"&gt
+									&ltimg src="https://source.unsplash.com/400x300/?project,coding" width="100%"/&gt
+								&lt/div&gt
+								{% if params["projectfive"][0] %}
+								&lth4&gt{{params["projectfive"][0]}}&lt/h4&gt
+								{% endif %}
+								{% if params["projectfive"][2] %}
+								&ltp&gt{{params["projectfive"][2]}}&lt/p&gt
+								{% endif %}
+								{% if params["projectfive"][1] %}
+								&lta href="{{params['projectfive'][1]}}"&gt&ltbutton style="background:#53b3f7; padding:2px; cursor:pointer;"&gt&ltb&gtView Source/Live&lt/b&gt&lt/button&gt&lt/a&gt
+								{% endif %}
+							&lt/div&gt
+						&lt/div&gt
+						{% endif %}
+		
+						{% if (params["projectsix"][0]) %}
+						&ltdiv class="service-item padd-15"&gt
+							&ltdiv class="service-item-inner"&gt
+								&ltdiv class="icon"&gt
+									&ltimg src="https://source.unsplash.com/400x300/?project,coding" width="100%"/&gt
+								&lt/div&gt
+								{% if params["projectsix"][0] %}
+								&lth4&gt{{params["projectsix"][0]}}&lt/h4&gt
+								{% endif %}
+								{% if params["projectsix"][2] %}
+								&ltp&gt{{params["projectsix"][2]}}&lt/p&gt
+								{% endif %}
+								{% if params["projectsix"][1] %}
+								&lta href="{{params['projectsix'][1]}}"&gt&ltbutton style="background:#53b3f7; padding:2px; cursor:pointer;"&gt&ltb&gtView Source/Live&lt/b&gt&lt/button&gt&lt/a&gt
+								{% endif %}
+							&lt/div&gt
+						&lt/div&gt
+						{% endif %}
+		
+					&lt/div&gt
+					&lt/div&gt
+			&lt/section&gt
+			&lt!-- end Service--&gt
+			
+			&lt!--Blog Section--&gt
+			&ltsection class="blog section" id="blog"&gt
+				&ltdiv class="container"&gt
+					{% if params["certificates"][0][0] %}
+					&ltdiv class="row"&gt
+						&ltdiv class="section-title padd-15"&gt
+							&lth2&gtCertifications&lt/h2&gt
+						&lt/div&gt
+					&lt/div&gt
+					&ltdiv class="row"&gt
+						{% for i in params["certificates"] %}
+						{% if i[0] %}
+						&ltdiv class="certi_data padd-15"&gt
+							&ltdiv class="skills__names"&gt
+								&ltimg src="https://img.icons8.com/fluent/24/000000/contract.png"/&gt
+								&ltspan class="skills__name"&gt {{i[0]}}&lt/span&gt
+								&ltspan style="margin-left:10px;"&gt&lta href="{{i[1]}}"&gtVerify&lt/a&gt&lt/span&gt
+							&lt/div&gt
+						&lt/div&gt
+						{% endif %}
+						{% endfor %}
+					&lt/div&gt
+					{% endif %}
+		
+					{% if params["achivements"][0][0] %}
+					&ltdiv class="row"&gt
+						&ltdiv class="section-title padd-15"&gt
+							&lth2&gtAchievements and Awards&lt/h2&gt
+						&lt/div&gt
+					&lt/div&gt
+					&ltdiv class="row"&gt
+						{% for i in params["achivements"] %}
+						{% if i%}
+						&ltdiv class="certi_data padd-15"&gt
+							&ltdiv class="skills__names"&gt
+								&ltimg src="https://img.icons8.com/color/24/000000/medal.png"/&gt
+								&ltspan class="skills__name"&gt {{i}}&lt/span&gt
+							&lt/div&gt
+						&lt/div&gt
+						{% endif %}
+						{% endfor %}
+					&lt/div&gt
+					{% endif %}
+					&ltdiv class="row"&gt
+						&ltdiv class="section-title padd-15"&gt
+							&lth2&gtLastest Blog&lt/h2&gt
+						&lt/div&gt
+					&lt/div&gt
+					&ltdiv class="row"&gt
+						{% if params["doingone"][0] %}
+						&ltdiv class="blog-item padd-15"&gt
+							&ltdiv class="blog-item-inner shadow-dark"&gt
+								&ltdiv class="blog-img"&gt
+									&ltimg src="https://source.unsplash.com/400x300/?blog" alt="blog"&gt
+								&lt/div&gt
+									&ltdiv class="blog-info"&gt
+										&lta href="{{params['doingone'][0]}}"&gt&ltp class="blog-description"&gt{{params["doingone"][1]}}&lt/p&gt&lt/a&gt
+									&lt/div&gt
+								&lt/div&gt
+							&lt/div&gt
+							{% endif %}
+							{% if params["doingone"][0] %}
+						&ltdiv class="blog-item padd-15"&gt
+							&ltdiv class="blog-item-inner shadow-dark"&gt
+								&ltdiv class="blog-img"&gt
+									&ltimg src="https://source.unsplash.com/400x300/?blog,tech" alt="blog"&gt
+								&lt/div&gt
+									&ltdiv class="blog-info"&gt
+										&lta href="{{params['doingone'][0]}}"&gt&ltp class="blog-description"&gt{{params["doingone"][1]}}&lt/p&gt&lt/a&gt
+									&lt/div&gt
+								&lt/div&gt
+							&lt/div&gt
+							{% endif %}
+							{% if params["doingone"][0] %}
+						&ltdiv class="blog-item padd-15"&gt
+							&ltdiv class="blog-item-inner shadow-dark"&gt
+								&ltdiv class="blog-img"&gt
+									&ltimg src="https://source.unsplash.com/400x300/?blog,code" alt="blog"&gt
+								&lt/div&gt
+									&ltdiv class="blog-info"&gt
+										&lta href="{{params['doingone'][0]}}"&gt&ltp class="blog-description"&gt{{params["doingone"][1]}}&lt/p&gt&lt/a&gt
+									&lt/div&gt
+								&lt/div&gt
+							&lt/div&gt
+							{% endif %}
+					&lt/div&gt
+				&lt/div&gt
+			&lt/section&gt
+			&lt!--end blog--&gt
+			&lt!--Contact section--&gt
+			 &ltsection class="contact section" id="contact"&gt
+				&ltdiv class="container"&gt
+					&ltdiv class="row"&gt
+						&ltdiv class="section-title padd-15"&gt
+							&lth2&gtContact Me&lt/h2&gt
+						&lt/div&gt
+					&lt/div&gt
+					&ltdiv class="row"&gt
+					&ltdiv class="contact-info-item padd-15"&gt
+						&ltdiv class="icon"&gt&lti class="fa fa-phone"&gt&lt/i&gt&lt/div&gt
+						&lth4&gtCall Us On&lt/h4&gt
+						&ltp&gt{{params["mobile"]}}&lt/p&gt
+					&lt/div&gt
+					&ltdiv class="contact-info-item padd-15"&gt
+						&ltdiv class="icon"&gt&lti class="fa fa-map-marker"&gt&lt/i&gt&lt/div&gt
+						&lth4&gtAddress&lt/h4&gt
+						&ltp&gt{{params["city"]}}&lt/p&gt
+					&lt/div&gt
+					&ltdiv class="contact-info-item padd-15"&gt
+						&ltdiv class="icon"&gt&lti class="fa fa-envelope"&gt&lt/i&gt&lt/div&gt
+						&lth4&gtEmail&lt/h4&gt
+						&ltp&gt{{params["email"]}}&lt/p&gt
+					&lt/div&gt
+				&lt/div&gt
+		
+				&ltdiv class="row"&gt
+					&ltdiv class="contacts padd-15"&gt
+						&ltdiv class="social-links"&gt
+							{% if params["linkedin"] %}
+							&lta href="https://www.linkedin.com/in/{{params['linkedin']}}" &gt&lti class="fa fa-linkedin" &gt&lt/i&gt&lt/a&gt
+							{% endif %}
+							{% if params["fb"] %}
+							&lta href="https://www.facebook.com/{{params['fb']}}" &gt&lti class='fa fa-facebook' &gt&lt/i&gt&lt/a&gt
+							{% endif %}
+							{% if (params["github"]) %}
+							&lta href="https://github.com/{{params['github']}}" &gt&lti class='fa fa-github' &gt&lt/i&gt&lt/a&gt
+							{% endif %}
+							{% if params["twitter"] %}
+							 &lta href="https://twitter.com/{{params['twitter']}}"&gt&lti class='fa fa-twitter'&gt&lt/i&gt&lt/a&gt
+							 {% endif %}
+							 {% if params["instagram"] %}
+							 &lta href="https://www.instagram.com/{{params['instagram']}}"&gt&lti class='fa fa-instagram'&gt&lt/i&gt&lt/a&gt
+							 {% endif %}
+		
+							 {% if params['dev'] %}
+							 &lta href="https://dev.to/{{params['dev']}}" class="home__social-icon"&gt&lti class='fa fa-dev-to'&gtdev&lt/i&gt&lt/a&gt
+							 {% endif %}
+							 {% if params['codepen'] %}
+							 &lta href="https://codepen.io/{{params['codepen']}}" class="home__social-icon"&gt&lti class='fa fa-codepen' &gt&lt/i&gt&lt/a&gt
+							 {% endif %}
+							 {% if (params["stackoverflow"]) %}
+							 &lta href="https://stackoverflow.com/users/{{params['stackoverflow']}}" class="home__social-icon"&gt&lti class='fa fa-stack-overflow' &gt&lt/i&gt&lt/a&gt
+							 {% endif %}
+							 {% if params["medium"] %}
+							  &lta href="https://medium.com/{{params['medium']}}" class="home__social-icon"&gt&lti class='fa fa-medium'&gt&lt/i&gt&lt/a&gt
+							  {% endif %}
+							  {% if params["youtube"] %}
+							  &lta href="{{params['youtube']}}" class="home__social-icon"&gt&lti class='fa fa-youtube'&gt&lt/i&gt&lt/a&gt
+							  {% endif %}
+						&lt/div&gt
+					&lt/div&gt
+		
+				&lt/div&gt
+				&lt!--form--&gt
+				&ltdiv class="row"&gt
+					&ltform class="contact-form padd-15"&gt
+						&ltdiv class="row"&gt
+							&ltdiv class="form-item col-6 padd-15"&gt
+								&ltdiv class="form-group"&gt
+									&ltinput type="text" class="form-control" placeholder="Name"&gt
+								&lt/div&gt
+							&lt/div&gt
+							&ltdiv class="form-item col-6 padd-15"&gt
+								&ltdiv class="form-group"&gt
+									&ltinput type="text" class="form-control" placeholder="Email"&gt
+								&lt/div&gt
+							&lt/div&gt
+							&lt/div&gt
+							&ltdiv class="row"&gt
+								&ltdiv class="form-item col-12 padd-15"&gt
+								&ltdiv class="form-group"&gt
+									&ltinput type="text" class="form-control"placeholder="Subject"&gt
+								&lt/div&gt
+							&lt/div&gt
+							
+						&lt/div&gt
+						&ltdiv class="row"&gt
+								&ltdiv class="form-item col-12 padd-15"&gt
+								&ltdiv class="form-group"&gt
+									&lttextarea class="form-control"  placeholder="Your Message....."&gt
+									&lt/textarea&gt
+								&lt/div&gt
+							&lt/div&gt
+							&lt/div&gt
+						 &ltdiv class="row"&gt
+								&ltdiv class="form-item col-12 padd-15"&gt
+									&ltbutton type="Submit" class="btn"&gtSend Message&lt/button&gt
+							&lt/div&gt
+							&lt/div&gt
+						&lt/div&gt
+					&lt/form&gt
+				&lt/div&gt
+			&lt/section&gt
+			&lt!--end contact section--&gt
+		&lt/div&gt
+		
+		&lt/div&gt
+		&ltscript type=""&gt
+		
+			const nav=document.querySelector(".nav"),
+			navList=nav.querySelectorAll("li"),
+			totalNavList=navList.length,
+			allSection=document.querySelectorAll(".section"),
+			totalSection=allSection.length;
+				for (let i = 0; i &lt totalNavList; i++) {
+					const a=navList[i].querySelector("a");
+					a.addEventListener("click",function (){
+						removeBackSectionClass();
+						
+					for(let j=0;j&lttotalNavList;j++){
+						if (navList[j].querySelector("a").classList.contains("active")) {
+						addBackSectionClass(j);
+						//allSection[j].classList.add("back-setion");	
+						}
+						  navList[j].querySelector("a").classList.remove("active");
+					  }
+					  this.classList.add("active");
+					  showSection(this);
+					  if(window.innerWidth&lt1200) {
+						  asideSectionTogglerBtn();
+					  }
+				  })
+				} 
+				function removeBackSectionClass(){
+				for(let i=0;i&lttotalSection;i++){
+						  allSection[i].classList.remove("back-section");
+					  }
+				} 
+				function addBackSectionClass(num){
+					allSection[num].classList.add("back-section");
+				}
+				function showSection(element){
+					 for(let i=0;i&lttotalSection;i++){
+						  allSection[i].classList.remove("active");
+					  }
+					  const target=element.getAttribute("href").split("#")[1];
+					 
+					  document.querySelector("#"+target).classList.add("active")
+				  }
+					  function updateNav(element){
+						  for(let i=0;i&lttotalNavList;i++){
+						  navList[i].querySelector("a").classList.remove("active");
+						  const target=element.getAttribute("href").split("#")[1];	
+						  if (target==navList[i].querySelector("a").getAttribute("href").split("#")[1]) {
+							  navList[i].querySelector("a").classList.add("active");
+						  }
+					   }
+					  }
+		
+					  document.querySelector(".hire-me").addEventListener("click",function(){
+						  const sectionIndex=this.getAttribute("data-section-index");
+						  showSection(this);
+						  updateNav(this);
+						  removeBackSectionClass();
+						  addBackSectionClass(sectionIndex);
+					  })
+					  
+				
+				const navTogglerBtn=document.querySelector(".nav-toggler"),
+					  aside=document.querySelector(".aside");
+		
+				navTogglerBtn.addEventListener("click",asideSectionTogglerBtn)
+				
+		   
+				function asideSectionTogglerBtn(){
+					aside.classList.toggle("open");
+					navTogglerBtn.classList.toggle("open");
+					for(let i=0;i&lttotalSection;i++){
+						  allSection[i].classList.toggle("open");
+					  }
+				}
+		
+		&lt/script&gt
+		&ltscript&gt
+			var typeString=JSON.parse('{{params["title"] | tojson}}');
+			var i=0;
+			var count=0;
+			var selectedText="";
+			var text="";
+			(function type() {
+				if (count==typeString.length) {
+					count=0;
+				}
+				selectedText=typeString[count];
+				text=selectedText.slice(0,++i);
+				document.querySelector('#typing').innerHTML=text;
+				document.querySelector('#typing').style.color="red";
+				document.querySelector('#typing').style.fontFamily="Aldrich";
+				document.querySelector('#typing').style.fontSize="xx-large";
+		
+				if (text.length===selectedText.length) {
+					count++;
+					i=0;
+				}
+			
+				setTimeout(type,350);
+			}());
+			function sleep(milliseconds) {
+				var start=new Date().getTime();
+				for (let i = 0; i &lt 1e7; i++) {
+					if ((new Date().getTime)-start)  milliseconds 
+						break;
+					}
+					
+				}
+		
+		&lt/script&gt
+		&lt/body&gt
+		&lt/html&gt
+	</pre>
+	</div>
+
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+$('.code').hide();
+$('.code__toggler').on('click',
+  function() {
+    $('.code, .show').toggle(200);
+  }
+);
+</script>
+<script>
+function CopyToClipboard(containerid) {
+  if (document.selection) {
+    var range = document.body.createTextRange();
+    range.moveToElementText(document.getElementById(containerid));
+    range.select().createTextRange();
+    document.execCommand("copy");
+  } else if (window.getSelection) {
+    var range = document.createRange();
+    range.selectNode(document.getElementById(containerid));
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    alert("Text has been copied, now create an index.html file in your Computer and paste it.")
+  }
+}
+</script>
+
+<script type="">
+
+	const nav=document.querySelector(".nav"),
+    navList=nav.querySelectorAll("li"),
+    totalNavList=navList.length,
+    allSection=document.querySelectorAll(".section"),
+    totalSection=allSection.length;
+        for (let i = 0; i < totalNavList; i++) {
+      	  const a=navList[i].querySelector("a");
+      	  a.addEventListener("click",function (){
+      	  	removeBackSectionClass();
+      	  	
+            for(let j=0;j<totalNavList;j++){
+            	if (navList[j].querySelector("a").classList.contains("active")) {
+            	addBackSectionClass(j);
+            	//allSection[j].classList.add("back-setion");	
+            	}
+      			navList[j].querySelector("a").classList.remove("active");
+      		}
+      		this.classList.add("active");
+      		showSection(this);
+      		if(window.innerWidth<1200) {
+      			asideSectionTogglerBtn();
+      		}
+          })
+        } 
+        function removeBackSectionClass(){
+        for(let i=0;i<totalSection;i++){
+      			allSection[i].classList.remove("back-section");
+      		}
+        } 
+        function addBackSectionClass(num){
+            allSection[num].classList.add("back-section");
+        }
+        function showSection(element){
+         	for(let i=0;i<totalSection;i++){
+      			allSection[i].classList.remove("active");
+      		}
+      		const target=element.getAttribute("href").split("#")[1];
+      	   
+      	    document.querySelector("#"+target).classList.add("active")
+      	}
+      		function updateNav(element){
+      			for(let i=0;i<totalNavList;i++){
+      			navList[i].querySelector("a").classList.remove("active");
+      			const target=element.getAttribute("href").split("#")[1];	
+      			if (target==navList[i].querySelector("a").getAttribute("href").split("#")[1]) {
+      				navList[i].querySelector("a").classList.add("active");
+      			}
+      		 }
+      		}
+
+      		document.querySelector(".hire-me").addEventListener("click",function(){
+      			const sectionIndex=this.getAttribute("data-section-index");
+      			showSection(this);
+      			updateNav(this);
+      			removeBackSectionClass();
+      			addBackSectionClass(sectionIndex);
+      		})
+      	    
+        
+        const navTogglerBtn=document.querySelector(".nav-toggler"),
+              aside=document.querySelector(".aside");
+
+        navTogglerBtn.addEventListener("click",asideSectionTogglerBtn)
+        
+   
+        function asideSectionTogglerBtn(){
+        	aside.classList.toggle("open");
+        	navTogglerBtn.classList.toggle("open");
+        	for(let i=0;i<totalSection;i++){
+      			allSection[i].classList.toggle("open");
+      		}
+        }
+
+</script>
+<script>
+    var typeString=JSON.parse('{{params["title"] | tojson}}');
+    var i=0;
+    var count=0;
+    var selectedText="";
+    var text="";
+    (function type() {
+        if (count==typeString.length) {
+            count=0;
+        }
+        selectedText=typeString[count];
+        text=selectedText.slice(0,++i);
+        document.querySelector('#typing').innerHTML=text;
+		document.querySelector('#typing').style.color="red";
+		document.querySelector('#typing').style.fontFamily="Aldrich";
+        document.querySelector('#typing').style.fontSize="xx-large";
+
+        if (text.length===selectedText.length) {
+			count++;
+            i=0;
+        }
+    
+        setTimeout(type,350);
+    }());
+    function sleep(milliseconds) {
+        var start=new Date().getTime();
+        for (let i = 0; i < 1e7; i++) {
+            if ((new Date().getTime)-start)  milliseconds 
+                break;
+            }
+            
+        }
+
+</script>
+</body>
+</html>

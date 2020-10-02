@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Manoj Kumar</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
+<style>
+	.aside .logo a::before{
+		border-top: 4px solid #ec1839;
+		border-left: 4px solid #ec1839;
+	}
+	.aside .logo a::after{
+		border-bottom: 4px solid #ec1839;
+		border-right:  4px solid #ec1839;
+	}
+	 
+	.contact .contact-info-item .icon .fa,
+	.blog .blog-item-inner .blog-info .blog-tags a,
+	
+	.aside .nav li a:hover,
+	.service .service-item .service-item-inner .icon .fa,
+	.about .about-content .about-text h3 span,
+		.aside .nav li a.active
+	{
+		color: #00ff22;
+	}
+	.blog .blog-item-inner .blog-img .blog-date,
+	.service .service-item .service-item-inner:hover .icon .fa,
+	.about .about-content .timeline .circle-dot,
+	.about .about-content .timeline .timeline-item::before,
+	.aside .nav-toggler span,
+	.btn,.about .about-content .skills .skill-item .progress .progress-in,
+	.aside .nav-toggler span::before
+		,.aside .nav-toggler span::after,
+		.section-title h2::before,
+		.section-title h2::after,
+		.home .intro .social-links a{
+			background-color: #ec1839;
+		}
+		.btn{
+			background-color: #068b7a;
+		}
+		
+
+
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Suez+One&display=swap');
+/*General Style*/
+body{
+	margin: 0;
+	line-height: 1.5;
+	font-size: 16px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+}
+*{
+	margin: 0;
+	padding: 0;
+	outline: none;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+::before,::after{
+	box-sizing: border-box;
+	}
+input,textarea,select{
+	font-family: 'Poppins', sans-serif;
+}	
+.section{
+	background-color: #131315;
+	min-height: 100vh;
+	display: block;
+	padding: 0 30px;
+	position: fixed;
+	left: 270px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	opacity:1; 
+	overflow-x:hidden;
+	overflow-y:auto; 
+	-webkit-transition:all 03s ease;
+	transition: all 0.3s ease;
+}
+.section.back-section{
+	z-index: 1;
+}
+.section.active{
+	opacity: 1;
+	z-index: 2;
+	-webkit-animation: slideSection 1s ease;
+	animation: slideSection 1s ease;
+}
+@-webkit-keyframes slideSection{
+	0%{
+		-webkit-transform:translateX(100%);
+		transform: translateX(100%);
+	}
+	100%{
+		-webkit-transform:translateX(0%);
+		transform: translateX(0%);
+	}
+}
+@keyframes slideSection{
+	0%{
+		-webkit-transform:translateX(100%);
+		transform: translateX(100%);
+	}
+	100%{
+		-webkit-transform:translateX(0%);
+		transform: translateX(0%);
+	}
+}
+.section.container{
+	padding-top: 60px;
+	padding-bottom: 70px;
+
+}
+.section-title{
+	-ms-flex:0 0 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
+	margin-bottom: 60px;
+}
+.section-title h2{
+	font-size: 40px;
+	color:#fbf3f4;
+	font-family: 'Suez One', serif;
+	font-weight: 700;
+	margin: 0;
+	position: relative;
+}
+.section-title h2::before{
+	content: '';
+	height:4px;
+	width: 60px;
+	position: absolute;
+	top: 100%;
+	left: 0;
+}
+.section-title h2::after{
+	content: '';
+	height:4px;
+	width: 40px;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	margin-top:8px;
+}
+.row{
+	display: flex;
+	display: -ms-flexbox;
+	-ms-flex-wrap:wrap;
+	flex-wrap: wrap;
+	margin-right: -15px;
+	margin-left: -15px;
+	position: relative;
+}
+.padd-15{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+/*.main-content{
+	padding-left: 270px;
+}*/
+.container{
+	max-width: 1100px;
+	margin: auto;
+	width: 100%;
+}
+.shadow-dark{
+	-webkit-box-shadow: 0 0 20px rgba(48,46,77,8.15);
+	box-shadow: 0 0 20px rgba(48,46,77,8.15);
+}
+.btn{
+	font-size: 16px;
+	font-family: 'Suez One', serif;
+	font-weight: 500;
+	padding: 12px 35px;
+	color: #ffffff;
+	border-radius: 40px;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	display: inline-block;
+	white-space: nowrap;
+	border:none;
+	cursor: pointer;
+}
+.btn:hover{
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+.hidden{
+	display: none!important;
+}
+/*Aside*/
+.aside{
+	width: 270px;
+	background-color: #3b3a3c;
+	position: fixed;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	border-right: 1px solid #e8dfec;
+	padding: 30px;
+   -webkit-transition:all 03s ease;
+	transition: all 0.3s ease;
+}
+.aside .logo{
+	padding:30px 0;
+	
+}
+.aside .logo a{
+	font-size: 40px;
+	color:#53b3f7;
+	font-family: 'Suez One', serif;
+	font-weight: 700;
+	text-decoration: none;
+	display: inline-block;
+	position: relative;
+	padding: 0 10px;
+	line-height: 50px;
+
+}
+.aside .logo a::before{
+	content: '';
+	height:20px;
+	width: 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+}
+.aside .logo a::after{
+	content: '';
+	height:20px;
+	width: 20px;
+	position: absolute;
+	bottom:0;
+	right:  0;
+}
+.aside .nav-toggler{
+	height: 40px;
+	width: 40px;
+	border:1px solid #d4d4e3;
+	position: fixed;
+	cursor: pointer;
+	left:300px;
+	top: 20px;
+	z-index: 11;
+	border-radius: 5px;
+	background-color: #fdf9ff;
+   /* display: -ms-flexbox;
+	display: flex;*/
+	display: none;
+	-ms-flex-align:center;
+	align-items: center;
+	-ms-flex-pack:center;
+	justify-content: center;
+	-webkit-transition:all 03s ease;
+	transition: all 0.3s ease;
+}
+.aside .nav-toggler span{
+	height: 2px;
+	width: 18px;
+	display: inline-block;
+	position: relative;
+}
+.aside .nav-toggle.open span{
+	background-color: transparent;
+	
+}
+
+.aside .nav-toggler.open span::before{
+	-webkit-transform:rotate(45deg);
+	transform: rotate(45deg);
+	top: 0px;
+}
+
+.aside .nav-toggler span::before{
+content: '';
+height: 2px;
+width: 18px;
+position: absolute;
+top: -6px;
+left: 0;
+}
+.aside .nav-toggler span::after{
+content: '';
+height: 2px;
+width: 18px;
+position: absolute;
+top: 6px;
+left: 0;
+}
+.aside .nav-toggle.open span::after{
+	-webkit-transform:rotate(-45deg);
+	transform: rotate(-45deg);
+	top: 0px;
+}
+.aside .nav{
+
+	list-style:none;
+	margin:80px 0; 
+	padding: 0;
+}
+.aside .nav li{
+	display: block;
+}
+.aside .nav li a{
+	font-weight: 600;
+	font-size: 16px;
+	color: #fdf9ff;
+	text-decoration: none;
+	line-height: 45px;
+	display: block;
+	border-bottom: 1px solid #e8dfec;
+	transition: all 0.3s ease;
+	text-transform: capitalize;
+}
+.aside .nav li a:not(.active):hover{
+	padding-left: 5px;
+}
+.aside .nav li a .fa{
+	margin-right: 5px;
+}
+.aside .copyright-text{
+	font-size: 13px;
+	color: #e8dfec;
+}
+
+/*home*/
+.home{
+	min-height:100vh;
+	display: -ms-flexbox;
+	display: flex;
+}
+.home .intro{
+	text-align: center;
+}
+.home .intro img{
+	height: 300px;
+	width: 300px;
+	border-radius: 50%;
+	display: inline-block;
+	border:8px solid #ffffff;
+}
+.home .intro h1{
+	font-size: 30px;
+	color:#eee;
+	font-family: 'Suez One', serif;
+	font-weight: 700;
+	margin: 20px 0 5px;
+}
+.home .intro p{
+	font-size: 16px;
+	font-weight: 500;
+	margin: 0;
+	line-height: 22px;
+	color:#06e8f0;
+}
+.home .intro .social-links{
+	margin-top: 25px;
+}
+.home .intro .social-links a{
+	height: 35px;
+	width: 35px;
+	display: inline-block;
+	text-align: center;
+	margin: 0 4px;
+	line-height: 35px;
+	color: #ffffff;
+	border-radius: 50%;
+	text-decoration: none;
+	-webkit-transition:all 0.3s ease;
+	transition: all 0.3s ease;
+
+}
+.home .intro .social-links a:hover{
+	-webkit-transform:scale(1.1);
+	transform: scale(1.1);
+}
+/*about*/
+.about .about-content{
+	-ms-flex:0 0 100%;
+	flex:0 0 100%;
+	max-width: 100%;
+}
+.about .about-content .about-text{
+	-ms-flex:0 0 100%;
+	flex:0 0 100%;
+	max-width: 100%;
+}
+.about .about-content .about-text h3{
+	font-size: 24px;
+	margin-top: 15px;
+	font-weight: 700;
+	color: #eee;
+}
+.about .about-content .about-text p{
+	font-size:16px;
+	line-height: 25px;
+	color: #1dc8f3;
+	margin: 0;
+
+}
+.about .about-content .personal-info{
+	-ms-flex:0 0 60%;
+	flex: 0 0 60%;
+	max-width: 60%;
+	margin-top: 40px;
+}
+.about .about-content .personal-info .info-item{
+-ms-flex:0 0 50%;
+	flex: 0 0 50%;
+	max-width: 50%;
+}
+.about .about-content .personal-info .info-item p{
+font-weight: 600;
+padding: 10px 0;
+font-size: 16px;
+color: #eee;
+margin: 0;
+border-bottom: 1px solid #e8dfec;
+
+}
+.about .about-content .personal-info .info-item p span{
+	font-weight: bold;
+	color: #ff0ad6;
+	margin-left: 4px;
+}
+.about .about-content .personal-info .buttons{
+	margin-top: 30px;
+}
+.about .about-content .personal-info .buttons .btn{
+	margin-right: 15px;
+	margin-top: 10px;
+}
+.about .about-content .skills{
+-ms-flex:0 0 40%;
+	flex: 0 0 40%;
+	max-width: 40%;
+	margin-top: 40px;
+}
+.about .about-content .skills .skill-item{
+-ms-flex:0 0 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+.about .about-content .skills .skill-item h5{
+	line-height: 40px;
+	font-weight: 600;
+	font-size: 16px;
+	color: #eee;
+	text-transform: capitalize;
+	margin: 0;
+}
+.about .about-content .skills .skill-item .progress{
+	background-color: #e3e3e3;
+	height: 8px;
+	border-radius: 4px;
+	width: 100%;
+	position: relative;
+}
+.about .about-content .skills .skill-item{
+	margin-bottom: 30px;
+}
+.about .about-content .skills .skill-item .progress .progress-in{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	border-radius: 4px;
+}
+.about .about-content .skills .skill-item .skill-percent{
+	line-height: 40px;
+	position: absolute;
+	right: 0;
+	top: -40px;
+	font-weight: 400;
+	color: #eee;
+
+}
+.about .about-content .education{
+-ms-flex:0 0 50%;
+	flex: 0 0 50%;
+	max-width: 50%;
+	margin-top: 30px;
+}
+.about .about-content .exprience{
+	-ms-flex:0 0 50%;
+	flex: 0 0 50%;
+	max-width: 50%;
+	margin-top: 30px;
+}
+.about .about-content h3.title{
+	font-size: 24px;
+	font-weight: 700;
+	color: #fbf3f4;
+	margin-bottom: 30px;
+}
+.about .about-content .timeline-box{
+	-ms-flex:0 0 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+.about .about-content .timeline{
+background-color: #131315;
+padding: 30px 15px;
+border:1px solid #d4d4e3;
+border-radius: 10px;
+position: relative;
+}
+.about .about-content .timeline .timeline-item{
+	position: relative;
+	padding-left: 37px;
+	padding-bottom: 50px;
+}
+.timeline-item p{
+	font-size: 16px;
+	line-height: 25px;
+	color: #f7fcf7;
+	margin: 0;
+}
+.about .about-content .timeline .timeline-item::before{
+	content: '';
+	width: 1px;
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+.about .about-content .timeline .circle-dot{
+position: absolute;
+left: 0;
+top: 0;
+height: 15px;
+width: 15px;
+left: -7px;
+border-radius: 50%;
+}
+.about .about-content .timeline .timeline-date{
+font-weight: 400;
+font-size: 14px;
+margin-bottom: 12px;
+color: #fdf590;
+}
+.about .about-content .timeline .timeline-date .fa{
+	margin-right: 5px;
+}
+.about .about-content .timeline .timeline-title{
+font-weight: 700;
+font-size: 18px;
+margin-bottom: 15px;
+text-transform: capitalize;
+color:#fdf9ff;
+}
+.about .about-content .timeline .timeline-text{
+font-size: 16px;
+line-height: 25px;
+color: #53b3f7;
+margin: 0;
+}
+/*Service*/
+.service .container{
+	padding-bottom: 40px;
+}
+.service .service-item{
+margin-bottom: 30px;
+-ms-flex:0 0 33.33%;
+flex: 0 0 33.33%;
+max-width: 33.33%;
+}
+.service .service-item .service-item-inner{
+background-color: #131315;
+border:1px solid #d4d4e3;
+border-radius: 10px;
+padding: 30px 15px;
+text-align: center;
+-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ea
+}
+.service .service-item .service-item-inner:hover{
+	-webkit-box-shadow: 0 0 20px rgba(48,46,77,8.15);
+	box-shadow: 0 0 20px rgba(48,46,77,8.15);
+
+}
+.project-button{
+	position:absolute;
+}
+.service .service-item .service-item-inner h4{
+	font-size: 16px;
+	margin-bottom: 15px;
+	color: #eee;
+	font-weight: 700;
+	text-transform: capitalize;
+}
+.service .service-item .service-item-inner p{
+	font-size: 16px;
+	color: #f5a511;
+	line-height:25px; 
+	margin: 0;
+}
+
+/*start blog*/
+
+.certi_data{
+	margin:5px;
+	display:flexbox;
+	background:#fff;
+	box-shadow: 0px 0px 10px #25ffff;
+	border-radius: 10px;
+
+}
+.skills__names{
+  align-items: center;
+  padding:4px;
+}
+.skills__name{
+	font-weight:bold;
+	margin-left:5px;
+}
+.blog .container{
+	padding-bottom: 30px;
+}
+.blog .blog-item{
+	flex: 0 0 33.33%;
+	max-width: 33.33%;
+}
+.blog .blog-item-inner{
+	border-radius: 10px;
+	overflow: hidden;
+	border:1px solid #d4d4e3;
+}
+.blog .blog-item-inner .blog-img{
+	position: relative;
+	overflow: hidden;
+}
+.blog .blog-item-inner .blog-img img{
+	width: 100%;
+	display: block;
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+.blog .blog-item-inner:hover .blog-img img{
+	-webkit-transform: scale(1.1); 
+	transform: scale(1.1); 
+}
+.blog .blog-item-inner .blog-img .blog-date{
+	position: absolute;
+	padding: 4px 10px;
+	border-radius: 5px;
+	color: #ffffff;
+	font-weight: 600;
+	font-size: 14px;
+	left: 15px;
+	bottom: 15px;
+}
+.blog .blog-item-inner .blog-info{
+	padding:30px 15px;
+	background-color: #131315;
+}
+.blog .blog-item-inner .blog-info .blog-title{
+	font-size: 18px;
+	font-weight: 700;
+	color: #eee;
+	text-transform: capitalize;
+	margin-bottom: 10px;
+}
+.blog .blog-item-inner .blog-info .blog-description{
+	font-size: 16px;
+	line-height: 25px;
+	color:#1164c4;
+	font-weight: 400;
+	margin-bottom: 15px;
+
+}
+.blog .blog-item-inner .blog-info .blog-tags{
+	font-size: 14px;
+	line-height: 25px;
+	color: #eee;
+	font-weight: 400;
+	text-transform: capitalize;
+}
+.blog .blog-item-inner .blog-info .blog-tags a{
+	text-decoration:none;
+	font-weight:600;
+}	
+/*contact section*/
+.contact .contact-info-item{
+	-ms-flex:0 0 33.33%;
+	flex: 0 0 33.33%;
+	max-width: 33.33%;
+	text-align: center;
+	margin-bottom: 40px;
+}
+.contact .contact-info-item .icon{
+	display: inline-block;
+}
+.contact .contact-info-item .icon .fa{
+	font-size: 40px;
+}
+.contact .contact-info-item h4{
+	font-weight: 700;
+	font-size: 18px;
+	color: #fbf3f4;
+	text-transform: capitalize;
+	margin:15px 0 5px;
+}
+.contact .contact-info-item p{
+	font-size: 16px;
+	line-height: 25px;
+	color: #f106d2;
+	margin: 0;
+	font-weight: 400;
+}
+.contacts{
+	max-width: 100%;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 40px;
+}
+.contacts .social-links a{
+	height: 35px;
+	width: 35px;
+	display: inline-block;
+	text-align: center;
+	background:#d3088f;
+	margin: 4px 4px;
+	line-height: 35px;
+	color: #ffffff;
+	border-radius: 50%;
+	text-decoration: none;
+	-webkit-transition:all 0.3s ease;
+	transition: all 0.3s ease;
+
+}
+.contacts .social-links a:hover{
+	-webkit-transform:scale(1.1);
+	transform: scale(1.1);
+	background:#d36308;
+}
+
+.contact .contact-form{
+	-ms-flex:0 0 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+.contact .contact-form .col-6{
+	-ms-flex:0 0 50%;
+	flex: 0 0 50%;
+	max-width: 50%;
+}
+.contact .contact-form .col-12{
+	-ms-flex:0 0 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+.contact .contact-form .form-item{
+	margin-bottom: 30px;
+}
+.contact .contact-form .form-item .form-control{
+	width: 100%;
+	border-radius: 25px;
+	height: 50px;
+	border:1px solid #d4d4e3;
+	padding: 10px 25px;
+	font-size: 16px;
+	color: #504e70;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	background-color: #131315;
+}
+.contact .contact-form .form-item .form-control:focus{
+	-webkit-box-shadow: 0 0 20px rgba(48,46,77,0.15);
+	box-shadow: 0 0 20px rgba(48,46,77,0.15);
+}
+.contact .contact-form .form-item textarea.form-control{
+	height: 120px;
+
+}
+.cntact .contact-form .btn{
+	height: 50px;
+	padding: 0 50px;
+}
+
+
+/*MEDIA Queary*/
+@media(max-width: 1199px)
+{
+	.section .container{
+		padding-top:70px;
+	}
+	.aside .nav-toggler{
+		display: -ms-flexbox;
+		display: flex;
+		left: 30px;
+	}
+	.aside{
+		left:-270px;
+	}
+	.aside .nav-toggler.open{
+		left: 300px;
+	}
+	.aside.open{
+		left: 0px;
+	}
+	.section{
+		left: 0;
+	}
+	.section.open{
+		left: 270px;
+	}
+	.main-content{
+		padding-left: 0;
+	}
+	.about .about-content .personal-info .info-item p span{
+		display: block;
+		margin-left: 0;
+	}
+}
+@media(max-width: 991px){
+	.blog .blog-item,
+	.service .service-item{
+	   -ms-flex:0 0 50%;
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+}
+@media(max-width: 767px){
+	.contact .contact-form .col-6,
+	.blog .blog-item,
+	.service .service-item,
+	.about .about-content .exprience,
+	.about .about-content .education,
+	.about .about-content .skills,
+	.about .about-content .personal-info{
+		-ms-flex:0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
+@media(max-width: 575px)
+{
+	.contact .contact-info-item{
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
+
+
+</style>
+</head>
+<body>
+<div class="aside">
+	<!--logo-->
+	<div class="logo">
+		<a href="#home">Manoj</a>
+	</div>
+	<div class="nav-toggler">
+		<span></span>
+	</div>
+	<ul class="nav">
+		<li><a href="#home" class="active"><i class="fa fa-home"></i>Home</a></li>
+		<li><a href="#about"><i class="fa fa-user"></i>About</a></li>
+		<li><a href="#project"><i class="fa fa-list"></i>Project</a></li>
+		<li><a href="#blog"><i class="fa fa-envelope"></i>Certificate/Blogs</a></li>
+		<li><a href="#contact"><i class="fa fa-comments"></i>Contact</a></li>
+	</ul>
+	<!--copyright-->
+	<div class="copyright-text">@copy; 2020 Manoj Kumar
+		Powered by
+			  <a style="text-decoration: none; color: tomato; font-weight: bold;" href="http://www.codescript.run/"> CodeScript</a>
+	</div>
+</div>
+<!--Aside End-->
+<!--main content-->
+<div class="main-content show">
+	<section class="home section active" id="home">
+		<div class="container">
+			<div class="intro">
+				<img src="http://manojcse.me/assets/images/badge.png" alt="Profile Image" class="shadow-dark">
+				<h1>Manoj Kumar</h1>
+				<p id="typing"></p>
+				<div class="social-links">
+					
+					<a href="https://www.linkedin.com/in/mjmaurya" ><i class="fa fa-linkedin" ></i></a>
+					
+					
+					<a href="https://www.facebook.com/mjkmaurya" ><i class='fa fa-facebook' ></i></a>
+					
+					
+					<a href="https://github.com/mjmaurya" ><i class='fa fa-github' ></i></a>
+					
+					
+					 <a href="https://twitter.com/gcssmanoj"><i class='fa fa-twitter'></i></a>
+					 
+					 
+					 <a href="https://www.instagram.com/gcssmanoj"><i class='fa fa-instagram'></i></a>
+					 
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--About-->
+	<section class="about section" id="about">
+		<div class="container">
+			<div class="row">
+				<div class="section-title padd-15">
+					<h2>About Me</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="about-content padd-15">
+					<div class="row">
+						<div class="about-text padd-15">
+							<h3>I Am Manoj Kumar</h3>
+								<p>I am Final Year Computer Science And Engineering Student.🚀 You can find me more on Stackoverflow,  Github,  Linkedin, Youtube than in the real world.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="personal-info padd-15">
+							<div class="row">
+								<div class="info-item padd-15">
+									<p>Email:<span>mjmaurya143@gmail.com</span></p>
+								</div>
+								<div class="info-item padd-15">
+									<p>Degree:<span>B.Tech</span></p>
+								</div>
+								<div class="info-item padd-15">
+									<p>Phone:<span>07761802234</span></p>
+								</div>
+								<div class="info-item padd-15">
+									<p>City:<span>Patna</span></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="buttons padd-15">
+									<a href=""class="btn">Download CV</a>
+									<a href="mailto:mjmaurya143@gmail.com" data-section-index="1"class="btn hire-me">Hire me</a>
+								</div>
+							</div>
+						</div>
+						<div class="skills padd-15">
+							<h3 style="color:#fff;">Skills</h3>
+							<div class="row">
+								
+								<div class="certi_data padd-15">
+									<div class="skills__names">
+										<span class="skills__name"> Web Development</span>
+									</div>
+								</div>
+									
+								<div class="certi_data padd-15">
+									<div class="skills__names">
+										<span class="skills__name">  Python</span>
+									</div>
+								</div>
+									
+								<div class="certi_data padd-15">
+									<div class="skills__names">
+										<span class="skills__name">  JavaScript</span>
+									</div>
+								</div>
+									
+								<div class="certi_data padd-15">
+									<div class="skills__names">
+										<span class="skills__name">  Java</span>
+									</div>
+								</div>
+									
+								<div class="certi_data padd-15">
+									<div class="skills__names">
+										<span class="skills__name">  Flask</span>
+									</div>
+								</div>
+									
+								<div class="certi_data padd-15">
+									<div class="skills__names">
+										<span class="skills__name">  PHP</span>
+									</div>
+								</div>
+									
+								</div>
+							</div>
+						</div>
+						<div class="row">
+						<div class="education padd-15">
+							<h3 class="title">Education</h3>
+							<div class="row">
+								<div class="timeline-box padd-15">
+								<div class="timeline shadow-dark">
+									
+									<div class="timeline-item">
+										<div class="circle-dot">
+										</div>
+										<h6 class="timeline-date">
+											
+											<i class="fa fa-calendar"></i>2017-2021
+											
+										</h6>
+										
+										<h4 class="timeline-title">Bachelor In Computer Science and Engineering</h4>
+										
+										
+										<p class="timeline-text">I am pursuing B.tech from a.k.u University and studied in Bakhtiyarpur College Of Engineering (8.40/10)</p>
+										
+									</div>
+									
+									
+									<div class="timeline-item">
+										<div class="circle-dot">
+										</div>
+										<h6 class="timeline-date">
+											
+											<i class="fa fa-calendar"></i>Intermediate
+											
+										</h6>
+										
+										<h4 class="timeline-title">Intermediate</h4>
+										
+										
+										<p class="timeline-text">12th from S V P HIGH School Maduban,East Champaran with first division (73.80%).</p>
+										
+									</div>
+									
+									
+									<div class="timeline-item">
+										<div class="circle-dot">
+										</div>
+										<h6 class="timeline-date">
+											
+											<i class="fa fa-calendar"></i>2014 - 2015
+											
+										</h6>
+										
+										<h4 class="timeline-title">Matriculation</h4>
+										
+										
+										<p class="timeline-text">10th from S V P HIGH School Maduban,East Champaran (71.20%).</p>
+										
+									</div>
+									
+
+									
+
+
+								</div>
+							</div>
+							</div>
+					</div>
+					<div class="exprience padd-15">
+							<h3 class="title">Experience</h3>
+							<div class="row">
+								<div class="timeline-box padd-15">
+								<div class="timeline shadow-dark">
+									
+									<div class="timeline-item">
+										<div class="circle-dot">
+										</div>
+										<h6 class="timeline-date">
+											
+											<i class="fa fa-calendar"></i>Aug/2020-sep/2020
+											
+										</h6>
+										
+										<h4 class="timeline-title">Software Developer Intern</h4>
+										
+										
+										<b class="timeline-text">Internship</b>
+										
+										
+										<h6 class="timeline-text">Geminid Systems, Inc</h6>
+										
+										
+										<p >Pharmalite App, Worked on Pharmalite which is developed in Apex and lightning web component and deployed on Salesforce</p>
+										
+									</div>
+									
+
+									
+									<div class="timeline-item">
+										<div class="circle-dot">
+										</div>
+										<h6 class="timeline-date">
+											
+											<i class="fa fa-calendar"></i>April - May 2020
+											
+										</h6>
+										
+										<h4 class="timeline-title">Web Developer</h4>
+										
+										
+										<b class="timeline-text">Internship</b>
+										
+										
+										<h6 class="timeline-text">Elemental Design</h6>
+										
+										
+										<p >Worked on WordPress, Implemented Meeting Scheduling System, Implemented LMS</p>
+										
+									</div>
+									
+
+									
+
+									
+
+									
+									
+								</div>
+							</div>
+							</div>
+				</div>
+					</div>
+				</div>
+		</div>
+	</section>
+	<!--About-->
+	<!--Service-->
+	<section class="service section" id="project">
+		<div class="container">
+			<div class="row">
+				<div class="section-title padd-15">
+					<h2>Recent Projects</h2>
+				</div>
+			</div>
+			<div class="row">
+				
+				<div class="service-item padd-15">
+					<div class="service-item-inner">
+						<div class="icon">
+							<img src="https://source.unsplash.com/400x300/?project,coding" width="100%"/>
+						</div>
+						
+						<h4>Heart Disease Predictor</h4>
+						
+						
+						<p>The system uses 13 medical parameters such as age, sex, blood pressure, cholesterol, and Blood Sugar, etc for prediction.</p>
+						
+						
+						<a href="https://github.com/mjmaurya/heart-disease-predictor"><button style="background:#d3088f; padding:3px; cursor:pointer;"><b>View Source/Live</b></button></a>
+						
+					</div>
+				</div>
+				
+				
+				
+				<div class="service-item padd-15">
+					<div class="service-item-inner">
+						<div class="icon">
+							<img src="https://source.unsplash.com/400x300/?code" width="100%"/>
+						</div>
+						
+						<h4>FACE ATTENDANCE SYSTEM</h4>
+						
+						
+						<p>A face detector developed to mark the attendance of a student.</p>
+						
+						
+						<a href="https://github.com/mjmaurya/FACE-ATTENDANCE-SYSTEM"><button style="background:#53b3f7; padding:2px; cursor:pointer;"><b>View Source/Live</b></button></a>
+						
+					</div>
+				</div>
+				
+
+				
+				<div class="service-item padd-15">
+					<div class="service-item-inner">
+						<div class="icon">
+							<img src="https://source.unsplash.com/400x300/?coding" width="100%"/>
+						</div>
+						
+						<h4>Resume Website Builder</h4>
+						
+						
+						<p>This tool provides an easy and efficient way to create your online resume website within 10 minutes without any coding</p>
+						
+						
+						<a href="https://github.com/mjmaurya/resume-website-builder"><button style="background:#53b3f7; padding:2px; cursor:pointer;"><b>View Source/Live</b></button></a>
+						
+					</div>
+				</div>
+				
+
+				
+
+				
+
+				
+
+			</div>
+			</div>
+	</section>
+	<!-- end Service-->
+	
+	<!--Blog Section-->
+	<section class="blog section" id="blog">
+		<div class="container">
+			
+			<div class="row">
+				<div class="section-title padd-15">
+					<h2>Certifications</h2>
+				</div>
+			</div>
+			<div class="row">
+				
+				
+				<div class="certi_data padd-15">
+					<div class="skills__names">
+						<img src="https://img.icons8.com/fluent/24/000000/contract.png"/>
+						<span class="skills__name"> Python for Everybody Specialization (Coursera)</span>
+						<span style="margin-left:10px;"><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/5V3MKTUV3YKY">Verify</a></span>
+					</div>
+				</div>
+				
+				
+				
+				<div class="certi_data padd-15">
+					<div class="skills__names">
+						<img src="https://img.icons8.com/fluent/24/000000/contract.png"/>
+						<span class="skills__name"> Android Developer Nanodegree</span>
+						<span style="margin-left:10px;"><a href="https://graduation.udacity.com/confirm/ACQFMCNL">Verify</a></span>
+					</div>
+				</div>
+				
+				
+				
+				<div class="certi_data padd-15">
+					<div class="skills__names">
+						<img src="https://img.icons8.com/fluent/24/000000/contract.png"/>
+						<span class="skills__name"> Python for Data Science</span>
+						<span style="margin-left:10px;"><a href="https://www.youracclaim.com/badges/11d42c6f-9751-40e9-ab75-dd025768701f/linked_in_profile">Verify</a></span>
+					</div>
+				</div>
+				
+				
+				
+				
+				
+				
+			</div>
+			
+
+			
+			<div class="row">
+				<div class="section-title padd-15">
+					<h2>Achievements and Awards</h2>
+				</div>
+			</div>
+			<div class="row">
+				
+				
+				<div class="certi_data padd-15">
+					<div class="skills__names">
+						<img src="https://img.icons8.com/color/24/000000/medal.png"/>
+						<span class="skills__name"> World Skills Asia Finalist 2020 at NIELIT</span>
+					</div>
+				</div>
+				
+				
+				
+				<div class="certi_data padd-15">
+					<div class="skills__names">
+						<img src="https://img.icons8.com/color/24/000000/medal.png"/>
+						<span class="skills__name">  Udacity Bertelsmann scholar</span>
+					</div>
+				</div>
+				
+				
+				
+				<div class="certi_data padd-15">
+					<div class="skills__names">
+						<img src="https://img.icons8.com/color/24/000000/medal.png"/>
+						<span class="skills__name">  No 1 CA Award IIT Patna Anwesha</span>
+					</div>
+				</div>
+				
+				
+			</div>
+			
+			<div class="row">
+				<div class="section-title padd-15">
+					<h2>Lastest Blog</h2>
+				</div>
+			</div>
+			<div class="row">
+				
+				<div class="blog-item padd-15">
+					<div class="blog-item-inner shadow-dark">
+						<div class="blog-img">
+							<img src="https://source.unsplash.com/400x300/?blog" alt="blog">
+						</div>
+							<div class="blog-info">
+								<a href="https://medium.com/@manojbce/activate-azure-for-students-using-github-student-developer-pack-389238de4f8"><p class="blog-description">Activate Azure for Students using GitHub Student Developer Pack.</p></a>
+							</div>
+						</div>
+					</div>
+					
+					
+				<div class="blog-item padd-15">
+					<div class="blog-item-inner shadow-dark">
+						<div class="blog-img">
+							<img src="https://source.unsplash.com/400x300/?blog,tech" alt="blog">
+						</div>
+							<div class="blog-info">
+								<a href="https://medium.com/@manojbce/activate-azure-for-students-using-github-student-developer-pack-389238de4f8"><p class="blog-description">Activate Azure for Students using GitHub Student Developer Pack.</p></a>
+							</div>
+						</div>
+					</div>
+					
+					
+				<div class="blog-item padd-15">
+					<div class="blog-item-inner shadow-dark">
+						<div class="blog-img">
+							<img src="https://source.unsplash.com/400x300/?blog,code" alt="blog">
+						</div>
+							<div class="blog-info">
+								<a href="https://medium.com/@manojbce/activate-azure-for-students-using-github-student-developer-pack-389238de4f8"><p class="blog-description">Activate Azure for Students using GitHub Student Developer Pack.</p></a>
+							</div>
+						</div>
+					</div>
+					
+			</div>
+		</div>
+	</section>
+	<!--end blog-->
+	<!--Contact section-->
+	 <section class="contact section" id="contact">
+		<div class="container">
+			<div class="row">
+				<div class="section-title padd-15">
+					<h2>Contact Me</h2>
+				</div>
+			</div>
+			<div class="row">
+			<div class="contact-info-item padd-15">
+				<div class="icon"><i class="fa fa-phone"></i></div>
+				<h4>Call Us On</h4>
+				<p>07761802234</p>
+			</div>
+			<div class="contact-info-item padd-15">
+				<div class="icon"><i class="fa fa-map-marker"></i></div>
+				<h4>Address</h4>
+				<p>Patna</p>
+			</div>
+			<div class="contact-info-item padd-15">
+				<div class="icon"><i class="fa fa-envelope"></i></div>
+				<h4>Email</h4>
+				<p>mjmaurya143@gmail.com</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="contacts padd-15">
+				<div class="social-links">
+					
+					<a href="https://www.linkedin.com/in/mjmaurya" ><i class="fa fa-linkedin" ></i></a>
+					
+					
+					<a href="https://www.facebook.com/mjkmaurya" ><i class='fa fa-facebook' ></i></a>
+					
+					
+					<a href="https://github.com/mjmaurya" ><i class='fa fa-github' ></i></a>
+					
+					
+					 <a href="https://twitter.com/gcssmanoj"><i class='fa fa-twitter'></i></a>
+					 
+					 
+					 <a href="https://www.instagram.com/gcssmanoj"><i class='fa fa-instagram'></i></a>
+					 
+
+					 
+					 <a href="https://dev.to/mjmaurya" class="home__social-icon"><i class='fa fa-dev-to'>dev</i></a>
+					 
+					 
+					 <a href="https://codepen.io/manoj_10" class="home__social-icon"><i class='fa fa-codepen' ></i></a>
+					 
+					 
+					 <a href="https://stackoverflow.com/users/12161200" class="home__social-icon"><i class='fa fa-stack-overflow' ></i></a>
+					 
+					 
+					  <a href="https://medium.com/@manojbce" class="home__social-icon"><i class='fa fa-medium'></i></a>
+					  
+					  
+				</div>
+			</div>
+
+		</div>
+		<!--form-->
+		<div class="row">
+			<form class="contact-form padd-15">
+				<div class="row">
+					<div class="form-item col-6 padd-15">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Name">
+						</div>
+					</div>
+					<div class="form-item col-6 padd-15">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Email">
+						</div>
+					</div>
+					</div>
+					<div class="row">
+						<div class="form-item col-12 padd-15">
+						<div class="form-group">
+							<input type="text" class="form-control"placeholder="Subject">
+						</div>
+					</div>
+					
+				</div>
+				<div class="row">
+						<div class="form-item col-12 padd-15">
+						<div class="form-group">
+							<textarea class="form-control"  placeholder="Your Message.....">
+							</textarea>
+						</div>
+					</div>
+					</div>
+				 <div class="row">
+						<div class="form-item col-12 padd-15">
+							<button type="Submit" class="btn">Send Message</button>
+					</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<!--end contact section-->
+</div>
+
+</div>
+<script type="">
+
+	const nav=document.querySelector(".nav"),
+	navList=nav.querySelectorAll("li"),
+	totalNavList=navList.length,
+	allSection=document.querySelectorAll(".section"),
+	totalSection=allSection.length;
+		for (let i = 0; i < totalNavList; i++) {
+			const a=navList[i].querySelector("a");
+			a.addEventListener("click",function (){
+				removeBackSectionClass();
+				
+			for(let j=0;j<totalNavList;j++){
+				if (navList[j].querySelector("a").classList.contains("active")) {
+				addBackSectionClass(j);
+				//allSection[j].classList.add("back-setion");	
+				}
+				  navList[j].querySelector("a").classList.remove("active");
+			  }
+			  this.classList.add("active");
+			  showSection(this);
+			  if(window.innerWidth<1200) {
+				  asideSectionTogglerBtn();
+			  }
+		  })
+		} 
+		function removeBackSectionClass(){
+		for(let i=0;i<totalSection;i++){
+				  allSection[i].classList.remove("back-section");
+			  }
+		} 
+		function addBackSectionClass(num){
+			allSection[num].classList.add("back-section");
+		}
+		function showSection(element){
+			 for(let i=0;i<totalSection;i++){
+				  allSection[i].classList.remove("active");
+			  }
+			  const target=element.getAttribute("href").split("#")[1];
+			 
+			  document.querySelector("#"+target).classList.add("active")
+		  }
+			  function updateNav(element){
+				  for(let i=0;i<totalNavList;i++){
+				  navList[i].querySelector("a").classList.remove("active");
+				  const target=element.getAttribute("href").split("#")[1];	
+				  if (target==navList[i].querySelector("a").getAttribute("href").split("#")[1]) {
+					  navList[i].querySelector("a").classList.add("active");
+				  }
+			   }
+			  }
+
+			  document.querySelector(".hire-me").addEventListener("click",function(){
+				  const sectionIndex=this.getAttribute("data-section-index");
+				  showSection(this);
+				  updateNav(this);
+				  removeBackSectionClass();
+				  addBackSectionClass(sectionIndex);
+			  })
+			  
+		
+		const navTogglerBtn=document.querySelector(".nav-toggler"),
+			  aside=document.querySelector(".aside");
+
+		navTogglerBtn.addEventListener("click",asideSectionTogglerBtn)
+		
+   
+		function asideSectionTogglerBtn(){
+			aside.classList.toggle("open");
+			navTogglerBtn.classList.toggle("open");
+			for(let i=0;i<totalSection;i++){
+				  allSection[i].classList.toggle("open");
+			  }
+		}
+
+</script>
+<script>
+	var typeString=JSON.parse('["Web Developer", "Fullstack Developer", "Machine Learning Enthusiast"]');
+	var i=0;
+	var count=0;
+	var selectedText="";
+	var text="";
+	(function type() {
+		if (count==typeString.length) {
+			count=0;
+		}
+		selectedText=typeString[count];
+		text=selectedText.slice(0,++i);
+		document.querySelector('#typing').innerHTML=text;
+		document.querySelector('#typing').style.color="red";
+		document.querySelector('#typing').style.fontFamily="Aldrich";
+		document.querySelector('#typing').style.fontSize="xx-large";
+
+		if (text.length===selectedText.length) {
+			count++;
+			i=0;
+		}
+	
+		setTimeout(type,350);
+	}());
+	function sleep(milliseconds) {
+		var start=new Date().getTime();
+		for (let i = 0; i < 1e7; i++) {
+			if ((new Date().getTime)-start)  milliseconds 
+				break;
+			}
+			
+		}
+
+</script>
+</body>
+</html>
