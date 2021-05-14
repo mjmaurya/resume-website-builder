@@ -4,8 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="7ixRO4pw8mZNdsDCuTxmzSWCdCRfM7lG4nNTVxKGiY0" />
-    <meta name="description" content="CodeScript is used by students to build beautiful portfolio website it's easy, fast and has everything you need to get started today.">
-    <meta name="author" content="Manoj Kumar">
+    <meta name="description" content="Online Portfolio Builder is used by Students,Developer and Professional to build beautiful portfolio website. Tt's easy, fast and has everything you need to get started today.">
+    <meta name="author" content="Online Portfolio Builder">
     <script data-ad-client="ca-pub-1325533494418823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <meta name="keywords" content="portfolio,web design,website design,website builder,webdesign,Create an Online Portfolio,portfolio builder,portfolio generator    ">
     <script data-ad-client="ca-pub-7970311056283911" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>    <title>{% block title %}{% endblock %} -CodeScript</title>
@@ -24,6 +24,7 @@
     ================================================== -->
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
@@ -60,7 +61,7 @@
 	height: 100%;
   z-index: 9999;
   
-	background: url(/static/Image/loader.gif) center no-repeat rgb(3, 3, 3);
+	background: url(https://media.giphy.com/media/hL9q5k9dk9l0wGd4e0/giphy.gif) center no-repeat rgb(3, 3, 3);
 }
   </style>
   </head>
@@ -71,13 +72,17 @@
     <nav class="navbar navbar-expand-lg py-3 navbar-dark shadow-sm" style="background: royalblue;">
         <div class="container">
           <a href="/" class="navbar-brand">
-            <span class="text-uppercase font-weight-bold">Online Portfolio Maker</span>
+            <span class="text-uppercase font-weight-bold">Online Portfolio Builder</span>
           </a>
       
           <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
       
           <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/contactus" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="https://github.com/mjmaurya/resume-website-builder"><button><i class="fa fa-star" aria-hidden="true"></i> Star this repo</button></a></li>
+                <li class="nav-item"><a href="https://github.com/mjmaurya/resume-website-builder/fork"><button><i class="fa fa-code-fork" aria-hidden="true"></i> Fork on GitHub</button></a></li>  
                </ul>
           </div>
         </div>
@@ -89,18 +94,24 @@
 
         {% endblock %}
     </div>
-    <div class="cotainer-fluid">
-      <!-- Footer -->
-<footer class="page-footer font-small indigo">
-  <!-- Copyright -->
-  <div class="footer-copyright text-center bg-primary py-3">© 2020 Copyright:
-    <a style="text-decoration: none; color: tomato; font-weight: bold;" href="/"> Manoj</a>
-  </div>
-  <!-- Copyright -->
-
-</footer>
-<!-- Footer -->
+    <div class="cotainer-fluid bg-primary">
+        <!-- Footer -->
+  <footer class="container">
+  
+    <!-- Copyright -->
+    <div class="row ">
+    <div class="col-sm-6 text-center  py-3">© 2020 Copyright:
+      <a style="text-decoration: none; color: tomato; font-weight: bold;" href="https://mjmaurya.github.io/"> Manoj</a>
     </div>
+    <div class="col-sm-6 text-center py-3">
+        <a style="cursor:pointer;color: tomato;" target="popup" onclick="window.open('https://postimages.org/','Image Link Generator', 'width=600,height=500')">Generate Image Link</a>
+    </div>
+  </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+      </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

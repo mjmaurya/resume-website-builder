@@ -1,11 +1,13 @@
 from flask import Flask
+import os
 from flask import render_template,redirect,request
 import sqlite3
 from datetime import datetime
 
-
 app=Flask(__name__)
 
+SECRET_KEY = os.urandom(32)
+app.config['SECRET_KEY'] = SECRET_KEY
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
@@ -178,7 +180,28 @@ def demo(theme):
 @app.route("/")
 def ResumeBuilder():
     return render_template("ResumeBuilder.html")
+@app.route("/contactus")
+def contact():
+    return render_template("contactUs.html")
+@app.route("/contact",methods=['POST','GET'])
+def contactUs():
+    if request.method=='POST':
+        name=request.form['name']
+        subject=request.form['subject']
+        email=request.form['email']
+        message=request.form['mesg']
 
+        message="<h4>"+name+"</h4><br><p>"+message+"</p>"
+        msg = Message(subject, sender = email,
+            recipients = ['manojbce@outlook.com'],
+            body= message
+        )  
+        if(mail.send(msg)):
+            return render_template("success.html")
+        else:
+            return render_template("error.html")
+
+    return render_template("contactUs.html")
 
 if __name__=='__main__':
     app.run( debug=True)
