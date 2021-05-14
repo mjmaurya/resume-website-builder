@@ -3,10 +3,10 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="7ixRO4pw8mZNdsDCuTxmzSWCdCRfM7lG4nNTVxKGiY0" />
-    <meta name="description" content="Online Portfolio Builder is used by Students,Developer and Professional to build beautiful portfolio website. Tt's easy, fast and has everything you need to get started today.">
-    <meta name="author" content="Online Portfolio Builder">
+    <title>Online Portfolio Builder</title>
     <script data-ad-client="ca-pub-1325533494418823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta name="description" content="CodeScript is used by students to build beautiful portfolio website it's easy, fast and has everything you need to get started today.">
+    <meta name="author" content="Manoj Kumar">
     <meta name="keywords" content="portfolio,web design,website design,website builder,webdesign,Create an Online Portfolio,portfolio builder,portfolio generator    ">
     <script data-ad-client="ca-pub-7970311056283911" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>    <title>{% block title %}{% endblock %} -CodeScript</title>
     
@@ -24,10 +24,11 @@
     ================================================== -->
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+  
 
     <!-- Stylesheets
     ================================================== -->
@@ -36,8 +37,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="/static/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://res.cloudinary.com/dpv8phzy0/raw/upload/v1601104269/mjbuttons.min.css">
+    <link rel="stylesheet" href="/static/css/style.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/Image/favicon.png">
     <script>
     //paste this code under the head tag or in a separate js file.
       // Wait for window load
@@ -47,10 +51,23 @@
       });
 
     </script>
-    {% block style %}
-
-  {% endblock %}
   <style>
+    .disable{
+        opacity: 0.3;
+      }
+      .not-active {
+        pointer-events: none;
+        cursor: default;
+        text-decoration: none;
+        color: black;
+      }
+      .modal-content iframe{
+        margin: 0 auto;
+        display: block;
+      }
+
+
+
     .no-js #loader { display: none;  }
 .js #loader { display: block; position: absolute; left: 100px; top: 0; }
 .se-pre-con {
@@ -63,12 +80,14 @@
   
 	background: url(https://media.giphy.com/media/hL9q5k9dk9l0wGd4e0/giphy.gif) center no-repeat rgb(3, 3, 3);
 }
+
   </style>
   </head>
   
   <body>
 
     <div  class="se-pre-con"></div>
+
     <nav class="navbar navbar-expand-lg py-3 navbar-dark shadow-sm" style="background: royalblue;">
         <div class="container">
           <a href="/" class="navbar-brand">
@@ -83,17 +102,121 @@
                 <li class="nav-item"><a href="/contactus" class="nav-link">Contact</a></li>
                 <li class="nav-item"><a href="https://github.com/mjmaurya/resume-website-builder"><button><i class="fa fa-star" aria-hidden="true"></i> Star this repo</button></a></li>
                 <li class="nav-item"><a href="https://github.com/mjmaurya/resume-website-builder/fork"><button><i class="fa fa-code-fork" aria-hidden="true"></i> Fork on GitHub</button></a></li>  
-               </ul>
+            </ul>
           </div>
         </div>
       </nav>
+<div class="container-fluid start">
+    <div class="row">
+      <div class="col-sm-6" style="padding: 50px;" >
+        <div style="margin-top:100px;">
+          <h1>Build Your Portfolio With Online Portfolio Builder</h1>
+        </div>
 
-    <div id="container-fluid">
-           
-        {% block content %}
+        <div style="margin-top:50px;">
+            <a class=" bt h-aqua" href="#theame">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+             Get Started</a>
+             <p data-target="#myModal" data-toggle="modal" class="bt h-danger">
+                <span></span>
+               <span></span>
+               <span></span>
+               <span></span>
+                <i class="fa fa-play-circle" aria-hidden="true"></i> Watch Video </p>
 
-        {% endblock %}
+        </div>
+        
+      </div>
+      <div class="col-sm-6 start-image d-none d-lg-block" style="padding: 50px;">
+        <img class="hero-image" src="/static/Image/hero.png" alt="Hero" width="500" alt="Hero">
+      </div>
     </div>
+</div>
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Portfolio Guide </h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <iframe width="450" height="315" src="https://www.youtube.com/embed/HMUmI9kfSDc" frameborder="0" 
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" id="theame">
+    <h1 style="text-align: center; margin-top:50px;">Portfolio Themes</h1>
+  <div class="row" style="margin-top: 20px;">
+      <div class="col-sm-6">
+          <h3>1. MisMash</h3>
+          <div class="card">
+              <img src="/static/Image/mishmash.PNG" alt="MisMash" height="350" class="card-img-top" alt="...">
+              <div class="card-body">
+                <a href="/demo/mismash" class="btn btn-primary">Demo</a>
+                <a href="/details/mismash" class="btn btn-primary">Use It</a>
+              </div>
+            </div>
+
+      </div>
+      <div class="col-sm-6" >
+        <h3>2. Supreme</h3>
+          <div class="card" >
+              <img src="/static/Image/supreme.png" height="350" alt="Model2" class="card-img-top" alt="...">
+              <div class="card-body">
+                <a href="/demo/supreme" class="btn btn-primary">Demo</a>
+                <a href="/details/supreme" class="btn btn-primary ">Use It</a>
+              </div>
+            </div>
+
+      </div>
+
+  </div>
+<div class="container text-center py-3" ><h3>Comming Soon With More Theames!</h3></div>
+  <div class="row" style="margin-top: 20px;" >
+      <div class="col-sm-6 disable" >
+        <h3>3. Mj</h3>
+          <div class="card">
+              <img src="/static/Image/model1.PNG" alt="model3" height="350" class="card-img-top" alt="...">
+              <div class="card-body">
+                <a href="#" class="btn btn-primary not-active">Demo</a>
+                <a href="#" class="btn btn-primary not-active">Use It</a>
+              </div>
+            </div>
+
+      </div>
+      <div class="col-sm-6 disable" disabled>
+        <h3>4. LoveMJ</h3>
+          <div class="card">
+              <img src="/static/Image/model1.PNG" alt="Model4" height="350" class="card-img-top" alt="...">
+              <div class="card-body">
+                <a href="#" class="btn btn-primary not-active">Demo</a>
+                <a href="#" class="btn btn-primary not-active">Use It</a>
+              </div>
+            </div>
+       </div>
+
+  </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
+    <script>
+        var scroll = new SmoothScroll('a[href*="#"]', {
+	      speed: 700,
+        });
+    </script>
+
     <div class="cotainer-fluid bg-primary">
         <!-- Footer -->
   <footer class="container">
@@ -113,6 +236,7 @@
   <!-- Footer -->
       </div>
 
+      
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

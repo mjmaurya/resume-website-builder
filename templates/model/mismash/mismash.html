@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" id="download">
     <head>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script>
+    //paste this code under the head tag or in a separate js file.
+      // Wait for window load
+      $(window).load(function() {
+        // Animate loader off screen
+        $(".se-pre-con").fadeOut("slow");;
+      });
+
+    </script>
 <style type="text/css">
 /*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
@@ -241,18 +253,12 @@ img{
 .button:hover{
   box-shadow: 0 10px 36px rgba(0,0,0,.15);
 }
-.domain{
-  margin-top:10px;
-}
 .card-img-top{
   width:150px;
   height:150px;
-  border-radius:50%;
 
 }
 .card{
-  height:300px;
-  overflow:scroll;
   box-shadow:0 4px 25px rgba(14,36,49,.15);
   padding:5px;
   margin:10px;
@@ -430,7 +436,18 @@ img{
     right: 10%;
   }
 }
-
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+  z-index: 9999;
+  
+	background: url(/static/Image/loader.gif) center no-repeat rgb(3, 3, 3);
+}
 
 </style>
         <meta charset="UTF-8">
@@ -447,6 +464,8 @@ img{
         <title>{{params['yourname']}}</title>
     </head>
     <body style="background-color: powerblue;">
+
+      <div  class="se-pre-con"></div>
         <!-- HEADER -->
         <header class="l-header">
             <nav class="nav bd-grid">
@@ -477,7 +496,7 @@ img{
                 <div class="home__data">
                     <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">{{params['yourname']}}</span><br>{% if params["title"] %}<span id="typing"></span>{% endif %}</h1>
 
-                    <a href="#contact" class="button">Contact Me</a>
+                    <a href="{{params['resume']}}" class="button">Download CV</a>
                 </div>
 
                 <div class="home__social">
@@ -494,7 +513,7 @@ img{
                     {% if params["twitter"] %}
                      <a href="https://twitter.com/{{params['twitter']}}" class="home__social-icon"><i class='bx bxl-twitter'></i></a>
                      {% endif %}
-                     {% if params["instagram"] %}
+                     {% if params["instagram" ] %}
                      <a href="https://www.instagram.com/{{params['instagram']}}" class="home__social-icon"><i class='bx bxl-instagram'></i></a>
                      {% endif %}
                 </div>
@@ -526,50 +545,6 @@ img{
                     </div>                                   
                 </div>
             </section>
-
-            <section>
-              <div class="container">
-                <h2 class="section-title">What I'm Doing</h2>
-                <div class="row" style="text-align: center;">
-                  {% if params["doingone"][0] %}
-                  <div class="col-sm-4 domain">
-                    <div class="card">
-                      <img class="card-img-top" src="https://image.flaticon.com/icons/svg/1197/1197511.svg" alt="Card image" style="width:100%">
-                      <div class="card-body">
-                        <h4 class="card-title">{{params["doingone"][0]}}</h4>
-                        <p class="card-text">{{params["doingone"][1]}}</p>
-                      </div>
-                    </div>
-                  </div>
-                  {% endif %}
-                  {% if params["doingtwo"][0] %}
-                  <div class="col-sm-4 domain">
-                    <div class="card" >
-                      <img class="card-img-top" src="https://image.flaticon.com/icons/svg/1197/1197511.svg" alt="Card image" style="width:100%">
-                      <div class="card-body">
-                        <h4 class="card-title">{{params["doingtwo"][0]}}</h4>
-                        <p class="card-text">{{params["doingtwo"][1]}}</p>
-                      </div>
-                    </div>
-                  </div>
-                  {% endif %}
-                  {% if params["doingthree"][0] %}
-                  <div class="col-sm-4 domain">
-                    <div class="card">
-                      <img class="card-img-top" src="https://image.flaticon.com/icons/svg/1197/1197511.svg" alt="Card image" style="width:100%">
-                      <div class="card-body">
-                        <h4 class="card-title">{{params["doingthree"][0]}}</h4>
-                        <p class="card-text">{{params["doingthree"][1]}}</p>
-                      </div>
-                    </div>
-                  </div>
-                  {% endif %}
-                </div>
-
-              </div>
-
-            </section>
-
 
             <section class="work section" id="education">
               <h2 class="section-title">Education</h2>
@@ -681,7 +656,7 @@ img{
 
                 <div class="container">          
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                           <h2 class="skills__subtitle">Work Skills</h2>
                           {% for i in params["work_skill"] %}
                         <div class="skills__data">
@@ -692,19 +667,6 @@ img{
                         </div>
                         {% endfor %}
                         
-                        </div>
-
-                        <div class="col-sm-6">
-                          <h2 class="skills__subtitle">Programming Language</h2>
-                          {% for i in params["p_language"] %}
-                          <div class="skills__data">
-                              <div class="skills__names">
-                                <img src="https://img.icons8.com/color/24/000000/code.png"/>
-                                  <span class="skills__name">{{i}}</span>
-                              </div> 
-                          </div>
-                          {% endfor %}
-                      
                         </div>
 
                     </div>
@@ -1068,6 +1030,48 @@ img{
                 </div>
             </section>
 
+            <section>
+              <div class="container">
+                <h2 class="section-title">Lastest Blog</h2>
+                <div class="row" style="text-align: center;">
+                  {% if params["doingone"][0] %}
+                  <div class="col-sm-4">
+                    <div class="card">
+                      <img class="card-img-top" src="https://source.unsplash.com/400x300/?blog,code" alt="blog" style="width:100%">
+                      <div class="card-body">
+                        <a href="{{params['doingone'][0]}}"><p class="card-text">{{params["doingone"][1]}}</p></a>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% if params["doingtwo"][0] %}
+                  <div class="col-sm-4">
+                    <div class="card">
+                      <img class="card-img-top" src="https://source.unsplash.com/400x300/?blog,code" alt="blog" style="width:100%">
+                      <div class="card-body">
+                        <a href="{{params['doingtwo'][0]}}"><p class="card-text">{{params["doingtwo"][1]}}</p></a>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% if params["doingthree"][0] %}
+                  <div class="col-sm-4">
+                    <div class="card">
+                      <img class="card-img-top" src="https://source.unsplash.com/400x300/?blog,code" alt="blog" style="width:100%">
+                      <div class="card-body">
+                        <a href="{{params['doingthree'][0]}}"><p class="card-text">{{params["doingthree"][1]}}</p></a>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+
+              </div>
+
+            </section>
+
+
+
             <!--CONTACT -->
             <section class="contact section" id="contact">
                 <h2 class="section-title container">Contact</h2>
@@ -1182,7 +1186,7 @@ img{
             </div>
             <p>Copyright &#169; 2020 {{params['yourname']}},All rights reserved. 
               Powered by
-              <a style="text-decoration: none; color: tomato; font-weight: bold;" href="http://www.codescript.run/"> CodeScript</a>
+              <a style="text-decoration: none; color: tomato; font-weight: bold;" href="http://codescript.in/ResumeBuilder"> CodeScript</a>
             </p>
         </footer>
       </main>
@@ -1252,7 +1256,6 @@ sr.reveal('.contact-location',{interval: 100});
 sr.reveal('.contact-email',{interval: 200}); 
 
 var typeString=JSON.parse('{{params["title"] | tojson}}');
-console.log(typeString);
     var i=0;
     var count=0;
     var selectedText="";
@@ -1514,7 +1517,7 @@ img{
   color: var(--first-color);
 }
 .home__img{
-  margin-top:50px;
+  margin-top: top 50px;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -1533,18 +1536,12 @@ img{
 .button:hover{
   box-shadow: 0 10px 36px rgba(0,0,0,.15);
 }
-.domain{
-  margin-top:10px;
-}
 .card-img-top{
   width:150px;
   height:150px;
-  border-radius:50%;
 
 }
 .card{
-  height:300px;
-  overflow:scroll;
   box-shadow:0 4px 25px rgba(14,36,49,.15);
   padding:5px;
   margin:10px;
@@ -1593,7 +1590,7 @@ img{
   padding: .5rem 1rem;
   margin-bottom: var(--mb-4);
   color:#fff;
-  background:rgb(17, 5, 5);
+  background:rgb(0, 0, 0);
   border-radius: .5rem;
   box-shadow: 0 4px 25px rgba(14,36,49,.15);
 }
@@ -1768,7 +1765,7 @@ img{
                 &ltdiv class="home__data"&gt
                     &lth1 class="home__title"&gtHi,&ltbr&gtI'am &ltspan class="home__title-color"&gt{{params['yourname']}}&lt/span&gt&ltbr&gt{% if params["title"] %}&ltspan id="typing"&gt&lt/span&gt{% endif %}&lt/h1&gt
 
-                    &lta href="#contact" class="button"&gtContact Me&lt/a&gt
+                    &lta href="{{params['resume']}}" class="button"&gtDownload CV&lt/a&gt
                 &lt/div&gt
 
                 &ltdiv class="home__social"&gt
@@ -1817,50 +1814,6 @@ img{
                     &lt/div&gt                                   
                 &lt/div&gt
             &lt/section&gt
-
-            &ltsection&gt
-              &ltdiv class="container"&gt
-              &lth2 class="section-title"&gtWhat I'm Doing&lt/h2&gt
-                &ltdiv class="row" style="text-align: center;"&gt
-                  {% if params["doingone"][0] %}
-                  &ltdiv class="col-sm-4 domain"&gt
-                    &ltdiv class="card"&gt
-                      &ltimg class="card-img-top" src="https://image.flaticon.com/icons/svg/1197/1197511.svg" alt="Card image" style="width:100%"&gt
-                      &ltdiv class="card-body"&gt
-                        &lth4 class="card-title"&gt{{params["doingone"][0]}}&lt/h4&gt
-                        &ltp class="card-text"&gt{{params["doingone"][1]}}&lt/p&gt
-                      &lt/div&gt
-                    &lt/div&gt
-                  &lt/div&gt
-                  {% endif %}
-                  {% if params["doingtwo"][0] %}
-                  &ltdiv class="col-sm-4 domain"&gt
-                    &ltdiv class="card" &gt
-                      &ltimg class="card-img-top" src="https://image.flaticon.com/icons/svg/1197/1197511.svg" alt="Card image" style="width:100%"&gt
-                      &ltdiv class="card-body"&gt
-                        &lth4 class="card-title"&gt{{params["doingtwo"][0]}}&lt/h4&gt
-                        &ltp class="card-text"&gt{{params["doingtwo"][1]}}&lt/p&gt
-                      &lt/div&gt
-                    &lt/div&gt
-                  &lt/div&gt
-                  {% endif %}
-                  {% if params["doingthree"][0] %}
-                  &ltdiv class="col-sm-4 domain"&gt
-                    &ltdiv class="card"&gt
-                      &ltimg class="card-img-top" src="https://image.flaticon.com/icons/svg/1197/1197511.svg" alt="Card image" style="width:100%"&gt
-                      &ltdiv class="card-body"&gt
-                        &lth4 class="card-title"&gt{{params["doingthree"][0]}}&lt/h4&gt
-                        &ltp class="card-text"&gt{{params["doingthree"][1]}}&lt/p&gt
-                      &lt/div&gt
-                    &lt/div&gt
-                  &lt/div&gt
-                  {% endif %}
-                &lt/div&gt
-
-              &lt/div&gt
-
-            &lt/section&gt
-
 
             &ltsection class="work section" id="education"&gt
               &lth2 class="section-title"&gtEducation&lt/h2&gt
@@ -1972,7 +1925,7 @@ img{
 
                 &ltdiv class="container"&gt          
                     &ltdiv class="row"&gt
-                        &ltdiv class="col-sm-6"&gt
+                        &ltdiv class="col-sm-12"&gt
                           &lth2 class="skills__subtitle"&gtWork Skills&lt/h2&gt
                           {% for i in params["work_skill"] %}
                         &ltdiv class="skills__data"&gt
@@ -1983,19 +1936,6 @@ img{
                         &lt/div&gt
                         {% endfor %}
                         
-                        &lt/div&gt
-
-                        &ltdiv class="col-sm-6"&gt
-                          &lth2 class="skills__subtitle"&gtProgramming Language&lt/h2&gt
-                          {% for i in params["p_language"] %}
-                          &ltdiv class="skills__data"&gt
-                              &ltdiv class="skills__names"&gt
-                                &ltimg src="https://img.icons8.com/color/24/000000/code.png"/&gt
-                                  &ltspan class="skills__name"&gt{{i}}&lt/span&gt
-                              &lt/div&gt 
-                          &lt/div&gt
-                          {% endfor %}
-                      
                         &lt/div&gt
 
                     &lt/div&gt
@@ -2014,9 +1954,7 @@ img{
                           &ltdiv class="skills__names"&gt
                             &ltimg src="https://img.icons8.com/fluent/24/000000/contract.png"/&gt
                               &ltspan class="skills__name"&gt {{i[0]}}&lt/span&gt
-                              &ltspan style="margin-left:10px;"&gt
-                              &lta href="{{i[1]}}">Verify&lt/a&gt
-                              &lt/span&gt
+                              &ltspan style="margin-left:10px;"&gt&lta href="{{i[1]}}"&gtVerify&lt/a&gt&lt/span&gt
                           &lt/div&gt 
                       &lt/div&gt
                       {% endif %}
@@ -2361,6 +2299,48 @@ img{
                 &lt/div&gt
             &lt/section&gt
 
+            &ltsection&gt
+              &ltdiv class="container"&gt
+                &lth2 class="section-title"&gtLastest Blog&lt/h2&gt
+                &ltdiv class="row" style="text-align: center;"&gt
+                  {% if params["doingone"][0] %}
+                  &ltdiv class="col-sm-4"&gt
+                    &ltdiv class="card"&gt
+                      &ltimg class="card-img-top" src="https://source.unsplash.com/400x300/?blog,code" alt="blog" style="width:100%"&gt
+                      &ltdiv class="card-body"&gt
+                        &lta href="{{params['doingone'][0]}}"&gt&ltp class="card-text"&gt{{params["doingone"][1]}}&lt/p&gt&lt/a&gt
+                      &lt/div&gt
+                    &lt/div&gt
+                  &lt/div&gt
+                  {% endif %}
+                  {% if params["doingtwo"][0] %}
+                  &ltdiv class="col-sm-4"&gt
+                    &ltdiv class="card"&gt
+                      &ltimg class="card-img-top" src="https://source.unsplash.com/400x300/?blog,code" alt="blog" style="width:100%"&gt
+                      &ltdiv class="card-body"&gt
+                        &lta href="{{params['doingtwo'][0]}}"&gt&ltp class="card-text"&gt{{params["doingtwo"][1]}}&lt/p&gt&lt/a&gt
+                      &lt/div&gt
+                    &lt/div&gt
+                  &lt/div&gt
+                  {% endif %}
+                  {% if params["doingthree"][0] %}
+                  &ltdiv class="col-sm-4"&gt
+                    &ltdiv class="card"&gt
+                      &ltimg class="card-img-top" src="https://source.unsplash.com/400x300/?blog,code" alt="blog" style="width:100%"&gt
+                      &ltdiv class="card-body"&gt
+                        &lta href="{{params['doingthree'][0]}}"&gt&ltp class="card-text"&gt{{params["doingthree"][1]}}&lt/p&gt&lt/a&gt
+                      &lt/div&gt
+                    &lt/div&gt
+                  &lt/div&gt
+                  {% endif %}
+                &lt/div&gt
+
+              &lt/div&gt
+
+            &lt/section&gt
+
+
+
             &lt!--CONTACT --&gt
             &ltsection class="contact section" id="contact"&gt
                 &lth2 class="section-title container"&gtContact&lt/h2&gt
@@ -2545,7 +2525,6 @@ sr.reveal('.contact-location',{interval: 100});
 sr.reveal('.contact-email',{interval: 200}); 
 
 var typeString=JSON.parse('{{params["title"] | tojson}}');
-console.log(typeString);
     var i=0;
     var count=0;
     var selectedText="";
@@ -2577,8 +2556,7 @@ console.log(typeString);
         }
 
     &lt/script&gt
-    &ltscript src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"&gt&lt/script&gt
-
+&lt!-- User Can get These code --&gt
         &ltscript src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"&gt&lt/script&gt
         &ltscript src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"&gt&lt/script&gt
         &ltscript src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"&gt&lt/script&gt

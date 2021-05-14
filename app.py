@@ -1,17 +1,20 @@
 from flask import Flask
+import os
 from flask import render_template,redirect,request
+import sqlite3
+from datetime import datetime
 
 app=Flask(__name__)
 
-@app.route("/")
-def index():
-    params=dict()
-    return render_template("index.html",params=params)
-
-@app.route("/result",methods=['POST','GET'])
-def model1():
+SECRET_KEY = os.urandom(32)
+app.config['SECRET_KEY'] = SECRET_KEY
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+    
+@app.route("/result/<theme>",methods=['POST','GET'])
+def model1(theme):
     if(request.method=='POST'):
-        # Profile Details
         params=dict()
         yourname=request.form["yourname"]
         profile_image=request.form["profile"]
@@ -41,6 +44,8 @@ def model1():
         params["doingtwo"]=[doing2,doingDesc2]
         params["doingthree"]=[doing3,doingDesc3]
         #My Resume
+        resume=degree1=request.form["resume"]
+        params["resume"]=resume
         # Education Details
         degree1=request.form["degree1"]
         duration1=request.form["duration1"]
@@ -129,7 +134,6 @@ def model1():
         params["projectsix"]=[project6,project_u6,project_d6]
 
         work_skill=request.form["work_skill"]
-        p_language=request.form["p_language"]
         achivements=request.form["achivements"]
         # Social Media
 
@@ -156,31 +160,49 @@ def model1():
         params["medium"]=medium
         params["youtube"]=youtube
         work_skill=work_skill.split(",")
-        p_language=p_language.split(",")
         achivements=achivements.split(",")
         params["work_skill"]=work_skill
-        params["p_language"]=p_language
         params["achivements"]=achivements
 
-        return render_template("model/mismash/mismash.html",params=params)
+        return render_template("model/"+theme+"/"+theme+".html",params=params)
 
 
     else:
         return render_template("details.html")
-@app.route("/details")
-def details():
-    return render_template("details.html")
+@app.route("/details/<theme>")
+def details(theme):
+    return render_template("details.html",theme=theme)
 
-@app.route("/demo")
-def demo():
-    return render_template("demo/mishmash.html")
-@app.route("/pandp")
-def policy():
-    return render_template("p&p.html")  
+@app.route("/demo/<theme>")
+def demo(theme):
+    return render_template("demo/"+theme+".html")
 
-
+@app.route("/")
+def ResumeBuilder():
+    return render_template("ResumeBuilder.html")
 @app.route("/contactus")
 def contact():
     return render_template("contactUs.html")
+@app.route("/contact",methods=['POST','GET'])
+def contactUs():
+    if request.method=='POST':
+        name=request.form['name']
+        subject=request.form['subject']
+        email=request.form['email']
+        message=request.form['mesg']
+
+        message="<h4>"+name+"</h4><br><p>"+message+"</p>"
+        msg = Message(subject, sender = email,
+            recipients = ['manojbce@outlook.com'],
+            body= message
+        )  
+        if(mail.send(msg)):
+            return render_template("success.html")
+        else:
+            return render_template("error.html")
+
+    return render_template("contactUs.html")
+
 if __name__=='__main__':
     app.run( debug=True)
+
