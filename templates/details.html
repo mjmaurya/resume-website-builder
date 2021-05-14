@@ -28,7 +28,7 @@
  <body class="">
   {% block content %}
    <div class="container main">
-     <form method="POST" enctype="multipart/form-data" action="/result">
+     <form method="POST" enctype="multipart/form-data" action="/result/{{theme}}">
     <div class="container">
       <h1>About Me</h1>
       <div class="row">
@@ -153,54 +153,19 @@
       </div>
     </div>
 
-<!--What I'm Doing Starts-->
-    <div class="container">
-      <h1>What I'm Doing</h1>
-      <div class="row">
-        <div class="col-sm-4">
-          <h3>1</h3>
-        
-        <div class="container">
-            <input name="doing1" placeholder="Machine Learning" class="inputField lg" value="">
-        </div>
-        <div class="container">
-          <textarea name="doingDesc1" placeholder=" Machine Learning is one of the most demandable technology so i have started to learn Machine Learning." rows="3" class="inputField lg" value=""></textarea>
-      </div>
 
-        </div>
-        <div class="col-sm-4">
-          <h3>2</h3>
-        
-        <div class="container">
-            <input name="doing2" placeholder="Learning Skill" class="inputField lg" value="">
-        </div>
-        <div class="container">
-          <textarea name="doingDesc2" placeholder=" Skill Description" rows="3" class="inputField lg" value=""></textarea>
-      </div>
-
-        </div>
-        <div class="col-sm-4">
-          <h3>3</h3>
-        
-          <div class="container">
-              <input name="doing3" placeholder="Learning Skill" class="inputField lg" value="">
-          </div>
-          <div class="container">
-            <textarea name="doingDesc3" placeholder=" Skill Description" rows="3" class="inputField lg" value=""></textarea>
-        </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- What I'm Doing End-->
 <div class="container">
   <div class="container">
 
     <h1>My Resume</h1>
   </div>
+  <div class="row">
+    <div class="container">
+      <div class="container">
+        <input name="resume" placeholder="Resume Link" class="inputField lg" value="">
+    </div>
+  </div>
+</div>
 <div class="row">
   <div class="col-sm-6">
     <div class="container">
@@ -551,25 +516,6 @@
         </div>
 
         <div class="col-sm-6">
-          <h3><i class="material-icons">code</i> Programming Skills</h3>
-          <div class="container">
-            <textarea name="p_language" placeholder=" Enter comma separated Languages Like Java,Python" rows="3" class="inputField lg" value="" required></textarea>
-        </div>
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- Skill and Languages End-->
-
-
-    <!-- Certificate and Achivements Start-->
-
-    
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
           <h3><i class="fa fa-trophy"></i> Achievements and Awards </h3>
           <div class="container">
             <textarea name="achivements" placeholder=" Enter Multiple comma separated Achievements" rows="3" class="inputField lg" value=""></textarea>
@@ -579,9 +525,52 @@
       </div>
 
     </div>
-
-    <!-- Certifiacte and Achivements End-->
     
+    <!--What I'm Doing Starts-->
+    <div class="container">
+      <h1>Latest Blogs</h1>
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>1</h3>
+        
+        <div class="container">
+            <input name="doing1" placeholder="Blog Link" class="inputField lg" value="">
+        </div>
+        <div class="container">
+          <textarea name="doingDesc1" placeholder="Blog Heading" rows="3" class="inputField lg" value=""></textarea>
+      </div>
+
+        </div>
+        <div class="col-sm-4">
+          <h3>2</h3>
+        
+        <div class="container">
+            <input name="doing2" placeholder="Blog Link" class="inputField lg" value="">
+        </div>
+        <div class="container">
+          <textarea name="doingDesc2" placeholder=" Blog Heading" rows="3" class="inputField lg" value=""></textarea>
+      </div>
+
+        </div>
+        <div class="col-sm-4">
+          <h3>3</h3>
+        
+          <div class="container">
+              <input name="doing3" placeholder="Blog Link" class="inputField lg" value="">
+          </div>
+          <div class="container">
+            <textarea name="doingDesc3" placeholder=" Blog Heading" rows="3" class="inputField lg" value=""></textarea>
+        </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- What I'm Doing End-->
+
+
     <div class="container">
             <h3>Social</h3>
             <div class="container">
@@ -606,12 +595,7 @@
                 <div class="container">
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/codepen.svg" class="icon" alt="codepen">
                     <input name="codepen" placeholder="codepen username" class="inputField lg" value="">
-                </div>
-                <div class="container">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/codesandbox.svg" class="icon" alt="codesandbox">
-                    <input name="codesandbox" placeholder="codesandbox username link" class="inputField lg" value="">
-                </div>
-               
+                </div>               
                 <div class="container">
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg" class="icon" alt="linkedin">
                     <input name="linkedin" placeholder="linkedin username" class="inputField lg" value="">
@@ -622,10 +606,7 @@
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/stackoverflow.svg" class="icon" alt="stackoverflow">
                 <input name="stackoverflow" placeholder="stackoverflow username" class="inputField lg" value="">
             </div>
-                <div class="container">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/kaggle.svg" class="icon" alt="kaggle">
-                    <input name="kaggle" placeholder="kaggle username" class="inputField lg" value="">
-                </div>
+                
                 <div class="container">
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/facebook.svg" class="icon" alt="facebook">
                     <input name="fb" placeholder="facebook username" class="inputField lg" value="">
