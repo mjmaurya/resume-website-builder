@@ -13,9 +13,9 @@ You need a resume that you can update and share at any given moment. On top of t
 
 ### How it Works [Watch Video](https://youtu.be/HMUmI9kfSDc)
 
-🚀**Try it out:** [Live Demo](http://www.codescript.run/)
+🚀**Try it out:** [Live Demo](https://opbuilder.herokuapp.com/)
 
-- [Live Demo](http://www.codescript.run/)
+- [Live Demo](https://opbuilder.herokuapp.com/)
 - [Report Bug](https://github.com/mjmaurya/resume-website-builder/issues/new/choose)
 - [Request Feature](https://github.com/mjmaurya/resume-website-builder/issues/new/choose)
 
